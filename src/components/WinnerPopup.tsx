@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { X, Gift, PartyPopper } from "lucide-react";
+import { X, Gift, Sparkles, Clock, ChevronRight } from "lucide-react";
 import { Gift as GiftType } from "@/data/gifts";
 import { useRouter } from "next/navigation";
 
@@ -12,21 +12,21 @@ interface WinnerPopupProps {
 
 export function WinnerPopup({ gift, onClose }: WinnerPopupProps) {
     const router = useRouter();
-    const [confetti, setConfetti] = useState<Array<{ id: number; left: number; delay: number; color: string }>>([]);
+    const [confetti, setConfetti] = useState<Array<{ id: number; left: number; delay: number; color: string; size: number }>>([]);
 
     useEffect(() => {
-        // Generate confetti pieces
-        const pieces = Array.from({ length: 50 }, (_, i) => ({
+        // Generate confetti pieces with varied sizes
+        const pieces = Array.from({ length: 60 }, (_, i) => ({
             id: i,
             left: Math.random() * 100,
             delay: Math.random() * 2,
             color: ['#ef4444', '#22c55e', '#fbbf24', '#3b82f6', '#ec4899', '#8b5cf6'][Math.floor(Math.random() * 6)],
+            size: Math.random() * 8 + 4,
         }));
         setConfetti(pieces);
     }, []);
 
     const handleGetGift = () => {
-        // Store the won gift in sessionStorage
         sessionStorage.setItem("wonGift", JSON.stringify(gift));
         router.push("/share");
     };
@@ -35,7 +35,7 @@ export function WinnerPopup({ gift, onClose }: WinnerPopupProps) {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 animate-fade-in">
             {/* Backdrop */}
             <div
-                className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+                className="absolute inset-0 bg-black/80 backdrop-blur-md"
                 onClick={onClose}
             />
 
@@ -44,10 +44,12 @@ export function WinnerPopup({ gift, onClose }: WinnerPopupProps) {
                 {confetti.map((piece) => (
                     <div
                         key={piece.id}
-                        className="absolute w-3 h-3 rounded-sm"
+                        className="absolute rounded-full"
                         style={{
                             left: `${piece.left}%`,
                             top: '-20px',
+                            width: `${piece.size}px`,
+                            height: `${piece.size}px`,
                             backgroundColor: piece.color,
                             animation: `confetti-fall 3s linear ${piece.delay}s infinite`,
                         }}
@@ -56,50 +58,65 @@ export function WinnerPopup({ gift, onClose }: WinnerPopupProps) {
             </div>
 
             {/* Modal */}
-            <div className="relative glass backdrop-blur-lg rounded-3xl p-8 max-w-md w-full animate-bounce-in">
-                {/* Close button */}
-                <button
-                    onClick={onClose}
-                    className="absolute top-4 right-4 p-2 rounded-xl hover:bg-[var(--card-border)] transition-colors"
-                >
-                    <X className="w-5 h-5 text-[var(--text-muted)] " />
-                </button>
+            <div className="relative w-full max-w-sm animate-bounce-in">
+                {/* Glow effect behind modal */}
+                <div className="absolute inset-0 bg-gradient-to-br from-red-500/30 to-pink-600/30 blur-3xl rounded-full scale-150" />
 
-                {/* Content */}
-                <div className="text-center">
-                    {/* Celebration icon */}
-                    <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-red-500 to-pink-600 mb-1 animate-bounce">
-                        <PartyPopper className="w-10 h-10 text-white" />
-                    </div>
-
-                    {/* Title */}
-                    <h2 className="text-4xl font-bold mb-2 bg-gradient-to-br from-red-500 to-pink-600 bg-clip-text text-transparent">
-                        Congratulations! 🎉
-                    </h2>
-
-                    <p className="text-lg text-[var(--text-muted)] mb-6">
-                        You&apos;ve won an amazing gift!
-                    </p>
-
-                    {/* Gift display */}
-                    <div className="card mb-6 bg-gradient-to-br from-[var(--card-bg)] to-[var(--card-border)]">
-                        <div className="text-6xl mb-3">{gift.icon}</div>
-                        <h3 className="text-3xl font-bold text-[var(--foreground)]">{gift.name}</h3>
-                        <p className="text-[var(--text-muted)] text-base mt-1">Worth ₹10,000+</p>
-                    </div>
-
-                    {/* CTA Button */}
+                {/* Modal content */}
+                <div className="relative bg-[var(--card-bg)] border border-[var(--card-border)] rounded-3xl p-6 shadow-2xl">
+                    {/* Close button */}
                     <button
-                        onClick={handleGetGift}
-                        className="btn-primary w-full text-lg py-4"
+                        onClick={onClose}
+                        className="absolute top-3 right-3 p-2 rounded-full bg-[var(--background)] border border-[var(--card-border)] hover:bg-[var(--card-border)] transition-all"
                     >
-                        <Gift className="w-5 h-5" />
-                        Get Your Gift Now!
+                        <X className="w-4 h-4 text-[var(--text-muted)]" />
                     </button>
 
-                    <p className="text-sm text-[var(--text-muted)] mt-4">
-                        ⏰ Claim within 24 hours to receive your gift
-                    </p>
+                    {/* Content */}
+                    <div className="text-center">
+                        {/* Celebration badge */}
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-red-500 to-pink-600 mb-4">
+                            <Sparkles className="w-4 h-4 text-white" />
+                            <span className="text-sm font-semibold text-white">You&apos;re a Winner!</span>
+                            <Sparkles className="w-4 h-4 text-white" />
+                        </div>
+
+                        {/* Title */}
+                        <h2 className="text-2xl font-bold text-[var(--foreground)] mb-1">
+                            Congratulations!
+                        </h2>
+                        <p className="text-sm text-[var(--text-muted)] mb-5">
+                            You&apos;ve won an amazing gift!
+                        </p>
+
+                        {/* Gift display card */}
+                        <div className="relative bg-gradient-to-br from-[var(--background)] to-[var(--card-bg)] rounded-2xl p-5 mb-5 border border-[var(--card-border)]">
+                            {/* Decorative corner */}
+                            <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-red-500/10 to-transparent rounded-tr-2xl" />
+
+                            <div className="text-5xl mb-3">{gift.icon}</div>
+                            <h3 className="text-xl font-bold text-[var(--foreground)] mb-1">{gift.name}</h3>
+                            <div className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20">
+                                <span className="text-sm font-medium text-green-500">Worth {gift.value}</span>
+                            </div>
+                        </div>
+
+                        {/* CTA Button */}
+                        <button
+                            onClick={handleGetGift}
+                            className="group w-full flex items-center justify-center gap-2 bg-gradient-to-r from-red-500 to-pink-600 hover:from-red-600 hover:to-pink-700 text-white font-semibold py-4 px-6 rounded-2xl transition-all duration-200 shadow-lg shadow-red-500/25 hover:shadow-red-500/40 hover:scale-[1.02] active:scale-[0.98]"
+                        >
+                            <Gift className="w-5 h-5" />
+                            <span>Claim Your Gift</span>
+                            <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                        </button>
+
+                        {/* Urgency notice */}
+                        <div className="flex items-center justify-center gap-2 mt-4 text-[var(--text-muted)]">
+                            <Clock className="w-4 h-4 text-orange-500" />
+                            <span className="text-xs">Claim within 24 hours to receive your gift</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

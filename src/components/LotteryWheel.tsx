@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { WandSparkles } from "lucide-react";
+import { ChevronRight, GiftIcon, WandSparkles } from "lucide-react";
 import { gifts, Gift } from "@/data/gifts";
 
 interface LotteryWheelProps {
@@ -181,14 +181,14 @@ export function LotteryWheel({ onWin }: LotteryWheelProps) {
                 </svg>
             </div>
 
-            {/* Spin Button */}
             <button
                 onClick={spin}
                 disabled={isSpinning}
-                className={`btn-primary text-xl px-10 py-4 ${isSpinning ? 'opacity-50 cursor-not-allowed' : 'animate-pulse-glow'}`}
+                className="group w-full flex items-center justify-center gap-2 bg-gradient-to-r from-red-500 to-pink-600 hover:from-red-600 hover:to-pink-700 text-white font-semibold py-4 px-6 rounded-2xl transition-all duration-200 shadow-lg shadow-red-500/25 hover:shadow-red-500/40 hover:scale-[1.02] active:scale-[0.98]"
             >
-                <WandSparkles className="w-6 h-6" />
-                {isSpinning ? "Spinning..." : "SPIN TO WIN!"}
+                <GiftIcon className="w-5 h-5" />
+                <span>{isSpinning ? "Spinning..." : "SPIN TO WIN!"}</span>
+                <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </button>
 
             <p className="text-[var(--text-muted)] text-base text-center max-w-xs">
