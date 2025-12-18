@@ -21,7 +21,6 @@ export default function SharePage() {
     const router = useRouter();
     const [gift, setGift] = useState<GiftType | null>(null);
     const [shareCount, setShareCount] = useState(0);
-    const [sharedPlatforms, setSharedPlatforms] = useState<Set<string>>(new Set());
     const [copied, setCopied] = useState(false);
     const [email, setEmail] = useState("");
     const [emailSubmitted, setEmailSubmitted] = useState(false);
@@ -60,15 +59,9 @@ export default function SharePage() {
         }
     }, []);
 
-    const incrementShareCount = (platform: string) => {
-        // Only count each platform once
-        if (sharedPlatforms.has(platform)) {
-            return;
-        }
-
-        setSharedPlatforms(prev => new Set([...prev, platform]));
-        const newCount = Math.min(shareCount + 1, requiredShares);
-        setShareCount(newCount);
+    const incrementShareCount = () => {
+        // Increment share count up to the required amount
+        setShareCount(prev => Math.min(prev + 1, requiredShares));
     };
 
     const handleShare = async (platform: string) => {
@@ -92,7 +85,7 @@ export default function SharePage() {
                     url: shareUrl,
                 });
                 // User completed the share
-                incrementShareCount(platform);
+                incrementShareCount();
                 return;
             } catch (err) {
                 // User cancelled or API not supported, fall through to popup method
@@ -128,7 +121,7 @@ export default function SharePage() {
 
                     // If user spent more than 3 seconds, they likely shared
                     if (timeSpent > 3000) {
-                        incrementShareCount(platform);
+                        incrementShareCount();
                     }
                 }
             }, 500);
@@ -367,7 +360,7 @@ export default function SharePage() {
                         </li>
                         <li className="flex items-start gap-2">
                             <span className="text-green-500">✓</span>
-                            Each share counts only once per platform
+                            You can share multiple times on the same platform
                         </li>
                         <li className="flex items-start gap-2">
                             <span className="text-green-500">✓</span>
