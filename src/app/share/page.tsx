@@ -346,7 +346,7 @@ export default function SharePage() {
                                     <p className="text-base text-[var(--text-muted)] mb-2">
                                         Confirmation sent to:
                                     </p>
-                                    <p className="text-lg font-semibold text-[var(--foreground)] mb-4">
+                                    <p className="text-lg font-semibold text-[var(--foreground)] mb-4 break-all">
                                         {email}
                                     </p>
                                     <div className="h-px bg-[var(--card-border)] mb-4"></div>
