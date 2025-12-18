@@ -32,15 +32,39 @@ export default function SharePage() {
         if (email.trim() && email.includes("@")) {
             setIsSubmitting(true);
 
-            // Simulate submission delay
-            await new Promise(resolve => setTimeout(resolve, 1500));
+            try {
+                // Save email to MongoDB via API
+                const response = await fetch('/api/subscribe', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email: email.trim() }),
+                });
 
-            // Store email in localStorage for persistence
-            localStorage.setItem("userEmail", email);
-            localStorage.setItem("emailSubmitted", "true");
+                const data = await response.json();
 
-            setIsSubmitting(false);
-            setEmailSubmitted(true);
+                if (response.ok && data.success) {
+                    // Store email in localStorage for persistence
+                    localStorage.setItem("userEmail", email);
+                    localStorage.setItem("emailSubmitted", "true");
+                    setEmailSubmitted(true);
+                } else {
+                    console.error('Failed to save email:', data.error);
+                    // Still allow user to proceed even if API fails
+                    localStorage.setItem("userEmail", email);
+                    localStorage.setItem("emailSubmitted", "true");
+                    setEmailSubmitted(true);
+                }
+            } catch (error) {
+                console.error('Error submitting email:', error);
+                // Fallback to localStorage if API fails
+                localStorage.setItem("userEmail", email);
+                localStorage.setItem("emailSubmitted", "true");
+                setEmailSubmitted(true);
+            } finally {
+                setIsSubmitting(false);
+            }
         }
     };
 
