@@ -375,7 +375,7 @@ export default function SharePage() {
                 )}
 
                 {/* Ad */}
-                <AdBanner/>
+                <AdBanner />
 
                 {/* Tips */}
                 <div className="card">
@@ -400,10 +400,7 @@ export default function SharePage() {
                     </ul>
                 </div>
 
-                {/* Native Ad */}
-                <div className="mt-8">
-                    <NativeAd />
-                </div>
+
             </div>
         </main >
     );

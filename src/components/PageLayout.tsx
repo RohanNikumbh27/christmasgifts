@@ -51,12 +51,7 @@ export function PageLayout({ children, title, subtitle }: PageLayoutProps) {
                 </div>
             </section>
 
-            {/* Ad Section */}
-            <section className="py-4 px-4">
-                <div className="max-w-4xl mx-auto">
-                    <NativeAd />
-                </div>
-            </section>
+            <NativeAd />
 
             {/* Footer */}
             <footer className="bg-zinc-900 dark:bg-black py-12 px-4 border-t border-zinc-800">
@@ -69,7 +64,7 @@ export function PageLayout({ children, title, subtitle }: PageLayoutProps) {
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-white">TrustChristmas</h3>
-                                    <p className="text-xs text-zinc-400">Foundation</p>
+                                    <p className="text-xs text-zinc-400">GlobalTrust Foundation</p>
                                 </div>
                             </div>
                             <p className="text-sm text-zinc-400">

@@ -49,7 +49,7 @@ export default function Home() {
               <h1 className="font-bold text-[var(--foreground)]">
                 TrustChristmas
               </h1>
-              <p className="text-xs text-zinc-600 dark:text-zinc-400">Foundation</p>
+              <p className="text-xs text-zinc-600 dark:text-zinc-400">GlobalTrust Foundation</p>
             </div>
           </div>
           <ThemeToggle />
@@ -111,12 +111,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Ad Banner */}
-      <section className="py-4 px-4">
-        <div className="max-w-3xl mx-auto">
-          <AdBanner/>
-        </div>
-      </section>
+      <AdBanner />
 
       {/* Stats Section */}
       <section className="py-12 px-4">
@@ -142,12 +137,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Native Ad after Stats */}
-      <section className="py-4 px-4">
-        <div className="max-w-3xl mx-auto">
-          <NativeAd />
-        </div>
-      </section>
+      <NativeAd />
 
       {/* Testimonials Section */}
       <section className="py-12 px-4">
@@ -196,12 +186,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Another Ad */}
-      <section className="py-4 px-4">
-        <div className="max-w-3xl mx-auto">
-          <AdBanner/>
-        </div>
-      </section>
+      <AdBanner />
 
       {/* How It Works */}
       <section className="py-12 px-4">
@@ -238,12 +223,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Native Ad before Footer */}
-      <section className="py-4 px-4">
-        <div className="max-w-3xl mx-auto">
-          <NativeAd />
-        </div>
-      </section>
+      <NativeAd />
+
 
       {/* Footer */}
       <footer className="bg-zinc-900 dark:bg-black py-12 px-4 border-t border-zinc-800">
@@ -256,7 +237,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="font-bold text-white">TrustChristmas</h3>
-                  <p className="text-xs text-zinc-400">Foundation</p>
+                  <p className="text-xs text-zinc-400">GlobalTrust Foundation</p>
                 </div>
               </div>
               <p className="text-sm text-zinc-400">
@@ -286,7 +267,7 @@ export default function Home() {
           </div>
 
           <div className="pt-8 border-t border-zinc-800 text-center text-sm text-zinc-400">
-            <p>© 2025 TrustChristmas Foundation. All rights reserved.</p>
+            <p>© 2025 TrustChristmas by GlobalTrust Foundation. All rights reserved.</p>
             <p className="mt-2">Made with ❤️ for spreading Christmas joy</p>
           </div>
         </div>
