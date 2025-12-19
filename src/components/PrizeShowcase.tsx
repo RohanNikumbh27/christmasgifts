@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { showcaseGifts, Gift } from "@/data/gifts";
 import { Sparkles, TrendingUp } from "lucide-react";
+import NativeAd from "./NativeAd";
 
 export function PrizeShowcase() {
     const [displayedGifts, setDisplayedGifts] = useState<Gift[]>([]);
@@ -88,7 +89,6 @@ export function PrizeShowcase() {
                     </div>
                 ))}
             </div>
-
             {/* Live indicator */}
             <div className="flex items-center justify-center gap-2 mt-6">
                 <div className="relative">
@@ -97,6 +97,8 @@ export function PrizeShowcase() {
                 </div>
                 <span className="text-sm text-[var(--text-muted)]">Live prizes • Updates every 5 seconds</span>
             </div>
+            <NativeAd/>
+
         </div>
     );
 }

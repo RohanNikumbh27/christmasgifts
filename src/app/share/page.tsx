@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { AdBanner } from "@/components/AdBanner";
+import NativeAd from "@/components/NativeAd";
 
 export default function SharePage() {
     const router = useRouter();
@@ -174,23 +175,25 @@ export default function SharePage() {
                 </div>
             </header>
 
-            <div className="max-w-2xl mx-auto px-4 py-8">
+            <div className="max-w-2xl mx-auto px-4 py-4">
                 {/* Gift Preview */}
                 {gift && (
-                    <div className="card text-center mb-8 animate-scale-in">
-                        <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl mb-4"
+                    <div className="card flex items-center gap-4 !p-4 mb-4 animate-scale-in">
+                        <div className="w-16 h-16 rounded-xl flex items-center justify-center shrink-0"
                             style={{ backgroundColor: gift.color + '20' }}>
-                            <span className="text-6xl">{gift.icon}</span>
+                            <span className="text-3xl">{gift.icon}</span>
                         </div>
-                        <h2 className="text-3xl font-bold text-[var(--foreground)] mb-1">
-                            Your Gift: {gift.name}
-                        </h2>
-                        <p className="text-lg text-[var(--text-muted)]">Worth ₹10,000+</p>
+                        <div>
+                            <p className="text-sm font-medium text-[var(--text-muted)]">Your Gift</p>
+                            <h2 className="text-xl font-bold text-[var(--foreground)]">
+                                {gift.name}
+                            </h2>
+                        </div>
                     </div>
                 )}
 
                 {/* Unlock Progress */}
-                <div className="card mb-8">
+                <div className="card mb-4">
                     <div className="flex items-center gap-3 mb-6">
                         {isUnlocked ? (
                             <div className="w-12 h-12 rounded-xl bg-green-500/20 flex items-center justify-center">
@@ -231,7 +234,7 @@ export default function SharePage() {
                     </div>
 
                     {/* Progress Steps */}
-                    <div className="flex justify-between mb-6">
+                    <div className="flex justify-between">
                         {Array.from({ length: requiredShares }, (_, i) => (
                             <div
                                 key={i}
@@ -249,7 +252,7 @@ export default function SharePage() {
 
                 {/* Share Buttons */}
                 {!isUnlocked && (
-                    <div className="card mb-8">
+                    <div className="card">
                         <div className="flex items-center gap-2 mb-4">
                             <Share2 className="w-6 h-6 text-[var(--foreground)]" />
                             <h3 className="text-xl font-semibold text-[var(--foreground)]">Share Now</h3>
@@ -372,7 +375,7 @@ export default function SharePage() {
                 )}
 
                 {/* Ad */}
-                <AdBanner variant="horizontal" className="mb-8" />
+                <AdBanner/>
 
                 {/* Tips */}
                 <div className="card">
@@ -395,6 +398,11 @@ export default function SharePage() {
                             All gifts are 100% genuine and verified
                         </li>
                     </ul>
+                </div>
+
+                {/* Native Ad */}
+                <div className="mt-8">
+                    <NativeAd />
                 </div>
             </div>
         </main >

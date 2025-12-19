@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Gift } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import NativeAd from "@/components/NativeAd";
 
 interface PageLayoutProps {
     children: React.ReactNode;
@@ -47,6 +48,13 @@ export function PageLayout({ children, title, subtitle }: PageLayoutProps) {
             <section className="py-12 px-4">
                 <div className="max-w-4xl mx-auto">
                     {children}
+                </div>
+            </section>
+
+            {/* Ad Section */}
+            <section className="py-4 px-4">
+                <div className="max-w-4xl mx-auto">
+                    <NativeAd />
                 </div>
             </section>
 

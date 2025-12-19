@@ -11,6 +11,7 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 import { PrizeShowcase } from "@/components/PrizeShowcase";
 import { Gift as GiftType } from "@/data/gifts";
 import { winners } from "@/data/winners";
+import NativeAd from "@/components/NativeAd";
 
 export default function Home() {
   const [showPopup, setShowPopup] = useState(false);
@@ -113,7 +114,7 @@ export default function Home() {
       {/* Ad Banner */}
       <section className="py-4 px-4">
         <div className="max-w-3xl mx-auto">
-          <AdBanner variant="horizontal" />
+          <AdBanner/>
         </div>
       </section>
 
@@ -138,6 +139,13 @@ export default function Home() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Native Ad after Stats */}
+      <section className="py-4 px-4">
+        <div className="max-w-3xl mx-auto">
+          <NativeAd />
         </div>
       </section>
 
@@ -191,7 +199,7 @@ export default function Home() {
       {/* Another Ad */}
       <section className="py-4 px-4">
         <div className="max-w-3xl mx-auto">
-          <AdBanner variant="horizontal" />
+          <AdBanner/>
         </div>
       </section>
 
@@ -227,6 +235,13 @@ export default function Home() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Native Ad before Footer */}
+      <section className="py-4 px-4">
+        <div className="max-w-3xl mx-auto">
+          <NativeAd />
         </div>
       </section>
 
