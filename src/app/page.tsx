@@ -6,7 +6,6 @@ import { Gift, ChevronDown, Shield, Users, Award, WandSparkles } from "lucide-re
 import { LotteryWheel } from "@/components/LotteryWheel";
 import { WinnerPopup } from "@/components/WinnerPopup";
 import { TestimonialCard } from "@/components/TestimonialCard";
-import { AdBanner } from "@/components/AdBanner";
 import { ThemeToggle } from "@/components/ThemeToggle";
 // import { PrizeShowcase } from "@/components/PrizeShowcase";
 import { Gift as GiftType } from "@/data/gifts";
@@ -111,7 +110,7 @@ export default function Home() {
         </div>
       </section> */}
 
-      <AdBanner />
+      <NativeAd unitName="unit1" />
 
       {/* Stats Section */}
       <section className="py-12 px-4">
@@ -137,7 +136,7 @@ export default function Home() {
         </div>
       </section>
 
-      <NativeAd />
+      <NativeAd unitName="unit1" />
 
       {/* Testimonials Section */}
       <section className="py-12 px-4">
@@ -186,7 +185,7 @@ export default function Home() {
         </div>
       </section>
 
-      <AdBanner />
+      <NativeAd unitName="unit1" />
 
       {/* How It Works */}
       <section className="py-12 px-4">
@@ -223,7 +222,7 @@ export default function Home() {
         </div>
       </section>
 
-      <NativeAd />
+      <NativeAd unitName="unit1" />
 
 
       {/* Footer */}

@@ -15,7 +15,6 @@ import {
     Facebook
 } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import { AdBanner } from "@/components/AdBanner";
 import NativeAd from "@/components/NativeAd";
 
 export default function SharePage() {
@@ -375,7 +374,7 @@ export default function SharePage() {
                 )}
 
                 {/* Ad */}
-                <AdBanner />
+                <NativeAd unitName="unit1" />
 
                 {/* Tips */}
                 <div className="card">

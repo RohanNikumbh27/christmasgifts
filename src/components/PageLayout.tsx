@@ -51,7 +51,7 @@ export function PageLayout({ children, title, subtitle }: PageLayoutProps) {
                 </div>
             </section>
 
-            <NativeAd />
+            <NativeAd unitName="unit1" />
 
             {/* Footer */}
             <footer className="bg-zinc-900 dark:bg-black py-12 px-4 border-t border-zinc-800">
