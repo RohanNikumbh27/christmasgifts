@@ -98,7 +98,7 @@ export default function Home() {
       </section>
 
       {/* Wheel Section */}
-      <section className="py-8 px-4">
+      <section className="py-0 px-4">
         <div className="max-w-6xl mx-auto flex flex-col items-center">
           <LotteryWheel onWin={handleWin} />
         </div>

@@ -94,11 +94,24 @@ export function WinnerPopup({ gift, onClose }: WinnerPopupProps) {
                             {/* Decorative corner */}
                             <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-red-500/10 to-transparent rounded-tr-2xl" />
 
-                            <div className="text-5xl mb-3">{gift.icon}</div>
-                            <h3 className="text-xl font-bold text-[var(--foreground)] mb-1">{gift.name}</h3>
-                            <div className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20">
-                                <span className="text-sm font-medium text-green-500">Worth {gift.value}</span>
+                            {/* Gift Image */}
+                            <div className="w-24 h-24 mx-auto mb-3 rounded-xl overflow-hidden bg-white shadow-lg">
+                                <img
+                                    src={gift.image}
+                                    alt={gift.name}
+                                    className="w-full h-full object-cover"
+                                    onError={(e) => {
+                                        // Fallback to emoji if image fails to load
+                                        e.currentTarget.style.display = 'none';
+                                        e.currentTarget.parentElement!.innerHTML = `<span class="text-5xl flex items-center justify-center h-full">${gift.icon}</span>`;
+                                    }}
+                                />
                             </div>
+                            <h3 className="text-xl font-bold text-[var(--foreground)]">{gift.name}</h3>
+                            {/* Show value for vouchers */}
+                            {gift.category === "Voucher" && (
+                                <p className="text-lg font-semibold text-green-500 mt-2">Worth {gift.value}</p>
+                            )}
                         </div>
 
                         {/* CTA Button */}

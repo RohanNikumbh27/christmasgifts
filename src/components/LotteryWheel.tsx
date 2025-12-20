@@ -2,7 +2,7 @@
 
 import { useState, useRef } from "react";
 import { ChevronRight, GiftIcon, WandSparkles } from "lucide-react";
-import { gifts, Gift } from "@/data/gifts";
+import { gifts, Gift, getGiftForSpinCount } from "@/data/gifts";
 
 interface LotteryWheelProps {
     onWin: (gift: Gift) => void;
@@ -11,6 +11,7 @@ interface LotteryWheelProps {
 export function LotteryWheel({ onWin }: LotteryWheelProps) {
     const [isSpinning, setIsSpinning] = useState(false);
     const [rotation, setRotation] = useState(0);
+    const [spinCount, setSpinCount] = useState(0); // Session-based, resets on refresh
     const wheelRef = useRef<SVGSVGElement>(null);
 
     const segmentAngle = 360 / gifts.length;
@@ -20,10 +21,17 @@ export function LotteryWheel({ onWin }: LotteryWheelProps) {
 
         setIsSpinning(true);
 
-        // Random number of full rotations (5-8) + random segment
+        // Increment spin count
+        const newSpinCount = spinCount + 1;
+        setSpinCount(newSpinCount);
+
+        // Get gift based on spin count
+        const selectedGift = getGiftForSpinCount(newSpinCount);
+
+        // Random number of full rotations (5-8) + random segment offset for visual variety
         const fullRotations = 5 + Math.floor(Math.random() * 4);
-        const randomSegment = Math.floor(Math.random() * gifts.length);
-        const segmentRotation = randomSegment * segmentAngle + segmentAngle / 2;
+        const randomOffset = Math.random() * segmentAngle * 0.5; // Small random offset within segment
+        const segmentRotation = randomOffset;
         const totalRotation = rotation + fullRotations * 360 + segmentRotation;
 
         setRotation(totalRotation);
@@ -31,10 +39,8 @@ export function LotteryWheel({ onWin }: LotteryWheelProps) {
         // Wait for animation to complete
         setTimeout(() => {
             setIsSpinning(false);
-            // Calculate which gift was selected (accounting for pointer at top)
-            const normalizedRotation = totalRotation % 360;
-            const selectedIndex = Math.floor((360 - normalizedRotation + segmentAngle / 2) / segmentAngle) % gifts.length;
-            onWin(gifts[selectedIndex]);
+            // Award the pre-selected gift based on spin count
+            onWin(selectedGift);
         }, 4000);
     };
 
@@ -187,7 +193,7 @@ export function LotteryWheel({ onWin }: LotteryWheelProps) {
                 className="group w-full flex items-center justify-center gap-2 bg-gradient-to-r from-red-500 to-pink-600 hover:from-red-600 hover:to-pink-700 text-white font-semibold py-4 px-6 rounded-2xl transition-all duration-200 shadow-lg shadow-red-500/25 hover:shadow-red-500/40 hover:scale-[1.02] active:scale-[0.98]"
             >
                 <GiftIcon className="w-5 h-5" />
-                <span>{isSpinning ? "Spinning..." : "SPIN TO WIN!"}</span>
+                <span>{isSpinning ? "Spinning..." : `SPIN TO WIN! #Spin${spinCount + 1}`}</span>
                 <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </button>
 
