@@ -8,7 +8,7 @@ import { WinnerPopup } from "@/components/WinnerPopup";
 import { TestimonialCard } from "@/components/TestimonialCard";
 import { AdBanner } from "@/components/AdBanner";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import { PrizeShowcase } from "@/components/PrizeShowcase";
+// import { PrizeShowcase } from "@/components/PrizeShowcase";
 import { Gift as GiftType } from "@/data/gifts";
 import { winners } from "@/data/winners";
 import NativeAd from "@/components/NativeAd";
@@ -105,11 +105,11 @@ export default function Home() {
       </section>
 
       {/* Prize Showcase - Auto shuffling */}
-      <section className="py-8 px-4">
+      {/* <section className="py-8 px-4">
         <div className="max-w-6xl mx-auto">
           <PrizeShowcase />
         </div>
-      </section>
+      </section> */}
 
       <AdBanner />
 
