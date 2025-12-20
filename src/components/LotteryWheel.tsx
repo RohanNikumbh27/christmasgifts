@@ -119,20 +119,18 @@ export function LotteryWheel({ onWin }: LotteryWheelProps) {
             <div className="relative">
                 {/* Pointer */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-2 z-10">
-                    <div className="w-0 h-0 border-l-[18px] border-l-transparent border-r-[18px] border-r-transparent border-t-[35px] border-t-pink-600 drop-shadow-2xl" />
+                    <div className="w-0 h-0 border-l-[18px] border-l-transparent border-r-[18px] border-r-transparent border-t-[35px] border-t-rose-600 drop-shadow-2xl" />
                 </div>
 
                 {/* Outer glow ring */}
-                <div className={`absolute inset-0 rounded-full bg-gradient-to-br from-red-500 to-pink-600 opacity-50 blur-xl ${isSpinning ? 'animate-pulse' : ''}`}
+                <div className={`absolute inset-0 rounded-full bg-gradient-to-br from-pink-600 to-rose-600 opacity-50 blur-xl ${isSpinning ? 'animate-pulse' : ''}`}
                     style={{ margin: '-20px' }} />
 
                 {/* Wheel */}
                 <svg
                     ref={wheelRef}
-                    width="300"
-                    height="300"
                     viewBox="0 0 300 300"
-                    className="drop-shadow-2xl transition-transform"
+                    className="drop-shadow-2xl transition-transform w-[300px] h-[300px] max-w-full h-auto"
                     style={{
                         transform: `rotate(${rotation}deg)`,
                         transitionDuration: isSpinning ? '4s' : '0s',
@@ -190,7 +188,7 @@ export function LotteryWheel({ onWin }: LotteryWheelProps) {
             <button
                 onClick={spin}
                 disabled={isSpinning}
-                className="group w-full flex items-center justify-center gap-2 bg-gradient-to-r from-red-500 to-pink-600 hover:from-red-600 hover:to-pink-700 text-white font-semibold py-4 px-6 rounded-2xl transition-all duration-200 shadow-lg shadow-red-500/25 hover:shadow-red-500/40 hover:scale-[1.02] active:scale-[0.98]"
+                className="btn-primary group w-full py-4 px-6 rounded-2xl shadow-lg shadow-pink-500/25 hover:shadow-pink-500/40 hover:scale-[1.02] active:scale-[0.98]"
             >
                 <GiftIcon className="w-5 h-5" />
                 <span>{isSpinning ? "Spinning..." : `SPIN TO WIN! #Spin${spinCount + 1}`}</span>

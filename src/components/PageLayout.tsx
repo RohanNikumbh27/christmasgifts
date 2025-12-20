@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Gift } from "lucide-react";
-import { ThemeToggle } from "@/components/ThemeToggle";
+import { Navbar } from "@/components/Navbar";
 import NativeAd from "@/components/NativeAd";
 
 interface PageLayoutProps {
@@ -14,38 +14,22 @@ interface PageLayoutProps {
 export function PageLayout({ children, title, subtitle }: PageLayoutProps) {
     return (
         <main className="min-h-screen bg-[var(--background)]">
-            {/* Header */}
-            <header className="sticky top-0 z-40 glass border-b border-[var(--card-border)]">
-                <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-                    <Link href="/" className="flex items-center gap-3">
-                        <div className="p-2 bg-gradient-to-br from-red-500 to-pink-600 rounded-2xl">
-                            <Gift className="w-6 h-6 text-white" />
-                        </div>
-                        <div>
-                            <h1 className="font-bold text-[var(--foreground)]">
-                                TrustChristmas
-                            </h1>
-                            <p className="text-xs text-zinc-600 dark:text-zinc-400">Foundation</p>
-                        </div>
-                    </Link>
-                    <ThemeToggle />
-                </div>
-            </header>
-
-            {/* Page Header */}
-            <section className="py-12 px-4 border-b border-[var(--card-border)]">
-                <div className="max-w-4xl mx-auto text-center">
-                    <h1 className="text-4xl md:text-5xl font-bold text-[var(--foreground)] mb-4">
-                        {title}
-                    </h1>
-                    {subtitle && (
-                        <p className="text-lg text-[var(--text-muted)]">{subtitle}</p>
-                    )}
-                </div>
-            </section>
+            {/* Page Header - only show if title exists */}
+            {title && (
+                <section className="py-6 px-4">
+                    <div className="max-w-4xl mx-auto text-center">
+                        <h1 className="text-3xl md:text-4xl font-bold text-[var(--foreground)] mb-1">
+                            {title}
+                        </h1>
+                        {subtitle && (
+                            <p className="text-base text-[var(--text-muted)]">{subtitle}</p>
+                        )}
+                    </div>
+                </section>
+            )}
 
             {/* Content */}
-            <section className="py-12 px-4">
+            <section className="py-8 px-4">
                 <div className="max-w-4xl mx-auto">
                     {children}
                 </div>

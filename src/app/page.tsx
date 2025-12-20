@@ -6,7 +6,7 @@ import { Gift, ChevronDown, Shield, Users, Award, WandSparkles } from "lucide-re
 import { LotteryWheel } from "@/components/LotteryWheel";
 import { WinnerPopup } from "@/components/WinnerPopup";
 import { TestimonialCard } from "@/components/TestimonialCard";
-import { ThemeToggle } from "@/components/ThemeToggle";
+import { Navbar } from "@/components/Navbar";
 // import { PrizeShowcase } from "@/components/PrizeShowcase";
 import { Gift as GiftType } from "@/data/gifts";
 import { winners } from "@/data/winners";
@@ -25,48 +25,19 @@ export default function Home() {
   const displayedWinners = showAllTestimonials ? winners : winners.slice(0, 3);
 
   return (
-    <main className="min-h-screen bg-[var(--background)]">
-      {/* Header */}
-      <header className="sticky top-0 z-40 glass border-b border-[var(--card-border)]">
-        <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-          {/* <div className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-red-500 to-green-600 flex items-center justify-center">
-              <Gift className="w-5 h-5 text-white" />
-            </div>
-            <div>
-              <h1 className="font-bold text-xl text-[var(--foreground)]">TrustChristmas</h1>
-              <p className="text-sm text-[var(--text-muted)]">Foundation</p>
-            </div>
-          </div> */}
-          <div
-            className="flex items-center gap-3"
-          >
-            <div className="p-2 bg-gradient-to-br from-red-500 to-pink-600 rounded-2xl">
-              <Gift className="w-6 h-6 text-white" />
-            </div>
-            <div>
-              <h1 className="font-bold text-[var(--foreground)]">
-                TrustChristmas
-              </h1>
-              <p className="text-xs text-zinc-600 dark:text-zinc-400">GlobalTrust Foundation</p>
-            </div>
-          </div>
-          <ThemeToggle />
-        </div>
-      </header>
-
+    <main className="min-h-screen bg-[var(--background)] overflow-x-hidden">
       {/* Hero Section */}
       <section className="py-8 md:py-12 px-4">
         <div className="max-w-6xl mx-auto text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-br from-red-500 to-pink-600 border border-red-500/30 mb-6 animate-fade-in">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-br from-pink-600 to-rose-600 border border-pink-500/30 mb-6 animate-fade-in">
             <WandSparkles className="w-4 h-4 text-yellow-400" />
             <span className="text-base font-medium text-zinc-100">Christmas Special 2025</span>
           </div>
 
           {/* Title */}
           <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4 animate-slide-up">
-            <span className="bg-gradient-to-br from-red-500 to-pink-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-br from-pink-600 to-rose-600 bg-clip-text text-transparent">
               Win Amazing
             </span>
             <br />
@@ -161,13 +132,10 @@ export default function Home() {
           {/* View More Button */}
           {!showAllTestimonials && (
             <div className="text-center mt-8">
-              <button
-                onClick={() => setShowAllTestimonials(true)}
-                className="btn-secondary"
-              >
+              <Link href="/winners" className="btn-secondary inline-flex">
                 <span>View More Winners</span>
                 <ChevronDown className="w-4 h-4" />
-              </button>
+              </Link>
             </div>
           )}
 
@@ -210,7 +178,7 @@ export default function Home() {
                 className="card text-center relative animate-slide-up"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-gradient-to-br from-red-500 to-pink-600 flex items-center justify-center text-white font-bold text-sm">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center text-white font-bold text-sm">
                   {item.step}
                 </div>
                 <div className="text-5xl mb-4 mt-4">{item.icon}</div>
@@ -231,7 +199,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-gradient-to-br from-red-500 to-pink-600 rounded-2xl">
+                <div className="p-2 bg-gradient-to-br from-pink-500 to-rose-600 rounded-2xl">
                   <Gift className="w-6 h-6 text-white" />
                 </div>
                 <div>

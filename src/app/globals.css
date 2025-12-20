@@ -34,6 +34,9 @@ body {
   font-family: var(--font-lexend), system-ui, sans-serif;
   font-size: 1.0625rem;
   transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+  max-width: 100vw;
+  padding-top: 6rem;
 }
 
 /* Custom scrollbar */
@@ -157,26 +160,60 @@ body {
   animation: pulse-glow 2s ease-in-out infinite;
 }
 
+@keyframes bounce-slow {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 2s ease-in-out infinite;
+}
+
+@keyframes gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 /* Button styles */
 .btn-primary {
-  background: linear-gradient(to bottom right, #ef4444, #db2777);
+  background: linear-gradient(to right, #db2777, #e11d48);
   color: white;
-  padding: 0.875rem 2rem;
+  padding: 1rem 2.5rem;
   border-radius: 9999px;
   font-weight: 600;
-  transition: all 0.2s ease;
+  font-size: 1.125rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border: none;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  box-shadow: 0 4px 15px rgba(219, 39, 119, 0.3);
+  position: relative;
+  overflow: hidden;
 }
 
 .btn-primary:hover {
-  background: linear-gradient(to bottom right, #dc2626, #be185d);
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(219, 39, 119, 0.3);
+  box-shadow: 0 8px 25px rgba(236, 72, 153, 0.5);
+  background: linear-gradient(to right, #ec4899, #f43f5e);
 }
 
 .btn-primary:active {
