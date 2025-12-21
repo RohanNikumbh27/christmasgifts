@@ -34,7 +34,7 @@ export function Navbar() {
 
     return (
         <>
-            <header className="fixed top-0 left-0 right-0 z-50 glass border-b border-[var(--card-border)]">
+            <header className="sticky top-0 z-50 glass border-b border-[var(--card-border)]">
                 <div className="max-w-6xl mx-auto px-4 py-4">
                     <div className="flex items-center justify-between">
                         {/* Logo */}
@@ -132,8 +132,8 @@ export function Navbar() {
                                         key={item.href}
                                         href={item.href}
                                         onClick={() => setIsOpen(false)}
-                                        className={`group flex items-center gap-4 px-4 py-4 rounded-2xl transition-all duration-300 border ${isActive(item.href)
-                                            ? (theme === 'dark' ? 'bg-gradient-to-r from-red-950/30 to-pink-950/30 border-red-900/30' : 'bg-gradient-to-r from-red-50 to-pink-50 border-red-200')
+                                        className={`group flex items-center gap-4 px-3 py-3 rounded-2xl transition-all duration-300 border ${isActive(item.href)
+                                            ? (theme === 'dark' ? 'bg-gradient-to-r from-red-950 to-pink-950 border-red-900' : 'bg-gradient-to-r from-red-500/50 to-pink-500/50 border-red-200')
                                             : (theme === 'dark' ? 'border-transparent hover:bg-white/5' : 'border-transparent hover:bg-neutral-100')
                                             }`}
                                         style={{ transitionDelay: `${idx * 50}ms` }}
@@ -151,11 +151,6 @@ export function Navbar() {
                                                 }`}>
                                                 {item.label}
                                             </span>
-                                            {isActive(item.href) && (
-                                                <span className={`text-xs font-medium animate-pulse ${theme === 'dark' ? 'text-red-400' : 'text-red-500'}`}>
-                                                    Currently viewing
-                                                </span>
-                                            )}
                                         </div>
                                         <div className={`opacity-0 -translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0`}>
                                             <div className="w-1.5 h-1.5 rounded-full bg-red-500" />

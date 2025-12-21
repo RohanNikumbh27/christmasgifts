@@ -26,6 +26,8 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-[var(--background)] overflow-x-hidden">
+      <Navbar />
+
       {/* Hero Section */}
       <section className="py-8 md:py-12 px-4">
         <div className="max-w-6xl mx-auto text-center">

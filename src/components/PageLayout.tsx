@@ -14,6 +14,8 @@ interface PageLayoutProps {
 export function PageLayout({ children, title, subtitle }: PageLayoutProps) {
     return (
         <main className="min-h-screen bg-[var(--background)]">
+            <Navbar />
+
             {/* Page Header - only show if title exists */}
             {title && (
                 <section className="py-6 px-4">
