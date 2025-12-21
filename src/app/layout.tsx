@@ -18,6 +18,9 @@ export const metadata: Metadata = {
     description: "Spin the wheel and win amazing Christmas gifts!",
     type: "website",
   },
+  other: {
+    monetag: "cca29e63614b0b58e563ab0d59bcf97b",
+  },
 };
 
 export default function RootLayout({
