@@ -96,7 +96,7 @@ export function Navbar() {
 
                     {/* Menu Panel */}
                     <div
-                        className={`absolute right-0 top-0 h-full w-[300px] shadow-2xl transition-transform duration-500 cubic-bezier(0.32, 0.72, 0, 1) ${isOpen ? 'translate-x-0' : 'translate-x-full'} overflow-hidden border-l ${theme === 'dark' ? 'bg-black/80 backdrop-blur-xl border-white/20' : 'bg-white border-neutral-200'}`}
+                        className={`absolute right-0 top-0 h-full w-[300px] shadow-2xl transition-transform duration-200 cubic-bezier(0.32, 0.72, 0, 1) ${isOpen ? 'translate-x-0' : 'translate-x-full'} overflow-hidden border-l ${theme === 'dark' ? 'bg-black/80 backdrop-blur-xl border-white/20' : 'bg-white border-neutral-200'}`}
                     >
                         {/* Festive Background Decorations (Dark Mode Only) */}
                         {theme === 'dark' && (
