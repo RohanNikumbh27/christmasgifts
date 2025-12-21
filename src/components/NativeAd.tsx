@@ -6,30 +6,26 @@ import { AD_UNITS, AdUnitName } from '@/config/adUnits';
 interface NativeAdProps {
   /** The unit name from AD_UNITS config (e.g., "unit1", "unit2") */
   unitName: AdUnitName;
+  /** Optional className for styling */
+  className?: string;
 }
 
-export default function NativeAd({ unitName }: NativeAdProps) {
+export default function NativeAd({ unitName, className = '' }: NativeAdProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const scriptLoaded = useRef(false);
+  const adLoaded = useRef(false);
 
   const adUnit = AD_UNITS[unitName];
 
   useEffect(() => {
-    if (scriptLoaded.current || !containerRef.current || !adUnit) return;
+    if (adLoaded.current || !containerRef.current || !adUnit) return;
 
-    const script = document.createElement('script');
-    script.src = adUnit.scriptUrl;
-    script.async = true;
-    script.setAttribute('data-cfasync', 'false');
+    // TODO: Add EthicalAds initialization here
+    // Reference: https://www.ethicalads.io/publishers/
 
-    // Append script after the container so Adsterra can find it
-    containerRef.current.parentElement?.appendChild(script);
-    scriptLoaded.current = true;
+    adLoaded.current = true;
 
     return () => {
-      if (script.parentElement) {
-        script.parentElement.removeChild(script);
-      }
+      // Cleanup if needed
     };
   }, [adUnit]);
 
@@ -39,8 +35,15 @@ export default function NativeAd({ unitName }: NativeAdProps) {
   }
 
   return (
-    <div className="flex justify-center my-8">
-      <div ref={containerRef} id={`container-${adUnit.id}`}></div>
+    <div className={`flex justify-center my-8 ${className}`}>
+      {/* Ad placeholder - replace with EthicalAds component */}
+      <div
+        ref={containerRef}
+        id={`ad-container-${adUnit.id}`}
+        className="ad-container min-h-[100px] w-full max-w-[728px] flex items-center justify-center"
+      >
+        <span className="text-[var(--text-muted)] text-sm">Ad Space</span>
+      </div>
     </div>
   );
 }
