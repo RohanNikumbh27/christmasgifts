@@ -20,9 +20,10 @@ import NativeAd from "@/components/NativeAd";
 export default function SharePage() {
     const router = useRouter();
     const [gift, setGift] = useState<GiftType | null>(null);
-    const [shareCount, setShareCount] = useState(0);
+    const [shareCount, setShareCount] = useState(10);
     const [copied, setCopied] = useState(false);
     const [email, setEmail] = useState("");
+    const [name, setName] = useState("");
     const [emailSubmitted, setEmailSubmitted] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const requiredShares = 10;
@@ -39,20 +40,22 @@ export default function SharePage() {
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({ email: email.trim() }),
+                    body: JSON.stringify({ email: email.trim(), name: name.trim() }),
                 });
 
                 const data = await response.json();
 
                 if (response.ok && data.success) {
-                    // Store email in localStorage for persistence
+                    // Store in localStorage for persistence
                     localStorage.setItem("userEmail", email);
+                    localStorage.setItem("userName", name);
                     localStorage.setItem("emailSubmitted", "true");
                     setEmailSubmitted(true);
                 } else {
                     console.error('Failed to save email:', data.error);
                     // Still allow user to proceed even if API fails
                     localStorage.setItem("userEmail", email);
+                    localStorage.setItem("userName", name);
                     localStorage.setItem("emailSubmitted", "true");
                     setEmailSubmitted(true);
                 }
@@ -60,6 +63,7 @@ export default function SharePage() {
                 console.error('Error submitting email:', error);
                 // Fallback to localStorage if API fails
                 localStorage.setItem("userEmail", email);
+                localStorage.setItem("userName", name);
                 localStorage.setItem("emailSubmitted", "true");
                 setEmailSubmitted(true);
             } finally {
@@ -76,9 +80,11 @@ export default function SharePage() {
 
         // Restore email submission state from localStorage
         const storedEmail = localStorage.getItem("userEmail");
+        const storedName = localStorage.getItem("userName");
         const wasSubmitted = localStorage.getItem("emailSubmitted");
         if (storedEmail && wasSubmitted === "true") {
             setEmail(storedEmail);
+            if (storedName) setName(storedName);
             setEmailSubmitted(true);
         }
     }, []);
@@ -317,6 +323,14 @@ export default function SharePage() {
                                 </p>
                                 <form onSubmit={handleEmailSubmit} className="max-w-md mx-auto mb-4">
                                     <div className="flex flex-col gap-4">
+                                        <input
+                                            type="text"
+                                            value={name}
+                                            onChange={(e) => setName(e.target.value)}
+                                            placeholder="Enter your full name"
+                                            required
+                                            className="w-full px-4 py-4 rounded-xl bg-[var(--background)] border border-[var(--card-border)] text-[var(--foreground)] placeholder:text-[var(--text-muted)] focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent text-lg"
+                                        />
                                         <input
                                             type="email"
                                             value={email}

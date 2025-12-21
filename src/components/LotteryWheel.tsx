@@ -170,7 +170,7 @@ export function LotteryWheel() {
                 className="btn-primary group w-full py-4 px-6 rounded-2xl shadow-lg shadow-pink-500/25 hover:shadow-pink-500/40 hover:scale-[1.02] active:scale-[0.98]"
             >
                 <GiftIcon className="w-5 h-5" />
-                <span>SPIN TO WIN! #SpinN.</span>
+                <span>SPIN TO WIN!</span>
                 <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </button>
 
