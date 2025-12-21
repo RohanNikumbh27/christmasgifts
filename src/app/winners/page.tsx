@@ -6,6 +6,7 @@ import { TestimonialCard } from "@/components/TestimonialCard";
 import { winners } from "@/data/winners";
 import Link from "next/link";
 import NativeAd from "@/components/NativeAd";
+import { GreetingsPromo } from "@/components/GreetingsPromo";
 import { Sparkles, Trophy, Gift, Star, TrendingUp, ChevronDown } from "lucide-react";
 
 const stats = [
@@ -155,17 +156,27 @@ export default function WinnersPage() {
                         </button>
 
                         {/* Ad after button */}
-                        <div className="mt-8 w-full">
+                        <div className="mt-3 w-full">
                             <NativeAd />
                         </div>
                     </div>
                 )}
 
+                {/* Greetings Promo */}
+                <section className="px-4">
+                    <div className="max-w-6xl mx-auto">
+                        <GreetingsPromo />
+                    </div>
+                </section>
+
                 {/* Show final ad if all winners are shown */}
                 {!hasMore && (
-                    <div className="mt-10">
-                        <NativeAd />
-                    </div>
+                    <>
+                        <div className="mt-10">
+                            <NativeAd />
+                        </div>
+                        <GreetingsPromo />
+                    </>
                 )}
             </div>
         </PageLayout>

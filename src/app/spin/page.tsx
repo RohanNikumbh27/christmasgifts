@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { Gift, ChevronRight, Clock, Sparkles, GiftIcon, ArrowLeft } from "lucide-react";
 import { gifts, Gift as GiftType, getGiftForSpinCount } from "@/data/gifts";
 import NativeAd from "@/components/NativeAd";
+import { GreetingsPromo } from "@/components/GreetingsPromo";
 
 export default function SpinPage() {
     const router = useRouter();
@@ -336,6 +337,11 @@ export default function SpinPage() {
                     {/* Ad Section - Below everything */}
                     <div className="mt-32 w-full flex justify-center">
                         <NativeAd />
+                    </div>
+
+                    {/* Greetings Promo */}
+                    <div className="w-full max-w-2xl mx-auto">
+                        <GreetingsPromo />
                     </div>
                 </div>
             </section>

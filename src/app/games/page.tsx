@@ -2,6 +2,7 @@ import Link from "next/link";
 import { PageLayout } from "@/components/PageLayout";
 import { Gamepad2, Brain, Gift, HelpCircle } from "lucide-react";
 import NativeAd from "@/components/NativeAd";
+import { GreetingsPromo } from "@/components/GreetingsPromo";
 
 export const metadata = {
     title: "Christmas Games | TrustChristmas Foundation",
@@ -91,6 +92,13 @@ export default function GamesPage() {
                     The more you play, the more fun you spread!
                 </p>
             </div>
+
+             {/* Greetings Promo */}
+                  <section className="px-4">
+                    <div className="max-w-6xl mx-auto">
+                      <GreetingsPromo />
+                    </div>
+                  </section>
         </PageLayout>
     );
 }

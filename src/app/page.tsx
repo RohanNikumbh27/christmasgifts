@@ -9,6 +9,7 @@ import { Navbar } from "@/components/Navbar";
 import { winners } from "@/data/winners";
 import NativeAd from "@/components/NativeAd";
 import { HowItWorks } from "@/components/HowItWorks";
+import { GreetingsPromo } from "@/components/GreetingsPromo";
 
 export default function Home() {
   const [showAllTestimonials, setShowAllTestimonials] = useState(false);
@@ -140,6 +141,13 @@ export default function Home() {
       </section>
 
       {/* <NativeAd /> */}
+
+      {/* Greetings Promo */}
+      <section className="px-4">
+        <div className="max-w-6xl mx-auto">
+          <GreetingsPromo />
+        </div>
+      </section>
 
       <HowItWorks />
 

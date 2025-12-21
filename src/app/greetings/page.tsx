@@ -74,7 +74,7 @@ export default function GreetingsPage() {
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-2 md:mb-8">
                 <div>
                     <h2 className="text-2xl md:text-3xl font-bold text-[var(--foreground)] !m-0 !p-0">
-                        Send Christmas Greetings 💌
+                        Send Christmas Greetings! 🎅
                     </h2>
                     {/* <p className="text-sm text-[var(--text-muted)]">
                         Create beautiful Christmas greetings for your loved ones
