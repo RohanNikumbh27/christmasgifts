@@ -1,47 +1,20 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { ChevronRight, GiftIcon, WandSparkles } from "lucide-react";
-import { gifts, Gift, getGiftForSpinCount } from "@/data/gifts";
+import { useRouter } from "next/navigation";
+import { ChevronRight, GiftIcon } from "lucide-react";
+import { gifts } from "@/data/gifts";
 
-interface LotteryWheelProps {
-    onWin: (gift: Gift) => void;
-}
-
-export function LotteryWheel({ onWin }: LotteryWheelProps) {
-    const [isSpinning, setIsSpinning] = useState(false);
-    const [rotation, setRotation] = useState(0);
-    const [spinCount, setSpinCount] = useState(0); // Session-based, resets on refresh
+export function LotteryWheel() {
+    const router = useRouter();
+    const [rotation] = useState(0);
     const wheelRef = useRef<SVGSVGElement>(null);
 
     const segmentAngle = 360 / gifts.length;
 
-    const spin = () => {
-        if (isSpinning) return;
-
-        setIsSpinning(true);
-
-        // Increment spin count
-        const newSpinCount = spinCount + 1;
-        setSpinCount(newSpinCount);
-
-        // Get gift based on spin count
-        const selectedGift = getGiftForSpinCount(newSpinCount);
-
-        // Random number of full rotations (5-8) + random segment offset for visual variety
-        const fullRotations = 5 + Math.floor(Math.random() * 4);
-        const randomOffset = Math.random() * segmentAngle * 0.5; // Small random offset within segment
-        const segmentRotation = randomOffset;
-        const totalRotation = rotation + fullRotations * 360 + segmentRotation;
-
-        setRotation(totalRotation);
-
-        // Wait for animation to complete
-        setTimeout(() => {
-            setIsSpinning(false);
-            // Award the pre-selected gift based on spin count
-            onWin(selectedGift);
-        }, 4000);
+    const handleSpinClick = () => {
+        // Navigate to /spin route where auto-spin will happen
+        router.push("/spin");
     };
 
     const renderSegments = () => {
@@ -113,28 +86,35 @@ export function LotteryWheel({ onWin }: LotteryWheelProps) {
         });
     };
 
+    // Get spin count from session storage for display
+    const getSpinCount = () => {
+        if (typeof window !== 'undefined') {
+            const stored = sessionStorage.getItem("spinCount");
+            return stored ? parseInt(stored) + 1 : 1;
+        }
+        return 1;
+    };
+
     return (
         <div className="flex flex-col items-center gap-6">
             {/* Wheel Container */}
-            <div className="relative">
+            <div className="relative cursor-pointer" onClick={handleSpinClick}>
                 {/* Pointer */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-2 z-10">
                     <div className="w-0 h-0 border-l-[18px] border-l-transparent border-r-[18px] border-r-transparent border-t-[35px] border-t-rose-600 drop-shadow-2xl" />
                 </div>
 
                 {/* Outer glow ring */}
-                <div className={`absolute inset-0 rounded-full bg-gradient-to-br from-pink-600 to-rose-600 opacity-50 blur-xl ${isSpinning ? 'animate-pulse' : ''}`}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-pink-600 to-rose-600 opacity-50 blur-xl animate-pulse"
                     style={{ margin: '-20px' }} />
 
                 {/* Wheel */}
                 <svg
                     ref={wheelRef}
                     viewBox="0 0 300 300"
-                    className="drop-shadow-2xl transition-transform w-[300px] h-[300px] max-w-full h-auto"
+                    className="drop-shadow-2xl w-[300px] h-[300px] max-w-full h-auto hover:scale-105 transition-transform duration-300"
                     style={{
                         transform: `rotate(${rotation}deg)`,
-                        transitionDuration: isSpinning ? '4s' : '0s',
-                        transitionTimingFunction: 'cubic-bezier(0.17, 0.67, 0.12, 0.99)',
                     }}
                 >
                     {/* Outer ring */}
@@ -186,12 +166,11 @@ export function LotteryWheel({ onWin }: LotteryWheelProps) {
             </div>
 
             <button
-                onClick={spin}
-                disabled={isSpinning}
+                onClick={handleSpinClick}
                 className="btn-primary group w-full py-4 px-6 rounded-2xl shadow-lg shadow-pink-500/25 hover:shadow-pink-500/40 hover:scale-[1.02] active:scale-[0.98]"
             >
                 <GiftIcon className="w-5 h-5" />
-                <span>{isSpinning ? "Spinning..." : `SPIN TO WIN! #Spin${spinCount + 1}`}</span>
+                <span>SPIN TO WIN! #SpinN.</span>
                 <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </button>
 
@@ -201,3 +180,4 @@ export function LotteryWheel({ onWin }: LotteryWheelProps) {
         </div>
     );
 }
+

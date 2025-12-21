@@ -4,23 +4,13 @@ import { useState } from "react";
 import Link from "next/link";
 import { Gift, ChevronDown, Shield, Users, Award, WandSparkles } from "lucide-react";
 import { LotteryWheel } from "@/components/LotteryWheel";
-import { WinnerPopup } from "@/components/WinnerPopup";
 import { TestimonialCard } from "@/components/TestimonialCard";
 import { Navbar } from "@/components/Navbar";
-// import { PrizeShowcase } from "@/components/PrizeShowcase";
-import { Gift as GiftType } from "@/data/gifts";
 import { winners } from "@/data/winners";
 import NativeAd from "@/components/NativeAd";
 
 export default function Home() {
-  const [showPopup, setShowPopup] = useState(false);
-  const [wonGift, setWonGift] = useState<GiftType | null>(null);
   const [showAllTestimonials, setShowAllTestimonials] = useState(false);
-
-  const handleWin = (gift: GiftType) => {
-    setWonGift(gift);
-    setShowPopup(true);
-  };
 
   const displayedWinners = showAllTestimonials ? winners : winners.slice(0, 3);
 
@@ -72,16 +62,9 @@ export default function Home() {
       {/* Wheel Section */}
       <section className="py-0 px-4">
         <div className="max-w-6xl mx-auto flex flex-col items-center">
-          <LotteryWheel onWin={handleWin} />
+          <LotteryWheel />
         </div>
       </section>
-
-      {/* Prize Showcase - Auto shuffling */}
-      {/* <section className="py-8 px-4">
-        <div className="max-w-6xl mx-auto">
-          <PrizeShowcase />
-        </div>
-      </section> */}
 
       <NativeAd unitName="unit1" />
 
@@ -241,11 +224,7 @@ export default function Home() {
           </div>
         </div>
       </footer>
-
-      {/* Winner Popup */}
-      {showPopup && wonGift && (
-        <WinnerPopup gift={wonGift} onClose={() => setShowPopup(false)} />
-      )}
     </main>
   );
 }
+
