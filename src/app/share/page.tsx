@@ -20,7 +20,7 @@ import NativeAd from "@/components/NativeAd";
 export default function SharePage() {
     const router = useRouter();
     const [gift, setGift] = useState<GiftType | null>(null);
-    const [shareCount, setShareCount] = useState(10);
+    const [shareCount, setShareCount] = useState(0);
     const [copied, setCopied] = useState(false);
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
@@ -46,25 +46,15 @@ export default function SharePage() {
                 const data = await response.json();
 
                 if (response.ok && data.success) {
-                    // Store in localStorage for persistence
-                    localStorage.setItem("userEmail", email);
-                    localStorage.setItem("userName", name);
-                    localStorage.setItem("emailSubmitted", "true");
                     setEmailSubmitted(true);
                 } else {
                     console.error('Failed to save email:', data.error);
                     // Still allow user to proceed even if API fails
-                    localStorage.setItem("userEmail", email);
-                    localStorage.setItem("userName", name);
-                    localStorage.setItem("emailSubmitted", "true");
                     setEmailSubmitted(true);
                 }
             } catch (error) {
                 console.error('Error submitting email:', error);
-                // Fallback to localStorage if API fails
-                localStorage.setItem("userEmail", email);
-                localStorage.setItem("userName", name);
-                localStorage.setItem("emailSubmitted", "true");
+                // Allow user to proceed even if API fails
                 setEmailSubmitted(true);
             } finally {
                 setIsSubmitting(false);
@@ -76,16 +66,6 @@ export default function SharePage() {
         const storedGift = sessionStorage.getItem("wonGift");
         if (storedGift) {
             setGift(JSON.parse(storedGift));
-        }
-
-        // Restore email submission state from localStorage
-        const storedEmail = localStorage.getItem("userEmail");
-        const storedName = localStorage.getItem("userName");
-        const wasSubmitted = localStorage.getItem("emailSubmitted");
-        if (storedEmail && wasSubmitted === "true") {
-            setEmail(storedEmail);
-            if (storedName) setName(storedName);
-            setEmailSubmitted(true);
         }
     }, []);
 
@@ -371,17 +351,26 @@ export default function SharePage() {
                                         <div>
                                             <p className="font-semibold text-[var(--foreground)] mb-1">What&apos;s Next?</p>
                                             <p className="text-sm text-[var(--text-muted)]">
-                                                Your gift will be delivered within 7 business days. Check your inbox for tracking details!
+                                                Further Communication will be happen via the provided email.
+                                                we will send email the delivery inquiry within 7 business days.
                                             </p>
                                         </div>
                                     </div>
                                 </div>
-                                <button
-                                    onClick={() => router.push('/')}
-                                    className="btn-secondary text-base px-6 py-3"
-                                >
-                                    Back to Home
-                                </button>
+                                <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                                    <button
+                                        onClick={() => router.push('/spin')}
+                                        className="btn-primary text-base px-6 py-3"
+                                    >
+                                        🎡 Spin Again
+                                    </button>
+                                    <button
+                                        onClick={() => router.push('/')}
+                                        className="btn-secondary text-base px-6 py-3"
+                                    >
+                                        Back to Home
+                                    </button>
+                                </div>
                             </div>
                         )}
                     </div>
