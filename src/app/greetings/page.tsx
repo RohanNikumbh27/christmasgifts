@@ -7,7 +7,7 @@ import { Copy, Check, ChevronRight, Shuffle, Eye, ArrowDownRight, ArrowDownLeft,
 // ... (existing code)
 
 
-import AdCashAd from "@/components/AdCashAd";
+import NativeAd from "@/components/NativeAd";
 import { greetingCards } from "@/data/greetings";
 
 export default function GreetingsPage() {
@@ -151,9 +151,9 @@ export default function GreetingsPage() {
             {/* Step 2: Personalize */}
             {step === 2 && (
                 <div className="animate-fade-in max-w-xl mx-auto">
-                    <h3 className="text-xl font-bold text-[var(--foreground)] text-center mb-6">
+                    {/* <h3 className="text-xl font-bold text-[var(--foreground)] text-center mb-6">
                         Personalize Your Greeting
-                    </h3>
+                    </h3> */}
 
                     {/* Selected Card Preview Mini */}
                     <div className="flex items-center justify-center gap-3 mb-6">
@@ -305,7 +305,7 @@ export default function GreetingsPage() {
 
             {/* Ad */}
             <div className="mt-8">
-                <AdCashAd zoneId="10735922" />
+                <NativeAd />
             </div>
         </PageLayout>
     );

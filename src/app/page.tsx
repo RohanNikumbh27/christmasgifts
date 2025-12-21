@@ -7,7 +7,8 @@ import { LotteryWheel } from "@/components/LotteryWheel";
 import { TestimonialCard } from "@/components/TestimonialCard";
 import { Navbar } from "@/components/Navbar";
 import { winners } from "@/data/winners";
-import AdCashAd from "@/components/AdCashAd";
+import NativeAd from "@/components/NativeAd";
+import { HowItWorks } from "@/components/HowItWorks";
 
 export default function Home() {
   const [showAllTestimonials, setShowAllTestimonials] = useState(false);
@@ -19,7 +20,7 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="py-8 md:py-12 px-4">
+      <section className="py-8 md:pb-12 md:pt-5 px-4">
         <div className="max-w-6xl mx-auto text-center">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-br from-pink-600 to-rose-600 border border-pink-500/30 mb-6 animate-fade-in">
@@ -66,7 +67,7 @@ export default function Home() {
         </div>
       </section>
 
-      <AdCashAd zoneId="10735922" />
+      <NativeAd />
 
       {/* Stats Section */}
       <section className="py-12 px-4">
@@ -92,7 +93,7 @@ export default function Home() {
         </div>
       </section>
 
-      <AdCashAd zoneId="10735922" />
+      {/* <NativeAd /> */}
 
       {/* Testimonials Section */}
       <section className="py-12 px-4">
@@ -138,44 +139,9 @@ export default function Home() {
         </div>
       </section>
 
-      <AdCashAd zoneId="10735922" />
+      {/* <NativeAd /> */}
 
-      {/* How It Works */}
-      <section className="py-12 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-10">
-            <h3 className="text-4xl font-bold text-[var(--foreground)] mb-2">
-              How It Works ✨
-            </h3>
-            <p className="text-lg text-[var(--text-muted)]">
-              Get your Christmas gift in 3 simple steps
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { step: 1, title: "Spin the Wheel", desc: "Click the spin button and watch the wheel decide your gift!", icon: "🎡" },
-              { step: 2, title: "Share with Friends", desc: "Share the joy with 10 friends to unlock your gift", icon: "🤝" },
-              { step: 3, title: "Receive Your Gift", desc: "Get your Christmas gift delivered to your doorstep!", icon: "📦" },
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="card text-center relative animate-slide-up"
-                style={{ animationDelay: `${index * 150}ms` }}
-              >
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center text-white font-bold text-sm">
-                  {item.step}
-                </div>
-                <div className="text-5xl mb-4 mt-4">{item.icon}</div>
-                <h4 className="text-2xl font-bold text-[var(--foreground)] mb-2">{item.title}</h4>
-                <p className="text-base text-[var(--text-muted)]">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <AdCashAd zoneId="10735922" />
+      <HowItWorks />
 
 
       {/* Footer */}

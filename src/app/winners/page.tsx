@@ -2,6 +2,7 @@ import { PageLayout } from "@/components/PageLayout";
 import { TestimonialCard } from "@/components/TestimonialCard";
 import { winners } from "@/data/winners";
 import Link from "next/link";
+import NativeAd from "@/components/NativeAd";
 
 export const metadata = {
     title: "Winners | TrustChristmas Foundation",
@@ -61,7 +62,8 @@ export default function WinnersPage() {
             </div>
 
             {/* CTA */}
-            <div className="card text-center bg-gradient-to-br from-red-500/10 to-pink-500/10 border-red-500/20 animate-fade-in">
+            <div className="card text-center bg-gradient-to-br from-red-500/10 to-pink-500/10 border-red-500/20 animate-fade-in mt-16">
+                <NativeAd />
                 <h3 className="text-2xl font-bold text-[var(--foreground)] mb-4">Want to be Our Next Winner? 🌟</h3>
                 <p className="text-[var(--text-muted)] mb-6">
                     Join thousands of happy winners this Christmas season!

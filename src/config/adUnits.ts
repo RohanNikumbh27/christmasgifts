@@ -1,15 +1,16 @@
-// Ad unit configurations
-// This file is prepared for EthicalAds integration
-// Configure your ad placements here
+// Ad unit configurations from Adsterra
+// Create new ad units at: https://publishers.adsterra.com/ad-units
+// Each ad placement needs its own unique ad unit
 
 export const AD_UNITS = {
     unit1: {
-        id: "placeholder",
-        // Add your EthicalAds configuration here
+        id: "c092032294eea7ba8a7e9d8c0db985af",
+        scriptUrl: "https://pl28293465.effectivegatecpm.com/c092032294eea7ba8a7e9d8c0db985af/invoke.js"
     },
     // Add more ad units here:
     // unit2: {
-    //   id: "your-ad-id",
+    //   id: "YOUR_AD_ID",
+    //   scriptUrl: "https://pl28293465.effectivegatecpm.com/YOUR_AD_ID/invoke.js"
     // },
 } as const;
 

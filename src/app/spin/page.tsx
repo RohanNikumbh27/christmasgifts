@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { Gift, ChevronRight, Clock, Sparkles, GiftIcon, ArrowLeft } from "lucide-react";
 import { gifts, Gift as GiftType, getGiftForSpinCount } from "@/data/gifts";
-import AdCashAd from "@/components/AdCashAd";
+import NativeAd from "@/components/NativeAd";
 
 export default function SpinPage() {
     const router = useRouter();
@@ -204,20 +204,8 @@ export default function SpinPage() {
                     </div>
 
                     {/* Main Content - Responsive Layout */}
-                    <div className="flex flex-col lg:flex-row items-center justify-center gap-8">
-                        {/* Left Ad - Desktop Only (Before Spin) */}
-                        {!hasSpun && (
-                            <div className="hidden lg:block w-[300px] flex-shrink-0">
-                                <AdCashAd zoneId="10735922" />
-                            </div>
-                        )}
+                    <div className="flex flex-col items-center justify-center gap-8">
 
-                        {/* Left Ad - Desktop Only (After Spin - Different Ad Position) */}
-                        {hasSpun && (
-                            <div className="hidden lg:block w-[300px] flex-shrink-0">
-                                <AdCashAd zoneId="10735922" />
-                            </div>
-                        )}
 
                         {/* Spinner Section */}
                         <div className="flex flex-col items-center gap-6">
@@ -343,32 +331,12 @@ export default function SpinPage() {
                             )}
                         </div>
 
-                        {/* Right Ad - Desktop Only (Before Spin) */}
-                        {!hasSpun && (
-                            <div className="hidden lg:block w-[300px] flex-shrink-0">
-                                <AdCashAd zoneId="10735922" />
-                            </div>
-                        )}
-
-                        {/* Right Ad - Desktop Only (After Spin) */}
-                        {hasSpun && (
-                            <div className="hidden lg:block w-[300px] flex-shrink-0">
-                                <AdCashAd zoneId="10735922" />
-                            </div>
-                        )}
                     </div>
 
-                    {/* Mobile Ad - Below Spinner */}
-                    <div className="lg:hidden mt-8">
-                        <AdCashAd zoneId="10735922" />
+                    {/* Ad Section - Below everything */}
+                    <div className="mt-32 w-full flex justify-center">
+                        <NativeAd />
                     </div>
-
-                    {/* Additional Ad after spin on mobile */}
-                    {hasSpun && (
-                        <div className="lg:hidden mt-4">
-                            <AdCashAd zoneId="10735922" />
-                        </div>
-                    )}
                 </div>
             </section>
         </main>

@@ -3,29 +3,29 @@
 import { useEffect, useRef } from 'react';
 import { AD_UNITS, AdUnitName } from '@/config/adUnits';
 
-interface NativeAdProps {
-  /** The unit name from AD_UNITS config (e.g., "unit1", "unit2") */
-  unitName: AdUnitName;
-  /** Optional className for styling */
-  className?: string;
-}
 
-export default function NativeAd({ unitName, className = '' }: NativeAdProps) {
+export default function NativeAd({ unitName = "unit1" }: { unitName?: AdUnitName }) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const adLoaded = useRef(false);
+  const scriptLoaded = useRef(false);
 
   const adUnit = AD_UNITS[unitName];
 
   useEffect(() => {
-    if (adLoaded.current || !containerRef.current || !adUnit) return;
+    if (scriptLoaded.current || !containerRef.current || !adUnit) return;
 
-    // TODO: Add EthicalAds initialization here
-    // Reference: https://www.ethicalads.io/publishers/
+    const script = document.createElement('script');
+    script.src = adUnit.scriptUrl;
+    script.async = true;
+    script.setAttribute('data-cfasync', 'false');
 
-    adLoaded.current = true;
+    // Append script after the container so Adsterra can find it
+    containerRef.current.parentElement?.appendChild(script);
+    scriptLoaded.current = true;
 
     return () => {
-      // Cleanup if needed
+      if (script.parentElement) {
+        script.parentElement.removeChild(script);
+      }
     };
   }, [adUnit]);
 
@@ -35,14 +35,17 @@ export default function NativeAd({ unitName, className = '' }: NativeAdProps) {
   }
 
   return (
-    <div className={`flex justify-center my-8 ${className}`}>
-      {/* Ad placeholder - replace with EthicalAds component */}
-      <div
-        ref={containerRef}
-        id={`ad-container-${adUnit.id}`}
-        className="ad-container min-h-[100px] w-full max-w-[728px] flex items-center justify-center"
-      >
-        <span className="text-[var(--text-muted)] text-sm">Ad Space</span>
+    <div className="flex flex-col items-center justify-center my-8 animate-fade-in">
+      <span className="text-xs text-[var(--text-muted)] uppercase tracking-widest mb-2 font-medium opacity-70">
+        Advertisement
+      </span>
+      <div className="relative rounded-2xl overflow-hidden bg-[var(--card-bg)] border border-[var(--card-border)] shadow-sm hover:shadow-md transition-all duration-300 p-1">
+        <div
+          ref={containerRef}
+          id={`container-${adUnit.id}`}
+          className="min-h-[250px] min-w-[300px] flex items-center justify-center bg-[var(--card-bg)] !rounded-xl"
+        >
+        </div>
       </div>
     </div>
   );

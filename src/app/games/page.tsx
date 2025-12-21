@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { PageLayout } from "@/components/PageLayout";
 import { Gamepad2, Brain, Gift, HelpCircle } from "lucide-react";
-import AdCashAd from "@/components/AdCashAd";
+import NativeAd from "@/components/NativeAd";
 
 export const metadata = {
     title: "Christmas Games | TrustChristmas Foundation",
@@ -79,7 +79,7 @@ export default function GamesPage() {
             </div>
 
             {/* Ad */}
-            <AdCashAd zoneId="10735922" />
+            <NativeAd />
 
             {/* Info Card */}
             <div className="card text-center bg-gradient-to-br from-yellow-500/10 to-orange-500/10 border-yellow-500/20 animate-fade-in">

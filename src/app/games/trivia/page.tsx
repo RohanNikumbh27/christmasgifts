@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { ArrowLeft, RotateCcw, Trophy, ChevronRight } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import AdCashAd from "@/components/AdCashAd";
+import NativeAd from "@/components/NativeAd";
 
 interface Question {
     question: string;
@@ -224,7 +224,7 @@ export default function TriviaGame() {
                 )}
 
                 {/* Ad */}
-                <AdCashAd zoneId="10735922" />
+                <NativeAd />
             </div>
         </main>
     );

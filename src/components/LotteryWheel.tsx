@@ -174,7 +174,7 @@ export function LotteryWheel() {
                 <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </button>
 
-            <p className="text-[var(--text-muted)] text-base text-center max-w-xs">
+            <p className="text-[var(--text-muted)] text-base text-center max-w-xs mb-5">
                 🎁 Spin the wheel and win amazing Christmas gifts from TrustChristmas Foundation!
             </p>
         </div>

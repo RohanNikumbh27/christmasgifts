@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Gift, Sparkles, Heart, ArrowLeft, Home, Share2, Copy, Check, Plus } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { getCardById, greetingCards } from "@/data/greetings";
-import AdCashAd from "@/components/AdCashAd";
+import NativeAd from "@/components/NativeAd";
 import { Suspense, useState, useEffect } from "react";
 
 function GreetingContent() {
@@ -288,8 +288,8 @@ function GreetingContent() {
                 )}
 
                 {/* Ad */}
-                <div className="mt-8">
-                    <AdCashAd zoneId="10735922" />
+                <div className="mt-[100px]">
+                    <NativeAd />
                 </div>
 
                 {/* CTA for non-preview mode */}
