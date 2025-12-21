@@ -22,14 +22,12 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
     useEffect(() => {
         setMounted(true);
+        // Only use saved theme if user explicitly changed it, otherwise default to light
         const savedTheme = localStorage.getItem("theme") as Theme;
         if (savedTheme) {
             setTheme(savedTheme);
-        } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-            setTheme("dark");
-        } else {
-            setTheme("light");
         }
+        // Default is already "light" from useState
     }, []);
 
     useEffect(() => {
