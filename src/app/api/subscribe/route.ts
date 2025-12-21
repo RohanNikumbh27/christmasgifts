@@ -4,7 +4,7 @@ import { getDatabase } from '@/lib/mongodb';
 export async function POST(request: NextRequest) {
     try {
         const body = await request.json();
-        const { email } = body;
+        const { email, name } = body;
 
         // Validate email
         if (!email || typeof email !== 'string') {
@@ -30,15 +30,23 @@ export async function POST(request: NextRequest) {
         // Check if email already exists
         const existingEmail = await collection.findOne({ email: email.toLowerCase() });
         if (existingEmail) {
+            // Update existing record with name if provided
+            if (name && typeof name === 'string' && name.trim()) {
+                await collection.updateOne(
+                    { email: email.toLowerCase() },
+                    { $set: { name: name.trim(), updatedAt: new Date() } }
+                );
+            }
             return NextResponse.json(
                 { message: 'Email already registered', success: true },
                 { status: 200 }
             );
         }
 
-        // Insert new email
+        // Insert new email with name
         await collection.insertOne({
             email: email.toLowerCase(),
+            name: name && typeof name === 'string' ? name.trim() : null,
             createdAt: new Date(),
         });
 
