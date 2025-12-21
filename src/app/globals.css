@@ -195,8 +195,8 @@ body {
 
 /* Button styles */
 .btn-primary {
-  background: linear-gradient(135deg, #e11d48, #ff0066, #660029);
-  color: white;
+  background: linear-gradient(135deg, #69012b, #ff0066, #660029);
+  color: gold;
   padding: 1rem 2.5rem;
   border-radius: 9999px;
   font-weight: 600;
@@ -211,14 +211,15 @@ body {
   box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
   position: relative;
   overflow: hidden;
-  text-shadow: 0 0 10px rgb(255, 208, 0);
+  /* text-shadow: 0 0 3px rgb(255, 208, 0); */
 }
 
 .btn-primary:hover {
+  text-shadow: 0 0 7px rgb(255, 208, 0);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px #ec005e;
+  box-shadow: 0 2px 10px blueviolet;
   background: linear-gradient(135deg, #69012b, #ec005e, #660029);
-  color: gold;
+  color: #ffd700;
 }
 
 .btn-primary:active {

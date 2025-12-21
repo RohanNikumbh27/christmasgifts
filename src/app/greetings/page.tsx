@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { PageLayout } from "@/components/PageLayout";
-import { Copy, Check, ChevronRight, Shuffle, Eye } from "lucide-react";
+import { Copy, Check, ChevronRight, Shuffle, Eye, ArrowDownRight, ArrowDownLeft, ArrowUpRight, ArrowUpLeft } from "lucide-react";
 
 // ... (existing code)
 
@@ -60,7 +60,7 @@ export default function GreetingsPage() {
     };
 
     const handlePreview = () => {
-        window.open(getPreviewLink(), "_blank");
+        window.location.href = getPreviewLink();
     };
 
     const currentMessage = selectedCard.messages.find(m => m.id === selectedMessageId)?.message || "";
@@ -71,18 +71,18 @@ export default function GreetingsPage() {
             subtitle=""
         >
             {/* Custom Header: Title left, Steps right on desktop */}
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-2 md:mb-8">
                 <div>
-                    <h2 className="text-2xl md:text-3xl font-bold text-[var(--foreground)]">
-                        Send Greetings 💌
+                    <h2 className="text-2xl md:text-3xl font-bold text-[var(--foreground)] !m-0 !p-0">
+                        Send Christmas Greetings 💌
                     </h2>
-                    <p className="text-sm text-[var(--text-muted)]">
+                    {/* <p className="text-sm text-[var(--text-muted)]">
                         Create beautiful Christmas greetings for your loved ones
-                    </p>
+                    </p> */}
                 </div>
 
                 {/* Progress Steps */}
-                <div className="flex items-center gap-2">
+                <div className="hidden md:flex items-center gap-2">
                     {[1, 2, 3].map((s) => (
                         <div key={s} className="flex items-center">
                             <div
@@ -107,7 +107,7 @@ export default function GreetingsPage() {
             {/* Step 1: Choose Card */}
             {step === 1 && (
                 <div className="animate-fade-in">
-                    <h3 className="text-xl font-bold text-[var(--foreground)] text-center mb-6">
+                    <h3 className="text-xl text-[var(--foreground)]/40 text-center mb-2">
                         Choose Your Card Style
                     </h3>
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
@@ -116,17 +116,17 @@ export default function GreetingsPage() {
                                 key={card.id}
                                 onClick={() => setSelectedCard(card)}
                                 className={`relative p-6 h-40 rounded-2xl border-4 transition-all hover:scale-105 bg-gradient-to-br flex flex-col items-center justify-center ${card.gradient} ${selectedCard.id === card.id
-                                    ? "border-black dark:border-white"
+                                    ? "!border-black dark:border-white"
                                     : "border-transparent hover:border-white/30"
                                     }`}
                             >
                                 {/* Corner circles for selected card */}
                                 {selectedCard.id === card.id && (
                                     <>
-                                        <div className="absolute top-1 left-1 w-3 h-3 rounded-full bg-black dark:bg-white" />
-                                        <div className="absolute top-1 right-1 w-3 h-3 rounded-full bg-black dark:bg-white" />
-                                        <div className="absolute bottom-1 left-1 w-3 h-3 rounded-full bg-black dark:bg-white" />
-                                        <div className="absolute bottom-1 right-1 w-3 h-3 rounded-full bg-black dark:bg-white" />
+                                        <ArrowDownRight className="absolute top-1 left-1 w-5 h-5 !text-black dark:text-white" />
+                                        <ArrowDownLeft className="absolute top-1 right-1 w-5 h-5 !text-black dark:text-white" />
+                                        <ArrowUpRight className="absolute bottom-1 left-1 w-5 h-5 !text-black dark:text-white" />
+                                        <ArrowUpLeft className="absolute bottom-1 right-1 w-5 h-5 !text-black dark:text-white" />
                                     </>
                                 )}
                                 <div className="text-5xl mb-3 text-center">
