@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Lexend } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
@@ -28,6 +29,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${lexend.variable} font-sans antialiased`}>
+        {/* AdCash library script - required for AdCashAd component */}
+        <Script
+          id="aclib"
+          src="//acscdn.com/script/aclib.js"
+          strategy="beforeInteractive"
+        />
         <ThemeProvider>
           {children}
         </ThemeProvider>

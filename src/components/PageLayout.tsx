@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Gift } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
-import NativeAd from "@/components/NativeAd";
+import AdCashAd from "@/components/AdCashAd";
 
 interface PageLayoutProps {
     children: React.ReactNode;
@@ -37,7 +37,7 @@ export function PageLayout({ children, title, subtitle }: PageLayoutProps) {
                 </div>
             </section>
 
-            <NativeAd unitName="unit1" />
+            <AdCashAd zoneId="10735922" />
 
             {/* Footer */}
             <footer className="bg-zinc-900 dark:bg-black py-12 px-4 border-t border-zinc-800">

@@ -195,7 +195,7 @@ body {
 
 /* Button styles */
 .btn-primary {
-  background: linear-gradient(135deg, #69012b, #ff0066, #660029);
+  background: linear-gradient(135deg, #e11d48, #ff0066, #660029);
   color: white;
   padding: 1rem 2.5rem;
   border-radius: 9999px;

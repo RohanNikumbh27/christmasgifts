@@ -7,7 +7,7 @@ import { LotteryWheel } from "@/components/LotteryWheel";
 import { TestimonialCard } from "@/components/TestimonialCard";
 import { Navbar } from "@/components/Navbar";
 import { winners } from "@/data/winners";
-import NativeAd from "@/components/NativeAd";
+import AdCashAd from "@/components/AdCashAd";
 
 export default function Home() {
   const [showAllTestimonials, setShowAllTestimonials] = useState(false);
@@ -66,7 +66,7 @@ export default function Home() {
         </div>
       </section>
 
-      <NativeAd unitName="unit1" />
+      <AdCashAd zoneId="10735922" />
 
       {/* Stats Section */}
       <section className="py-12 px-4">
@@ -92,7 +92,7 @@ export default function Home() {
         </div>
       </section>
 
-      <NativeAd unitName="unit1" />
+      <AdCashAd zoneId="10735922" />
 
       {/* Testimonials Section */}
       <section className="py-12 px-4">
@@ -138,7 +138,7 @@ export default function Home() {
         </div>
       </section>
 
-      <NativeAd unitName="unit1" />
+      <AdCashAd zoneId="10735922" />
 
       {/* How It Works */}
       <section className="py-12 px-4">
@@ -175,7 +175,7 @@ export default function Home() {
         </div>
       </section>
 
-      <NativeAd unitName="unit1" />
+      <AdCashAd zoneId="10735922" />
 
 
       {/* Footer */}

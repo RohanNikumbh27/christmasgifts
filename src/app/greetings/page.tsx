@@ -7,7 +7,7 @@ import { Copy, Check, ChevronRight, Shuffle, Eye } from "lucide-react";
 // ... (existing code)
 
 
-import NativeAd from "@/components/NativeAd";
+import AdCashAd from "@/components/AdCashAd";
 import { greetingCards } from "@/data/greetings";
 
 export default function GreetingsPage() {
@@ -305,7 +305,7 @@ export default function GreetingsPage() {
 
             {/* Ad */}
             <div className="mt-8">
-                <NativeAd unitName="unit1" />
+                <AdCashAd zoneId="10735922" />
             </div>
         </PageLayout>
     );

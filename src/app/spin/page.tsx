@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { Gift, ChevronRight, Clock, Sparkles, GiftIcon, ArrowLeft } from "lucide-react";
 import { gifts, Gift as GiftType, getGiftForSpinCount } from "@/data/gifts";
-import NativeAd from "@/components/NativeAd";
+import AdCashAd from "@/components/AdCashAd";
 
 export default function SpinPage() {
     const router = useRouter();
@@ -208,14 +208,14 @@ export default function SpinPage() {
                         {/* Left Ad - Desktop Only (Before Spin) */}
                         {!hasSpun && (
                             <div className="hidden lg:block w-[300px] flex-shrink-0">
-                                <NativeAd unitName="unit1" />
+                                <AdCashAd zoneId="10735922" />
                             </div>
                         )}
 
                         {/* Left Ad - Desktop Only (After Spin - Different Ad Position) */}
                         {hasSpun && (
                             <div className="hidden lg:block w-[300px] flex-shrink-0">
-                                <NativeAd unitName="unit1" />
+                                <AdCashAd zoneId="10735922" />
                             </div>
                         )}
 
@@ -346,27 +346,27 @@ export default function SpinPage() {
                         {/* Right Ad - Desktop Only (Before Spin) */}
                         {!hasSpun && (
                             <div className="hidden lg:block w-[300px] flex-shrink-0">
-                                <NativeAd unitName="unit1" />
+                                <AdCashAd zoneId="10735922" />
                             </div>
                         )}
 
                         {/* Right Ad - Desktop Only (After Spin) */}
                         {hasSpun && (
                             <div className="hidden lg:block w-[300px] flex-shrink-0">
-                                <NativeAd unitName="unit1" />
+                                <AdCashAd zoneId="10735922" />
                             </div>
                         )}
                     </div>
 
                     {/* Mobile Ad - Below Spinner */}
                     <div className="lg:hidden mt-8">
-                        <NativeAd unitName="unit1" />
+                        <AdCashAd zoneId="10735922" />
                     </div>
 
                     {/* Additional Ad after spin on mobile */}
                     {hasSpun && (
                         <div className="lg:hidden mt-4">
-                            <NativeAd unitName="unit1" />
+                            <AdCashAd zoneId="10735922" />
                         </div>
                     )}
                 </div>

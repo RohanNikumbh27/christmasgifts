@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { ArrowLeft, RotateCcw, Trophy, Play, Pause } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import NativeAd from "@/components/NativeAd";
+import AdCashAd from "@/components/AdCashAd";
 
 interface Present {
     id: number;
@@ -219,7 +219,7 @@ export default function CatchGame() {
                 )}
 
                 {/* Ad */}
-                <NativeAd unitName="unit1" />
+                <AdCashAd zoneId="10735922" />
             </div>
         </main>
     );

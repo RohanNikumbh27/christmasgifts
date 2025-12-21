@@ -15,7 +15,7 @@ import {
     Facebook
 } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import NativeAd from "@/components/NativeAd";
+import AdCashAd from "@/components/AdCashAd";
 
 export default function SharePage() {
     const router = useRouter();
@@ -374,7 +374,7 @@ export default function SharePage() {
                 )}
 
                 {/* Ad */}
-                <NativeAd unitName="unit1" />
+                <AdCashAd zoneId="10735922" />
 
                 {/* Tips */}
                 <div className="card">
