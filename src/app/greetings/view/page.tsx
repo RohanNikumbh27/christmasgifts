@@ -187,7 +187,13 @@ function GreetingContent() {
             <div className="sticky top-4 z-40 max-w-2xl mx-auto px-4 pt-4">
                 <div className="flex items-center justify-between gap-3">
                     <button
-                        onClick={() => router.back()}
+                        onClick={() => {
+                            if (window.history.length > 1) {
+                                router.back();
+                            } else {
+                                router.push('/greetings');
+                            }
+                        }}
                         className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/90 backdrop-blur-sm hover:bg-white transition-colors shadow-lg"
                     >
                         <ArrowLeft className="w-4 h-4 text-gray-700" />
