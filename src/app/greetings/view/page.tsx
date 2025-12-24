@@ -59,7 +59,7 @@ function GreetingContent() {
     };
 
     return (
-        <main className={`h-svh bg-gradient-to-br ${card.gradient} relative overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]`}>
+        <main className={`h-dvh bg-gradient-to-br ${card.gradient} relative overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]`}>
             {/* Confetti Animations */}
             <style jsx>{`
                 @keyframes confetti-fall {
