@@ -144,7 +144,7 @@ export default function CatchGame() {
 
                 {/* Game Area */}
                 <div
-                    className="relative w-full h-96 rounded-2xl bg-gradient-to-b from-blue-900 to-indigo-900 border border-[var(--card-border)] overflow-hidden mb-6"
+                    className="relative w-full h-96 rounded-2xl bg-gradient-to-br from-purple-700 to-indigo-800 border border-[var(--card-border)] overflow-hidden mb-6"
                     style={{ touchAction: "manipulation" }}
                 >
                     {/* Snowflakes background decoration */}

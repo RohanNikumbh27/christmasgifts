@@ -24,12 +24,23 @@ export default function SpinPage() {
         if (hasStarted.current) return;
         hasStarted.current = true;
 
-        // Always start at spin 1 (resets on refresh)
-        setSpinCount(1);
+        // Load spin count from localStorage, default to 1 if not found
+        const storedSpinCount = localStorage.getItem("spinCount");
+        let currentSpinCount = storedSpinCount ? parseInt(storedSpinCount, 10) : 1;
+
+        // Reset to 1 if we've reached 20 spins
+        if (currentSpinCount > 20) {
+            currentSpinCount = 1;
+        }
+
+        setSpinCount(currentSpinCount);
+
+        // Save the current spin count to localStorage
+        localStorage.setItem("spinCount", currentSpinCount.toString());
 
         // Start spinning after a short delay
         setTimeout(() => {
-            spin(1);
+            spin(currentSpinCount);
         }, 500);
     }, []);
 
@@ -72,15 +83,20 @@ export default function SpinPage() {
     };
 
     const handleSpinAgain = () => {
-        hasStarted.current = false;
-        setHasSpun(false);
-        setWonGift(null);
-        setConfetti([]);
-        const newSpinCount = spinCount + 1;
-        setSpinCount(newSpinCount);
-        setTimeout(() => {
-            spin(newSpinCount);
-        }, 300);
+        // Increment the spin count in localStorage
+        const storedSpinCount = localStorage.getItem("spinCount");
+        let newSpinCount = storedSpinCount ? parseInt(storedSpinCount, 10) + 1 : 2;
+
+        // Reset to 1 if we've reached beyond 20 spins
+        if (newSpinCount > 20) {
+            newSpinCount = 1;
+        }
+
+        // Save the new spin count to localStorage
+        localStorage.setItem("spinCount", newSpinCount.toString());
+
+        // Refresh the page to restart the spin with the new count
+        window.location.reload();
     };
 
     const handleBack = () => {
@@ -154,7 +170,7 @@ export default function SpinPage() {
     };
 
     return (
-        <main className="min-h-screen bg-[var(--background)] overflow-x-hidden">
+        <main className="bg-[var(--background)] overflow-x-hidden">
             {/* Back Button Header */}
             <header className="sticky top-0 z-50 glass border-b border-[var(--card-border)]">
                 <div className="max-w-6xl mx-auto px-4 py-4">
@@ -188,7 +204,7 @@ export default function SpinPage() {
                 </div>
             )}
 
-            <section className="py-8 md:py-12 px-4">
+            <section className="py-8 px-4">
                 <div className="max-w-6xl mx-auto">
                     {/* Header */}
                     <div className="text-center mb-8">
@@ -196,7 +212,7 @@ export default function SpinPage() {
                             <Sparkles className="w-4 h-4 text-yellow-400" />
                             <span className="text-base font-medium text-zinc-100">Spin #{spinCount}</span>
                         </div>
-                        <h1 className="text-4xl md:text-5xl font-bold text-[var(--foreground)] mb-2">
+                        <h1 className="text-4xl md:text-4xl font-bold text-[var(--foreground)] mb-2">
                             {isSpinning ? "Spinning..." : hasSpun ? "🎉 You Won!" : "Ready to Spin!"}
                         </h1>
                         <p className="text-lg text-[var(--text-muted)]">
@@ -205,7 +221,7 @@ export default function SpinPage() {
                     </div>
 
                     {/* Main Content - Responsive Layout */}
-                    <div className="flex flex-col items-center justify-center gap-8">
+                    <div className="flex flex-col items-center justify-center gap-8">           
 
 
                         {/* Spinner Section */}
@@ -335,7 +351,7 @@ export default function SpinPage() {
                     </div>
 
                     {/* Ad Section - Below everything */}
-                    <div className="mt-32 w-full flex justify-center">
+                    <div className="mt-14 w-full flex justify-center">
                         <NativeAd />
                     </div>
 

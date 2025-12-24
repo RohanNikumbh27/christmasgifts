@@ -6,7 +6,10 @@ import { Gift, Sparkles, Heart, ArrowLeft, Home, Share2, Copy, Check, Plus } fro
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { getCardById, greetingCards } from "@/data/greetings";
 import NativeAd from "@/components/NativeAd";
+import { Footer } from "@/components/Footer";
 import { Suspense, useState, useEffect } from "react";
+import Lottie from "lottie-react";
+import christmasTreeAnimation from "../../../../public/christmas-tree.json";
 
 function GreetingContent() {
     const searchParams = useSearchParams();
@@ -192,7 +195,7 @@ function GreetingContent() {
                     </button>
                     <Link
                         href="/greetings"
-                        className="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-zinc-950 to-black hover:from-zinc-900 hover:to-black text-white font-medium transition-colors shadow-xl"
+                        className="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-zinc-950 to-black hover:from-zinc-900 hover:to-black text-amber-300 font-medium transition-colors shadow-xl"
                     >
                         <Plus size={20} absoluteStrokeWidth />
                         <span>New</span>
@@ -295,12 +298,12 @@ function GreetingContent() {
                 {/* CTA for non-preview mode */}
                 {!isPreview && (
                     <div className="mt-0 text-center">
-                        <p className="text-[var(--text-muted)] mb-4">
+                        <p className="text-black mb-4">
                             Want to send your own Christmas greeting?
                         </p>
                         <Link
                             href="/greetings"
-                            className="btn-primary inline-flex"
+                            className="bg-black text-amber-400 hover:bg-amber-400 hover:text-black inline-flex px-6 py-4 rounded-full"
                         >
                             <Sparkles className="w-4 h-4" />
                             <span>Create Your Greeting</span>
@@ -310,11 +313,123 @@ function GreetingContent() {
 
                 {/* Footer Message */}
                 <div className="mt-12 text-center">
-                    <p className="text-sm text-[var(--text-muted)]">
+                    <p className="text-sm text-black">
                         🎄 Spread the Christmas joy with TrustChristmas 🎁
                     </p>
                 </div>
+
+                {/* Christmas Tree Lottie Animation */}
+                <div className="flex justify-center my-8">
+                    <Lottie
+                        animationData={christmasTreeAnimation}
+                        loop={true}
+                        autoplay={true}
+                        className="w-48 h-48 rounded-full"
+                    />
+                </div>
+
+                {/* Features Promotion Section */}
+                <div className="mt-12 mb-8">
+                    <h2 className="text-2xl font-bold text-center text-zinc-950 mb-2">✨ Explore More Features ✨</h2>
+                    <p className="text-center text-zinc-900 mb-8">Discover everything TrustChristmas has to offer!</p>
+
+                    <div className="grid grid-cols-1 gap-6">
+
+                        {/* Greetings - 2nd */}
+                        <Link
+                            href="/greetings"
+                            className="group relative overflow-hidden rounded-3xl bg-zinc-900 p-8 shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all border border-zinc-800"
+                        >
+                            <div className="absolute top-4 right-4 text-8xl text-zinc-700 opacity-40 group-hover:opacity-60 transition-opacity">💌</div>
+                            <div className="relative z-10">
+                                <div className="flex items-center gap-4 mb-4">
+                                    <span className="text-5xl">🎄</span>
+                                    <div>
+                                        <h3 className="text-2xl font-bold text-zinc-100">Send Greetings</h3>
+                                        <p className="text-zinc-500 text-sm">Share joy with loved ones</p>
+                                    </div>
+                                </div>
+                                <p className="text-zinc-300 text-base leading-relaxed">Create beautiful personalized Christmas greetings and share them with your friends and family. Spread the holiday cheer!</p>
+                                <div className="mt-4 inline-flex items-center gap-2 text-zinc-400 group-hover:text-zinc-200 transition-colors">
+                                    <span className="text-sm font-medium">Create Greeting</span>
+                                    <span>→</span>
+                                </div>
+                            </div>
+                        </Link>
+                        
+                        {/* Spin & Win */}
+                        <Link
+                            href="/spin"
+                            className="group relative overflow-hidden rounded-3xl bg-zinc-900 p-8 shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all border border-zinc-800"
+                        >
+                            <div className="absolute top-4 right-4 text-8xl text-zinc-700 opacity-40 group-hover:opacity-60 transition-opacity">🎡</div>
+                            <div className="relative z-10">
+                                <div className="flex items-center gap-4 mb-4">
+                                    <span className="text-5xl">🎁</span>
+                                    <div>
+                                        <h3 className="text-2xl font-bold text-zinc-100">Spin & Win Gifts!</h3>
+                                        <p className="text-zinc-500 text-sm">Try your luck now</p>
+                                    </div>
+                                </div>
+                                <p className="text-zinc-300 text-base leading-relaxed">Win amazing prizes like iPhones, MacBooks, Amazon vouchers, AirPods & more! Spin the wheel and claim your Christmas gift today!</p>
+                                <div className="mt-4 inline-flex items-center gap-2 text-zinc-400 group-hover:text-zinc-200 transition-colors">
+                                    <span className="text-sm font-medium">Start Spinning</span>
+                                    <span>→</span>
+                                </div>
+                            </div>
+                        </Link>
+
+                        {/* Games with Thumbnails - Last */}
+                        <Link
+                            href="/games"
+                            className="group relative overflow-hidden rounded-3xl bg-zinc-900 p-8 shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all border border-zinc-800"
+                        >
+                            <div className="absolute top-4 right-4 text-8xl text-zinc-700 opacity-40 group-hover:opacity-60 transition-opacity">🎮</div>
+                            <div className="relative z-10">
+                                <div className="flex items-center gap-4 mb-4">
+                                    <span className="text-5xl">🕹️</span>
+                                    <div>
+                                        <h3 className="text-2xl font-bold text-zinc-100">Fun Christmas Games</h3>
+                                        <p className="text-zinc-500 text-sm">3 exciting games to play</p>
+                                    </div>
+                                </div>
+                                <p className="text-zinc-300 text-base leading-relaxed mb-6">Play exciting games - Catch falling gifts, test your memory skills, and challenge your Christmas trivia knowledge!</p>
+
+                                {/* Game Thumbnails - One per row, image on top, text below */}
+                                <div className="flex flex-col gap-6">
+                                    <div className="rounded-2xl overflow-hidden border-2 border-zinc-700 group-hover:border-zinc-600 transition-colors">
+                                        <img src="/games/Catch_The_Presents.png" alt="Catch The Presents" className="w-full rounded-t-xl" />
+                                        <div className="bg-zinc-800 px-4 py-3">
+                                            <p className="text-lg text-zinc-200 font-semibold">Catch Gifts</p>
+                                            <p className="text-sm text-zinc-500 mt-1">Catch falling presents before they hit the ground!</p>
+                                        </div>
+                                    </div>
+                                    <div className="rounded-2xl overflow-hidden border-2 border-zinc-700 group-hover:border-zinc-600 transition-colors">
+                                        <img src="/games/Memory_Match_Game.png" alt="Memory Match" className="w-full rounded-t-xl" />
+                                        <div className="bg-zinc-800 px-4 py-3">
+                                            <p className="text-lg text-zinc-200 font-semibold">Memory Match</p>
+                                            <p className="text-sm text-zinc-500 mt-1">Test your memory with holiday cards!</p>
+                                        </div>
+                                    </div>
+                                    <div className="rounded-2xl overflow-hidden border-2 border-zinc-700 group-hover:border-zinc-600 transition-colors">
+                                        <img src="/games/Christmas_Trivia.png" alt="Christmas Trivia" className="w-full rounded-t-xl" />
+                                        <div className="bg-zinc-800 px-4 py-3">
+                                            <p className="text-lg text-zinc-200 font-semibold">Trivia Quiz</p>
+                                            <p className="text-sm text-zinc-500 mt-1">How much do you know about Christmas?</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="mt-5 inline-flex items-center gap-2 text-zinc-400 group-hover:text-zinc-200 transition-colors">
+                                    <span className="text-sm font-medium">Play Now</span>
+                                    <span>→</span>
+                                </div>
+                            </div>
+                        </Link>
+                    </div>
+                </div>
             </div>
+            <Footer />
         </main>
     );
 }
