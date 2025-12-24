@@ -188,10 +188,10 @@ function GreetingContent() {
                 <div className="flex items-center justify-between gap-3">
                     <button
                         onClick={() => router.back()}
-                        className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/90 backdrop-blur-sm hover:bg-white transition-colors shadow-lg"
+                        className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/90 backdrop-blur-sm hover:bg-white transition-colors shadow-lg"
                     >
                         <ArrowLeft className="w-4 h-4 text-gray-700" />
-                        <span className="font-medium text-gray-700">Back</span>
+                        <span className="font-semibold text-sm tracking-wide text-gray-700">Back</span>
                     </button>
                     <Link
                         href="/greetings"
@@ -221,24 +221,24 @@ function GreetingContent() {
                             </div>
 
                             {/* Recipient */}
-                            <div className="mb-4 inline-block">
+                            <div className="mb-6 inline-block">
                                 <div className="rounded-2xl">
-                                    <p className="text-3xl md:text-5xl font-bold drop-shadow-lg">
+                                    <p className="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-lg leading-tight">
                                         {recipientName ? recipientName : "Hello Dear 🤩"}
                                     </p>
                                 </div>
                             </div>
 
                             {/* Message */}
-                            <p className="text-xl md:text-2xl font-medium leading-relaxed md:leading-tight mb-6">
+                            <p className="text-lg md:text-xl font-medium leading-relaxed tracking-wide mb-8 opacity-95">
                                 {message}
                             </p>
 
                             {/* Sender */}
                             {senderName && (
-                                <p className="text-xl md:text-sm flex items-center justify-center gap-2">
-                                    <Heart className="w-3 h-3" />
-                                    <span>{card.title} card</span>
+                                <p className="text-sm md:text-base flex items-center justify-center gap-2 opacity-80 tracking-wide">
+                                    <Heart className="w-4 h-4" />
+                                    <span className="font-medium">{card.title} card</span>
                                 </p>
                             )}
                         </div>
@@ -246,11 +246,11 @@ function GreetingContent() {
 
                     {/* Card Type Badge */}
                     <div className="flex justify-center -mt-4 relative z-10">
-                        <div className="px-4 py-2 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] shadow-lg flex items-center gap-2">
+                        <div className="px-5 py-2.5 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] shadow-lg flex items-center gap-3">
                             <span className="text-xl">{card.emoji}</span>
-                            <span className="font-medium text-[var(--foreground)]">by {senderName || "your Santa"}</span>
+                            <span className="font-semibold text-base tracking-wide text-[var(--foreground)]">by {senderName || "your Santa"}</span>
                         </div>
-                        <span className="h-12 w-12 text-[53px] -mt-4 ml-1">😉</span>
+                        <span className="h-13 w-13 text-[55px] -mt-4 ml-1">😉</span>
                     </div>
                 </div>
 
@@ -294,20 +294,20 @@ function GreetingContent() {
 
 
                 {/* Footer Message */}
-                <div className="mt-30 p-8 rounded-3xl bg-black/50 backdrop-blur-sm text-center border border-white/10">
-                    <div className="mb-2">
-                        <p className="text-sm text-white/70">
+                <div className="mt-30 p-8 md:p-10 rounded-3xl bg-white/20 backdrop-blur-sm text-center border border-white/10">
+                    <div className="mb-3">
+                        <p className="text-base tracking-wide text-black/80">
                             🎄 Spread the Christmas joy with TrustChristmas 🎁
                         </p>
                     </div>
 
-                    <div className="mt-0">
-                        <p className="text-white font-medium mb-4">
+                    <div className="mt-4">
+                        <p className="text-lg md:text-xl text-black font-semibold mb-5 tracking-wide">
                             Want to send your own Christmas greeting?
                         </p>
                         <Link
                             href="/greetings"
-                            className="bg-amber-400 text-black hover:bg-amber-300 inline-flex px-8 py-4 rounded-full mx-auto mt-4 items-center gap-3 font-bold transition-all shadow-lg"
+                            className="bg-amber-400 text-black hover:bg-zinc-900 hover:text-white inline-flex px-8 py-4 rounded-full mx-auto mt-4 items-center gap-3 font-bold text-base tracking-wide transition-all shadow-lg hover:shadow-xl hover:scale-105"
                         >
                             <Sparkles className="w-5 h-5" />
                             <span>Create Your Greeting</span>
@@ -323,9 +323,9 @@ function GreetingContent() {
 
 
                 {/* Features Promotion Section */}
-                <div className="mt-12 mb-8">
-                    <h2 className="text-2xl font-bold text-center text-zinc-950 mb-2">✨ Explore More Features ✨</h2>
-                    <p className="text-center text-zinc-900 mb-8">Discover everything TrustChristmas has to offer!</p>
+                <div className="mt-16 mb-12">
+                    <h2 className="text-3xl md:text-4xl font-extrabold text-center text-zinc-950 mb-3 tracking-tight">✨ Explore More Features ✨</h2>
+                    <p className="text-center text-zinc-700 text-lg mb-10 tracking-wide">Discover everything TrustChristmas has to offer!</p>
 
                     <div className="grid grid-cols-1 gap-6">
 
