@@ -290,43 +290,37 @@ function GreetingContent() {
                     </div>
                 )}
 
+
+
+
+                {/* Footer Message */}
+                <div className="mt-30 p-8 rounded-3xl bg-black/50 backdrop-blur-sm text-center border border-white/10">
+                    <div className="mb-2">
+                        <p className="text-sm text-white/70">
+                            🎄 Spread the Christmas joy with TrustChristmas 🎁
+                        </p>
+                    </div>
+
+                    <div className="mt-0">
+                        <p className="text-white font-medium mb-4">
+                            Want to send your own Christmas greeting?
+                        </p>
+                        <Link
+                            href="/greetings"
+                            className="bg-amber-400 text-black hover:bg-amber-300 inline-flex px-8 py-4 rounded-full mx-auto mt-4 items-center gap-3 font-bold transition-all shadow-lg"
+                        >
+                            <Sparkles className="w-5 h-5" />
+                            <span>Create Your Greeting</span>
+                        </Link>
+                    </div>
+                </div>
+
+
                 {/* Ad */}
                 <div className="mt-[100px]">
                     <NativeAd />
                 </div>
 
-                {/* CTA for non-preview mode */}
-                {!isPreview && (
-                    <div className="mt-0 text-center">
-                        <p className="text-black mb-4">
-                            Want to send your own Christmas greeting?
-                        </p>
-                        <Link
-                            href="/greetings"
-                            className="bg-black text-amber-400 hover:bg-amber-400 hover:text-black inline-flex px-6 py-4 rounded-full"
-                        >
-                            <Sparkles className="w-4 h-4" />
-                            <span>Create Your Greeting</span>
-                        </Link>
-                    </div>
-                )}
-
-                {/* Footer Message */}
-                <div className="mt-12 text-center">
-                    <p className="text-sm text-black">
-                        🎄 Spread the Christmas joy with TrustChristmas 🎁
-                    </p>
-                </div>
-
-                {/* Christmas Tree Lottie Animation */}
-                <div className="flex justify-center my-8">
-                    <Lottie
-                        animationData={christmasTreeAnimation}
-                        loop={true}
-                        autoplay={true}
-                        className="w-48 h-48 rounded-full"
-                    />
-                </div>
 
                 {/* Features Promotion Section */}
                 <div className="mt-12 mb-8">
@@ -356,7 +350,7 @@ function GreetingContent() {
                                 </div>
                             </div>
                         </Link>
-                        
+
                         {/* Spin & Win */}
                         <Link
                             href="/spin"
