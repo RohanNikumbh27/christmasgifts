@@ -10,17 +10,13 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
 
     const cardId = params?.card ? String(params.card) : "classic";
     const recipientName = params?.to ? String(params.to) : "";
-    const senderName = params?.from ? String(params.from) : "Someone special";
+    const senderName = params?.from ? String(params.from) : "Your friend";
 
     const card = getCardById(cardId) || greetingCards[0];
 
-    const title = recipientName
-        ? `${card.emoji} Christmas Greeting for ${recipientName}!`
-        : `${card.emoji} You've received a Christmas Greeting!`;
+    const title = `🎅 ${senderName} has sent you Christmas greetings! ✨🎄`;
 
-    const description = recipientName
-        ? `${senderName} has sent a special Christmas greeting to ${recipientName}. Open to see the magical message! 🎄✨`
-        : `${senderName} has sent you a special Christmas greeting. Open to see the magical message! 🎄✨`;
+    const description = `Open to view your special message from ${senderName}!`;
 
     return {
         title: title,

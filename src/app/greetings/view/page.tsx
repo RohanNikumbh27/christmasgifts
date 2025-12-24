@@ -54,7 +54,7 @@ function GreetingContent() {
 
     const handleWhatsApp = () => {
         const shareLink = getShareableLink();
-        const text = encodeURIComponent(`🎄 You've received a Christmas greeting! Open to view:\n${shareLink}`);
+        const text = encodeURIComponent(`🎅 ${senderName} has sent you Christmas greetings! ✨🎄\n\nOpen to view your special message:\n${shareLink}`);
         window.open(`https://wa.me/?text=${text}`, "_blank");
     };
 
