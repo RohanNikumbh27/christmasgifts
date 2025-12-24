@@ -230,9 +230,11 @@ function GreetingContent() {
                             </div>
 
                             {/* Message */}
-                            <p className="text-lg md:text-xl font-medium leading-relaxed tracking-wide mb-8 opacity-95">
-                                {message}
-                            </p>
+                            <div className="mb-8 p-8 md:p-10 rounded-3xl bg-white/20 backdrop-blur-sm text-center border border-white/10 shadow-xl">
+                                <p className="text-lg md:text-xl font-medium leading-relaxed tracking-wide opacity-95">
+                                    {message}
+                                </p>
+                            </div>
 
                             {/* Sender */}
                             {senderName && (
