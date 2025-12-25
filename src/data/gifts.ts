@@ -579,12 +579,16 @@ export const getGiftForSpinCount = (spinCount: number): Gift => {
         // First spin: ₹500 - ₹1,000
         targetMin = 500;
         targetMax = 1000;
-    } else if (spinCount >= 20) {
-        // 20+ spins: Premium gifts ₹50,000+
-        targetMin = 50000;
+    } else if (spinCount >= 35) {
+        // 35-50 spins: Ultra Premium gifts ₹100,000+
+        targetMin = 100000;
         targetMax = 200000;
+    } else if (spinCount >= 20) {
+        // 20-34 spins: Premium gifts ₹50,000+
+        targetMin = 50000;
+        targetMax = 100000;
     } else {
-        // Subsequent spins: approximately spinCount * 1000 (±30% variance)
+        // Spins 2-19: approximately spinCount * 1000 (±30% variance)
         const targetValue = spinCount * 1000;
         targetMin = Math.floor(targetValue * 0.7);
         targetMax = Math.ceil(targetValue * 1.3);

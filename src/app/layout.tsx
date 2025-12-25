@@ -3,6 +3,7 @@ import { Lexend } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const lexend = Lexend({
   variable: "--font-lexend",
@@ -29,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${lexend.variable} font-sans antialiased`}>
-
+        <GoogleAnalytics />
         <ThemeProvider>
           {children}
         </ThemeProvider>

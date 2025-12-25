@@ -24,13 +24,31 @@ export default function SpinPage() {
         if (hasStarted.current) return;
         hasStarted.current = true;
 
-        // Load spin count from localStorage, default to 1 if not found
+        // Load spin count and first spin timestamp from localStorage
         const storedSpinCount = localStorage.getItem("spinCount");
+        const firstSpinTime = localStorage.getItem("firstSpinTime");
         let currentSpinCount = storedSpinCount ? parseInt(storedSpinCount, 10) : 1;
 
-        // Reset to 1 if we've reached 20 spins
-        if (currentSpinCount > 20) {
+        // Check if 5 minutes have passed since the first spin
+        const now = Date.now();
+        const fiveMinutesInMs = 5 * 60 * 1000;
+
+        if (firstSpinTime) {
+            const timeElapsed = now - parseInt(firstSpinTime, 10);
+            if (timeElapsed > fiveMinutesInMs) {
+                // Reset spin count if more than 5 minutes have passed
+                currentSpinCount = 1;
+                localStorage.setItem("firstSpinTime", now.toString());
+            }
+        } else {
+            // First spin ever, store the timestamp
+            localStorage.setItem("firstSpinTime", now.toString());
+        }
+
+        // Reset to 1 if we've reached 50 spins
+        if (currentSpinCount > 50) {
             currentSpinCount = 1;
+            localStorage.setItem("firstSpinTime", now.toString());
         }
 
         setSpinCount(currentSpinCount);
@@ -83,13 +101,34 @@ export default function SpinPage() {
     };
 
     const handleSpinAgain = () => {
-        // Increment the spin count in localStorage
-        const storedSpinCount = localStorage.getItem("spinCount");
-        let newSpinCount = storedSpinCount ? parseInt(storedSpinCount, 10) + 1 : 2;
+        // Check if 5 minutes have passed since the first spin
+        const firstSpinTime = localStorage.getItem("firstSpinTime");
+        const now = Date.now();
+        const fiveMinutesInMs = 5 * 60 * 1000;
 
-        // Reset to 1 if we've reached beyond 20 spins
-        if (newSpinCount > 20) {
+        let newSpinCount: number;
+
+        if (firstSpinTime) {
+            const timeElapsed = now - parseInt(firstSpinTime, 10);
+            if (timeElapsed > fiveMinutesInMs) {
+                // Reset spin count if more than 5 minutes have passed
+                newSpinCount = 1;
+                localStorage.setItem("firstSpinTime", now.toString());
+            } else {
+                // Within 5 minutes, increment normally
+                const storedSpinCount = localStorage.getItem("spinCount");
+                newSpinCount = storedSpinCount ? parseInt(storedSpinCount, 10) + 1 : 2;
+            }
+        } else {
+            // No first spin time, start fresh
             newSpinCount = 1;
+            localStorage.setItem("firstSpinTime", now.toString());
+        }
+
+        // Reset to 1 if we've reached beyond 50 spins
+        if (newSpinCount > 50) {
+            newSpinCount = 1;
+            localStorage.setItem("firstSpinTime", now.toString());
         }
 
         // Save the new spin count to localStorage
@@ -221,7 +260,7 @@ export default function SpinPage() {
                     </div>
 
                     {/* Main Content - Responsive Layout */}
-                    <div className="flex flex-col items-center justify-center gap-8">           
+                    <div className="flex flex-col items-center justify-center gap-8">
 
 
                         {/* Spinner Section */}
