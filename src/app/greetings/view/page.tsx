@@ -253,12 +253,12 @@ function GreetingContent() {
                     </div>
 
                     {/* Card Type Badge */}
-                    <div className="flex justify-center -mt-4 relative z-10">
+                    <div className="flex justify-center mt-2 relative z-10">
                         <div className="px-5 py-2.5 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] shadow-lg flex items-center gap-3">
                             <span className="text-xl">{card.emoji}</span>
                             <span className="font-semibold text-base tracking-wide text-[var(--foreground)]">by {senderName || "your friend"}</span>
                         </div>
-                        <span className="h-13 w-13 text-[55px] -mt-4 ml-1">😉</span>
+                        <span className="text-4xl md:text-5xl ml-2">😉</span>
                     </div>
                 </div>
 
@@ -414,7 +414,7 @@ function GreetingContent() {
                                         </div>
                                     </div>
                                     <div className="rounded-2xl overflow-hidden border-2 border-zinc-700 group-hover:border-zinc-600 transition-colors">
-                                        <img src="/games/Christmas_Trivia.png" alt="Christmas Trivia" className="w-full rounded-t-xl" />
+                                        <img src="/games/Trivia.png" alt="New Year Trivia" className="w-full rounded-t-xl" />
                                         <div className="bg-zinc-800 px-4 py-3">
                                             <p className="text-lg text-zinc-200 font-semibold">Trivia Quiz</p>
                                             <p className="text-sm text-zinc-500 mt-1">How much do you know about New Year traditions?</p>
