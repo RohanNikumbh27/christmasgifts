@@ -15,34 +15,34 @@ const faqs: FAQItem[] = [
     // General
     {
         category: "General",
-        question: "What is TrustChristmas Gift Carnival?",
-        answer: "TrustChristmas Gift Carnival is a free Christmas giveaway program by TrustChristmas Foundation. We give away thousands of exciting gifts during the holiday season to spread joy and happiness across India."
+        question: "What is TrustNewYear Gift Carnival?",
+        answer: "TrustNewYear Gift Carnival is a free New Year giveaway program by TrustNewYear Foundation. We give away thousands of exciting gifts during the celebration season to spread joy and happiness across India."
     },
     {
         category: "General",
         question: "Is this really free? What's the catch?",
-        answer: "Yes, it's completely free! There's no catch. We're a registered NGO funded by donations and sponsors who want to spread Christmas cheer. The only requirement is that you share our campaign with friends to help us reach more people."
+        answer: "Yes, it's completely free! There's no catch. We're a registered NGO funded by donations and sponsors who want to spread New Year cheer. The only requirement is that you share our campaign with friends to help us reach more people."
     },
     {
         category: "General",
-        question: "Is TrustChristmas Foundation legitimate?",
+        question: "Is TrustNewYear Foundation legitimate?",
         answer: "Absolutely! We're a registered Non-Governmental Organization (NGO) in India. We've been operating since 2020 and have successfully delivered over 12,500 gifts to happy winners. You can see real testimonials from our winners on our website."
     },
     // Participation
     {
         category: "Participation",
         question: "How do I participate?",
-        answer: "Simply visit our homepage, spin the Christmas wheel, and win a gift! Then share your winning entry with at least 10 friends through social media. After completing the sharing, submit your email address. That's it!"
+        answer: "Simply visit our homepage, spin the New Year wheel, and win a gift! Then share your winning entry with at least 10 friends through social media. After completing the sharing, submit your email address. That's it!"
     },
     {
         category: "Participation",
         question: "Can I spin more than once?",
-        answer: "Each person can only participate once per Christmas season. We track entries to ensure fairness for everyone. Attempting multiple entries may result in disqualification."
+        answer: "Each person can only participate once per New Year season. We track entries to ensure fairness for everyone. Attempting multiple entries may result in disqualification."
     },
     {
         category: "Participation",
         question: "Why do I need to share with 10 friends?",
-        answer: "Sharing helps us spread the Christmas joy to more people and allows us to reach a wider audience. It also helps us verify that participants are real people genuinely interested in our campaign."
+        answer: "Sharing helps us spread the New Year joy to more people and allows us to reach a wider audience. It also helps us verify that participants are real people genuinely interested in our campaign."
     },
     {
         category: "Participation",
@@ -125,8 +125,8 @@ export default function FAQPage() {
                         key={category}
                         onClick={() => setActiveCategory(category)}
                         className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${activeCategory === category
-                                ? "bg-gradient-to-br from-red-500 to-pink-600 text-white"
-                                : "bg-[var(--card-bg)] text-[var(--foreground)] border border-[var(--card-border)] hover:border-[var(--foreground)]"
+                            ? "bg-gradient-to-br from-red-500 to-pink-600 text-white"
+                            : "bg-[var(--card-bg)] text-[var(--foreground)] border border-[var(--card-border)] hover:border-[var(--foreground)]"
                             }`}
                     >
                         {category === "all" ? "All Questions" : category}

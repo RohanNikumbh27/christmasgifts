@@ -2,8 +2,8 @@ import { PageLayout } from "@/components/PageLayout";
 import { Shield, Eye, Lock, UserCheck } from "lucide-react";
 
 export const metadata = {
-    title: "Privacy Policy | TrustChristmas Foundation",
-    description: "Learn how TrustChristmas Foundation collects, uses, and protects your personal information.",
+    title: "Privacy Policy | TrustNewYear Foundation",
+    description: "Learn how TrustNewYear Foundation collects, uses, and protects your personal information.",
 };
 
 export default function PrivacyPage() {
@@ -17,7 +17,7 @@ export default function PrivacyPage() {
                     <strong>Last Updated:</strong> December 1, 2025
                 </p>
                 <p className="text-[var(--text-muted)] mt-2">
-                    TrustChristmas Foundation (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy.
+                    TrustNewYear Foundation (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy.
                     This Privacy Policy explains how we collect, use, and safeguard your information.
                 </p>
             </div>
@@ -124,7 +124,7 @@ You may request deletion of your data at any time.`
 • **Opt-out:** Unsubscribe from marketing communications
 • **Portability:** Receive your data in a portable format
 
-Contact us at privacy@trustchristmas.org to exercise these rights.`
+Contact us at privacy@trustnewyear.org to exercise these rights.`
                 },
                 {
                     title: "8. Children's Privacy",
@@ -144,9 +144,9 @@ Continued use after changes constitutes acceptance of the updated policy.`
                     title: "10. Contact Us",
                     content: `For privacy-related questions or concerns:
 
-**Email:** privacy@trustchristmas.org
+**Email:** privacy@trustnewyear.org
 **Phone:** +91 9876 543 210
-**Address:** TrustChristmas Foundation, 123 Christmas Lane, Mumbai 400001`
+**Address:** TrustNewYear Foundation, 123 Celebration Lane, Mumbai 400001`
                 },
             ].map((section, index) => (
                 <div

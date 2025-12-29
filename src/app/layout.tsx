@@ -12,12 +12,12 @@ const lexend = Lexend({
 });
 
 export const metadata: Metadata = {
-  title: "TrustChristmas Gift Carnival | Win Amazing Christmas Gifts!",
-  description: "Spin the Christmas wheel and win exciting gifts from TrustChristmas Foundation. Join thousands of winners this holiday season!",
-  keywords: "Christmas gifts, lottery, wheel spin, TrustChristmas, free gifts, holiday giveaway",
+  title: "TrustNewYear Gift Carnival 2026 | Win Amazing New Year Gifts!",
+  description: "Spin the wheel and win exciting gifts from TrustNewYear Foundation. Join thousands of winners this New Year 2026!",
+  keywords: "New Year gifts, 2026, lottery, wheel spin, TrustNewYear, free gifts, new year giveaway",
   openGraph: {
-    title: "TrustChristmas Gift Carnival",
-    description: "Spin the wheel and win amazing Christmas gifts!",
+    title: "TrustNewYear Gift Carnival 2026",
+    description: "Spin the wheel and win amazing New Year gifts!",
     type: "website",
   },
 };

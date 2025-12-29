@@ -147,7 +147,7 @@ export function LotteryWheel() {
                         fill="white"
                         fontSize="16"
                     >
-                        🎄
+                        🎉
                     </text>
 
                     {/* Gradients */}
@@ -175,7 +175,7 @@ export function LotteryWheel() {
             </button>
 
             <p className="text-[var(--text-muted)] text-base text-center max-w-xs mb-5">
-                🎁 Spin the wheel and win amazing Christmas gifts from TrustChristmas Foundation!
+                🎁 Spin the wheel and win amazing New Year gifts from TrustNewYear Foundation!
             </p>
         </div>
     );

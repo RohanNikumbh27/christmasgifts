@@ -27,7 +27,7 @@ function GreetingContent() {
     const cardId = searchParams.get("card") || "classic";
     const msgParam = searchParams.get("msg") || "1";
     const recipientName = searchParams.get("to") || "";
-    const senderName = searchParams.get("from") || "your Santa Claus";
+    const senderName = searchParams.get("from") || "your friend";
     const isPreview = searchParams.get("preview") === "true";
 
     const card = getCardById(cardId) || greetingCards[0];
@@ -54,7 +54,7 @@ function GreetingContent() {
 
     const handleWhatsApp = () => {
         const shareLink = getShareableLink();
-        const text = encodeURIComponent(`🎅 ${senderName} has sent you Christmas greetings! ✨🎄\n\nOpen to view your special message:\n${shareLink}`);
+        const text = encodeURIComponent(`🥳 ${senderName} has sent you New Year greetings! ✨🎉\n\nOpen to view your special message:\n${shareLink}`);
         window.open(`https://wa.me/?text=${text}`, "_blank");
     };
 
@@ -217,8 +217,8 @@ function GreetingContent() {
                         className="relative overflow-hidden p-8  md:p-12 md:pt-4 text-white"
                     >
                         {/* Decorative elements */}
-                        <div className="absolute top-4 right-4 text-6xl opacity-20">❄️</div>
-                        <div className="absolute bottom-4 left-4 text-6xl opacity-20">❄️</div>
+                        <div className="absolute top-4 right-4 text-6xl opacity-20">✨</div>
+                        <div className="absolute bottom-4 left-4 text-6xl opacity-20">✨</div>
 
                         <div className="relative z-10 text-center">
                             {/* Emoji */}
@@ -256,7 +256,7 @@ function GreetingContent() {
                     <div className="flex justify-center -mt-4 relative z-10">
                         <div className="px-5 py-2.5 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] shadow-lg flex items-center gap-3">
                             <span className="text-xl">{card.emoji}</span>
-                            <span className="font-semibold text-base tracking-wide text-[var(--foreground)]">by {senderName || "your Santa"}</span>
+                            <span className="font-semibold text-base tracking-wide text-[var(--foreground)]">by {senderName || "your friend"}</span>
                         </div>
                         <span className="h-13 w-13 text-[55px] -mt-4 ml-1">😉</span>
                     </div>
@@ -305,13 +305,13 @@ function GreetingContent() {
                 <div className="mt-30 p-8 md:p-10 rounded-3xl bg-white/20 backdrop-blur-sm text-center border border-white/10">
                     <div className="mb-3">
                         <p className="text-base tracking-wide text-black/80">
-                            🎄 Spread the Christmas joy with TrustChristmas 🎁
+                            🎉 Spread the New Year joy with TrustNewYear 🎁
                         </p>
                     </div>
 
                     <div className="mt-4">
                         <p className="text-lg md:text-xl text-black font-semibold mb-5 tracking-wide">
-                            Want to send your own Christmas greeting?
+                            Want to send your own New Year greeting?
                         </p>
                         <Link
                             href="/greetings"
@@ -333,7 +333,7 @@ function GreetingContent() {
                 {/* Features Promotion Section */}
                 <div className="mt-16 mb-12">
                     <h2 className="text-3xl md:text-4xl font-extrabold text-center text-zinc-950 mb-3 tracking-tight">✨ Explore More Features ✨</h2>
-                    <p className="text-center text-zinc-700 text-lg mb-10 tracking-wide">Discover everything TrustChristmas has to offer!</p>
+                    <p className="text-center text-zinc-700 text-lg mb-10 tracking-wide">Discover everything TrustNewYear has to offer!</p>
 
                     <div className="grid grid-cols-1 gap-6">
 
@@ -345,13 +345,13 @@ function GreetingContent() {
                             <div className="absolute top-4 right-4 text-8xl text-zinc-700 opacity-40 group-hover:opacity-60 transition-opacity">💌</div>
                             <div className="relative z-10">
                                 <div className="flex items-center gap-4 mb-4">
-                                    <span className="text-5xl">🎄</span>
+                                    <span className="text-5xl">🎉</span>
                                     <div>
                                         <h3 className="text-2xl font-bold text-zinc-100">Send Greetings</h3>
                                         <p className="text-zinc-500 text-sm">Share joy with loved ones</p>
                                     </div>
                                 </div>
-                                <p className="text-zinc-300 text-base leading-relaxed">Create beautiful personalized Christmas greetings and share them with your friends and family. Spread the holiday cheer!</p>
+                                <p className="text-zinc-300 text-base leading-relaxed">Create beautiful personalized New Year greetings and share them with your friends and family. Spread the celebration!</p>
                                 <div className="mt-4 inline-flex items-center gap-2 text-zinc-400 group-hover:text-zinc-200 transition-colors">
                                     <span className="text-sm font-medium">Create Greeting</span>
                                     <span>→</span>
@@ -373,7 +373,7 @@ function GreetingContent() {
                                         <p className="text-zinc-500 text-sm">Try your luck now</p>
                                     </div>
                                 </div>
-                                <p className="text-zinc-300 text-base leading-relaxed">Win amazing prizes like iPhones, MacBooks, Amazon vouchers, AirPods & more! Spin the wheel and claim your Christmas gift today!</p>
+                                <p className="text-zinc-300 text-base leading-relaxed">Win amazing prizes like iPhones, MacBooks, Amazon vouchers, AirPods & more! Spin the wheel and claim your New Year gift today!</p>
                                 <div className="mt-4 inline-flex items-center gap-2 text-zinc-400 group-hover:text-zinc-200 transition-colors">
                                     <span className="text-sm font-medium">Start Spinning</span>
                                     <span>→</span>
@@ -391,11 +391,11 @@ function GreetingContent() {
                                 <div className="flex items-center gap-4 mb-4">
                                     <span className="text-5xl">🕹️</span>
                                     <div>
-                                        <h3 className="text-2xl font-bold text-zinc-100">Fun Christmas Games</h3>
+                                        <h3 className="text-2xl font-bold text-zinc-100">Fun New Year Games</h3>
                                         <p className="text-zinc-500 text-sm">3 exciting games to play</p>
                                     </div>
                                 </div>
-                                <p className="text-zinc-300 text-base leading-relaxed mb-6">Play exciting games - Catch falling gifts, test your memory skills, and challenge your Christmas trivia knowledge!</p>
+                                <p className="text-zinc-300 text-base leading-relaxed mb-6">Play exciting games - Catch falling gifts, test your memory skills, and challenge your New Year trivia knowledge!</p>
 
                                 {/* Game Thumbnails - One per row, image on top, text below */}
                                 <div className="flex flex-col gap-6">
@@ -417,7 +417,7 @@ function GreetingContent() {
                                         <img src="/games/Christmas_Trivia.png" alt="Christmas Trivia" className="w-full rounded-t-xl" />
                                         <div className="bg-zinc-800 px-4 py-3">
                                             <p className="text-lg text-zinc-200 font-semibold">Trivia Quiz</p>
-                                            <p className="text-sm text-zinc-500 mt-1">How much do you know about Christmas?</p>
+                                            <p className="text-sm text-zinc-500 mt-1">How much do you know about New Year traditions?</p>
                                         </div>
                                     </div>
                                 </div>
@@ -441,7 +441,7 @@ export default function GreetingViewPage() {
         <Suspense fallback={
             <div className="min-h-screen bg-[var(--background)] flex items-center justify-center">
                 <div className="text-center">
-                    <div className="text-6xl mb-4 animate-bounce">🎄</div>
+                    <div className="text-6xl mb-4 animate-bounce">🎉</div>
                     <p className="text-[var(--text-muted)]">Loading your greeting...</p>
                 </div>
             </div>

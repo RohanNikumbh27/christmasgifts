@@ -80,7 +80,7 @@ export default function WinnersPage() {
                 {/* Decorative elements */}
                 <div className="absolute top-0 left-0 w-32 h-32 bg-white/10 rounded-full blur-2xl" />
                 <div className="absolute bottom-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-2xl" />
-                <div className="absolute top-4 right-4 text-6xl opacity-20">🎄</div>
+                <div className="absolute top-4 right-4 text-6xl opacity-20">🎉</div>
                 <div className="absolute bottom-4 left-4 text-6xl opacity-20">🎁</div>
 
                 <div className="relative z-10">
@@ -93,7 +93,7 @@ export default function WinnersPage() {
                         Want to be Our Next Winner? 🌟
                     </h3>
                     <p className="text-white/90 mb-8 text-lg max-w-md mx-auto">
-                        Join thousands of happy winners this Christmas season!
+                        Join thousands of happy winners this New Year 2026!
                     </p>
                     <Link
                         href="/"
@@ -110,7 +110,7 @@ export default function WinnersPage() {
                 <div className="flex items-center justify-center gap-2 mb-6">
                     <Sparkles className="w-5 h-5 text-yellow-500" />
                     <h2 className="text-2xl font-bold text-[var(--foreground)]">Gifts We&apos;ve Given</h2>
-                    <span className="text-2xl">🎄</span>
+                    <span className="text-2xl">🎉</span>
                 </div>
                 <div className="flex flex-wrap justify-center gap-3">
                     {giftCategories.map((gift, index) => (

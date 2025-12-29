@@ -12,7 +12,7 @@ export function HowItWorks() {
                             How It Works ✨
                         </h3>
                         <p className="text-lg text-[var(--text-muted)]">
-                            Get your Christmas gift in 3 simple steps
+                            Get your New Year gift in 3 simple steps
                         </p>
                     </div>
 
@@ -33,7 +33,7 @@ export function HowItWorks() {
                             {
                                 step: 3,
                                 title: "Receive Your Gift",
-                                desc: "Get your Christmas gift delivered to your doorstep!",
+                                desc: "Get your New Year gift delivered to your doorstep!",
                                 icon: "📦",
                             },
                         ].map((item, index) => (

@@ -255,7 +255,7 @@ export default function SpinPage() {
                             {isSpinning ? "Spinning..." : hasSpun ? "🎉 You Won!" : "Ready to Spin!"}
                         </h1>
                         <p className="text-lg text-[var(--text-muted)]">
-                            {isSpinning ? "Watch the wheel decide your fate!" : hasSpun ? "Congratulations on your prize!" : "Your Christmas gift awaits!"}
+                            {isSpinning ? "Watch the wheel decide your fate!" : hasSpun ? "Congratulations on your prize!" : "Your New Year gift awaits!"}
                         </p>
                     </div>
 
@@ -312,7 +312,7 @@ export default function SpinPage() {
                                             fill="white"
                                             fontSize="16"
                                         >
-                                            🎄
+                                            🎉
                                         </text>
                                         <defs>
                                             <linearGradient id="pinkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -382,7 +382,7 @@ export default function SpinPage() {
                             {/* Spinning indicator */}
                             {isSpinning && (
                                 <p className="text-[var(--text-muted)] text-base text-center max-w-xs animate-pulse">
-                                    🎁 The wheel is choosing your Christmas gift...
+                                    🎁 The wheel is choosing your New Year gift...
                                 </p>
                             )}
                         </div>

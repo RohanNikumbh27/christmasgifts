@@ -2,15 +2,15 @@ import { PageLayout } from "@/components/PageLayout";
 import Link from "next/link";
 
 export const metadata = {
-    title: "How It Works | TrustChristmas Foundation",
-    description: "Learn how to win amazing Christmas gifts from TrustChristmas Foundation in 3 simple steps.",
+    title: "How It Works | TrustNewYear Foundation",
+    description: "Learn how to win amazing New Year gifts from TrustNewYear Foundation in 3 simple steps.",
 };
 
 export default function HowItWorksPage() {
     return (
         <PageLayout
             title="How It Works ✨"
-            subtitle="Get your Christmas gift in 3 simple steps"
+            subtitle="Get your New Year gift in 3 simple steps"
         >
             {/* Steps */}
             <div className="space-y-6 mb-12">
@@ -19,7 +19,7 @@ export default function HowItWorksPage() {
                         step: 1,
                         icon: "🎡",
                         title: "Spin the Wheel",
-                        desc: "Visit our homepage and click the 'Spin Now' button to spin the magical Christmas wheel. The wheel contains various exciting gifts ranging from electronics to jewelry, and everyone's a winner!",
+                        desc: "Visit our homepage and click the 'Spin Now' button to spin the magical New Year wheel. The wheel contains various exciting gifts ranging from electronics to jewelry, and everyone's a winner!",
                         tips: [
                             "Make sure you have a stable internet connection",
                             "Wait for the wheel to completely stop spinning",
@@ -85,7 +85,7 @@ export default function HowItWorksPage() {
                 {[
                     {
                         q: "Is this really free?",
-                        a: "Yes! TrustChristmas Foundation is a registered NGO that gives away gifts during the Christmas season. There are no hidden charges."
+                        a: "Yes! TrustNewYear Foundation is a registered NGO that gives away gifts during the New Year season. There are no hidden charges."
                     },
                     {
                         q: "What if I don't complete sharing?",
@@ -97,7 +97,7 @@ export default function HowItWorksPage() {
                     },
                     {
                         q: "Can I spin multiple times?",
-                        a: "Each person can spin once per Christmas season. Make sure to complete your sharing to claim your gift!"
+                        a: "Each person can spin once per New Year season. Make sure to complete your sharing to claim your gift!"
                     },
                 ].map((faq, index) => (
                     <div

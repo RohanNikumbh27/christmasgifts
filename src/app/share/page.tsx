@@ -76,7 +76,7 @@ export default function SharePage() {
 
     const handleShare = async (platform: string) => {
         const shareUrl = typeof window !== 'undefined' ? window.location.origin : '';
-        const shareText = `🎄 I just won ${gift?.name} from TrustChristmas Foundation! Spin the wheel and win amazing Christmas gifts! 🎁`;
+        const shareText = `🎉 I just won ${gift?.name} from TrustNewYear Foundation! Spin the wheel and win amazing New Year gifts! 🎁`;
 
         // Handle copy separately - no increment
         if (platform === 'copy') {
@@ -90,7 +90,7 @@ export default function SharePage() {
         if (navigator.share && platform !== 'copy') {
             try {
                 await navigator.share({
-                    title: 'TrustChristmas Gift Carnival',
+                    title: 'TrustNewYear Gift Carnival 2026',
                     text: shareText,
                     url: shareUrl,
                 });

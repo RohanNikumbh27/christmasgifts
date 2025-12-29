@@ -14,7 +14,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
 
     const card = getCardById(cardId) || greetingCards[0];
 
-    const title = `🎅 ${senderName} has sent you Christmas greetings! ✨🎄`;
+    const title = `🥳 ${senderName} has sent you New Year greetings! ✨🎉`;
 
     const description = `Open to view your special message from ${senderName}!`;
 
@@ -30,7 +30,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
                     url: "/og-greeting.png",
                     width: 1200,
                     height: 630,
-                    alt: "Christmas Greeting from TrustChristmas",
+                    alt: "New Year Greeting from TrustNewYear",
                 },
             ],
         },

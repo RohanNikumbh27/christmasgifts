@@ -55,7 +55,7 @@ export default function GreetingsPage() {
 
     const handleWhatsApp = () => {
         const shareLink = getShareableLink();
-        const text = encodeURIComponent(`🎄 You've received a Christmas greeting! Open to view:\n${shareLink}`);
+        const text = encodeURIComponent(`🎉 You've received a New Year greeting! Open to view:\n${shareLink}`);
         window.open(`https://wa.me/?text=${text}`, "_blank");
     };
 
@@ -74,10 +74,10 @@ export default function GreetingsPage() {
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-2 md:mb-8">
                 <div>
                     <h2 className="text-2xl md:text-3xl font-bold text-[var(--foreground)] !m-0 !p-0">
-                        Send Christmas Greetings! 🎅
+                        Send New Year Greetings! 🥳
                     </h2>
                     {/* <p className="text-sm text-[var(--text-muted)]">
-                        Create beautiful Christmas greetings for your loved ones
+                        Create beautiful New Year greetings for your loved ones
                     </p> */}
                 </div>
 

@@ -43,7 +43,7 @@ export function Navbar() {
                                 <Gift className="w-6 h-6 text-white" />
                             </div>
                             <div>
-                                <h1 className="font-bold text-[var(--foreground)]">TrustChristmas</h1>
+                                <h1 className="font-bold text-[var(--foreground)]">TrustNewYear</h1>
                                 <p className="text-xs text-zinc-600 dark:text-zinc-400">GlobalTrust Foundation</p>
                             </div>
                         </Link>
@@ -166,16 +166,16 @@ export function Navbar() {
                                     <div className="absolute bottom-0 left-0 -mb-4 -ml-4 w-24 h-24 bg-black/10 rounded-full blur-2xl" />
 
                                     <div className="relative z-10 text-center">
-                                        <div className="text-3xl mb-2">🎄</div>
-                                        <h3 className="font-bold text-lg mb-1">Merry Christmas!</h3>
+                                        <div className="text-3xl mb-2">🎉</div>
+                                        <h3 className="font-bold text-lg mb-1">Happy New Year 2026!</h3>
                                         <p className="text-red-100 text-sm opacity-90">
-                                            May your holidays be filled with joy and gifts! 🎁
+                                            May your new year be filled with joy and gifts! 🎁
                                         </p>
                                     </div>
                                 </div>
                                 <div className="mt-6 text-center">
                                     <p className="text-xs text-[var(--text-muted)] font-medium">
-                                        Made with ❤️ by TrustChristmas
+                                        Made with ❤️ by TrustNewYear
                                     </p>
                                 </div>
                             </div>

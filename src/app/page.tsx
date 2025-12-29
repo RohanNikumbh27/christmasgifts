@@ -26,7 +26,7 @@ export default function Home() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-br from-pink-600 to-rose-600 border border-pink-500/30 mb-6 animate-fade-in">
             <WandSparkles className="w-4 h-4 text-yellow-400" />
-            <span className="text-base font-medium text-zinc-100">Christmas Special 2025</span>
+            <span className="text-base font-medium text-zinc-100">New Year Special 2026</span>
           </div>
 
           {/* Title */}
@@ -35,11 +35,11 @@ export default function Home() {
               Win Amazing
             </span>
             <br />
-            <span className="text-[var(--foreground)]">Christmas Gifts! 🎄</span>
+            <span className="text-[var(--foreground)]">New Year Gifts! 🎉</span>
           </h2>
 
           <p className="text-xl text-[var(--text-muted)] max-w-xl mx-auto mb-8 animate-slide-up" style={{ animationDelay: '100ms' }}>
-            Spin the wheel and claim your Christmas gift from TrustChristmas Foundation.
+            Spin the wheel and claim your New Year gift from TrustNewYear Foundation.
             Over <strong className="text-[var(--foreground)]">10,000+ winners</strong> already!
           </p>
 
@@ -105,7 +105,7 @@ export default function Home() {
               🏆 Real Winners, Real Gifts
             </h3>
             <p className="text-lg text-[var(--text-muted)]">
-              See what our lucky winners have to say about their Christmas gifts!
+              See what our lucky winners have to say about their New Year gifts!
             </p>
           </div>
 
@@ -162,12 +162,12 @@ export default function Home() {
                   <Gift className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-white">TrustChristmas</h3>
+                  <h3 className="font-bold text-white">TrustNewYear</h3>
                   <p className="text-xs text-zinc-400">GlobalTrust Foundation</p>
                 </div>
               </div>
               <p className="text-sm text-zinc-400">
-                Spreading joy and happiness through our Christmas Gift Carnival. A trusted foundation bringing smiles to thousands.
+                Spreading joy and happiness through our New Year Gift Carnival 2026. A trusted foundation bringing smiles to thousands.
               </p>
             </div>
 
@@ -193,8 +193,8 @@ export default function Home() {
           </div>
 
           <div className="pt-8 border-t border-zinc-800 text-center text-sm text-zinc-400">
-            <p>© 2025 TrustChristmas by GlobalTrust Foundation. All rights reserved.</p>
-            <p className="mt-2">Made with ❤️ for spreading Christmas joy</p>
+            <p>© 2026 TrustNewYear by GlobalTrust Foundation. All rights reserved.</p>
+            <p className="mt-2">Made with ❤️ for spreading New Year joy</p>
           </div>
         </div>
       </footer>

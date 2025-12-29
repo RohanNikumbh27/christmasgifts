@@ -17,11 +17,11 @@ export const allGifts: Gift[] = [
     // ==================== ₹500 - ₹1,000 (First Spin) ====================
     {
         id: 1,
-        name: "Christmas Ornaments",
+        name: "New Year Decorations",
         color: "#ef4444",
         textColor: "#ffffff",
-        icon: "🎄",
-        image: "/gifts/christmas_ornaments.png",
+        icon: "🎉",
+        image: "/gifts/new_year_decorations.png",
         value: "₹599",
         numericValue: 599,
         category: "Decor"
@@ -50,7 +50,7 @@ export const allGifts: Gift[] = [
     },
     {
         id: 4,
-        name: "Premium Planner 2025",
+        name: "Premium Planner 2026",
         color: "#f43f5e",
         textColor: "#ffffff",
         icon: "📓",

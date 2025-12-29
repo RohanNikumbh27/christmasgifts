@@ -6,7 +6,7 @@ import { ArrowLeft, RotateCcw, Trophy } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import NativeAd from "@/components/NativeAd";
 
-const emojis = ["🎄", "🎅", "🎁", "⭐", "🔔", "❄️", "🦌", "🍪"];
+const emojis = ["🎉", "🥳", "🎁", "⭐", "🥂", "✨", "🎊", "🍾"];
 
 interface Card {
     id: number;
@@ -114,7 +114,7 @@ export default function MemoryGame() {
                         🧠 Memory Match
                     </h1>
                     <p className="text-[var(--text-muted)]">
-                        Match all the Christmas pairs!
+                        Match all the New Year pairs!
                     </p>
                 </div>
 
@@ -142,7 +142,7 @@ export default function MemoryGame() {
                                 } ${card.isMatched ? "opacity-50" : ""}`}
                             disabled={card.isMatched}
                         >
-                            {card.isFlipped || card.isMatched ? card.emoji : "🎄"}
+                            {card.isFlipped || card.isMatched ? card.emoji : "🎉"}
                         </button>
                     ))}
                 </div>

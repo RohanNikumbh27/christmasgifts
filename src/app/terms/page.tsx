@@ -1,8 +1,8 @@
 import { PageLayout } from "@/components/PageLayout";
 
 export const metadata = {
-    title: "Terms & Conditions | TrustChristmas Foundation",
-    description: "Read the terms and conditions for participating in TrustChristmas Gift Carnival.",
+    title: "Terms & Conditions | TrustNewYear Foundation",
+    description: "Read the terms and conditions for participating in TrustNewYear Gift Carnival.",
 };
 
 export default function TermsPage() {
@@ -22,7 +22,7 @@ export default function TermsPage() {
                 {[
                     {
                         title: "1. Acceptance of Terms",
-                        content: `By participating in the TrustChristmas Gift Carnival ("Carnival"), you agree to be bound by these Terms and Conditions. If you do not agree with any part of these terms, please do not participate in the Carnival.`
+                        content: `By participating in the TrustNewYear Gift Carnival ("Carnival"), you agree to be bound by these Terms and Conditions. If you do not agree with any part of these terms, please do not participate in the Carnival.`
                     },
                     {
                         title: "2. Eligibility",
@@ -32,23 +32,23 @@ export default function TermsPage() {
 • Have a valid email address
 • Have access to social media platforms for sharing
 
-Employees of TrustChristmas Foundation and their immediate family members are not eligible to participate.`
+Employees of TrustNewYear Foundation and their immediate family members are not eligible to participate.`
                     },
                     {
                         title: "3. How to Participate",
                         content: `Participation involves the following steps:
-1. Visit our website and spin the Christmas wheel
+1. Visit our website and spin the New Year wheel
 2. Share your winning entry with at least 10 friends through social media platforms
 3. Submit your valid email address
 4. Wait for verification and delivery confirmation
 
-Each participant may only enter once per Christmas season. Multiple entries will result in disqualification.`
+Each participant may only enter once per New Year season. Multiple entries will result in disqualification.`
                     },
                     {
                         title: "4. Prize Information",
                         content: `• All prizes are given free of charge
 • Prizes cannot be exchanged for cash or other items
-• TrustChristmas Foundation reserves the right to substitute prizes of equal or greater value
+• TrustNewYear Foundation reserves the right to substitute prizes of equal or greater value
 • Prize delivery is subject to verification of sharing requirements
 • Delivery is available only within India`
                     },
@@ -61,7 +61,7 @@ Each participant may only enter once per Christmas season. Multiple entries will
                     },
                     {
                         title: "6. Verification Process",
-                        content: `TrustChristmas Foundation reserves the right to verify all entries. We may:
+                        content: `TrustNewYear Foundation reserves the right to verify all entries. We may:
 • Contact you via email for verification
 • Request additional information
 • Disqualify entries that appear fraudulent
@@ -76,11 +76,11 @@ Each participant may only enter once per Christmas season. Multiple entries will
                     },
                     {
                         title: "8. Intellectual Property",
-                        content: `All content on this website, including but not limited to text, graphics, logos, and images, is the property of TrustChristmas Foundation and is protected by copyright laws.`
+                        content: `All content on this website, including but not limited to text, graphics, logos, and images, is the property of TrustNewYear Foundation and is protected by copyright laws.`
                     },
                     {
                         title: "9. Limitation of Liability",
-                        content: `TrustChristmas Foundation shall not be liable for:
+                        content: `TrustNewYear Foundation shall not be liable for:
 • Any technical issues preventing participation
 • Loss or damage arising from prize delivery
 • Any indirect, incidental, or consequential damages
@@ -97,7 +97,7 @@ Each participant may only enter once per Christmas season. Multiple entries will
                     {
                         title: "12. Contact Information",
                         content: `For questions about these Terms and Conditions, please contact us at:
-Email: legal@trustchristmas.org
+Email: legal@trustnewyear.org
 Phone: +91 9876 543 210`
                     },
                 ].map((section, index) => (
@@ -113,7 +113,7 @@ Phone: +91 9876 543 210`
 
                 <div className="card text-center bg-gradient-to-br from-red-500/10 to-pink-500/10 border-red-500/20 animate-fade-in mt-8">
                     <p className="text-[var(--foreground)]">
-                        By participating in the TrustChristmas Gift Carnival, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions.
+                        By participating in the TrustNewYear Gift Carnival, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions.
                     </p>
                 </div>
             </div>

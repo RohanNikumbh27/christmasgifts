@@ -5,18 +5,18 @@ import NativeAd from "@/components/NativeAd";
 import { GreetingsPromo } from "@/components/GreetingsPromo";
 
 export const metadata = {
-    title: "Christmas Games | TrustChristmas Foundation",
-    description: "Play fun Christmas games and win amazing prizes!",
+    title: "New Year Games | TrustNewYear Foundation",
+    description: "Play fun New Year games and win amazing prizes!",
 };
 
 const games = [
     {
         id: "memory",
         title: "Memory Match",
-        description: "Match Christmas pairs to test your memory!",
+        description: "Match New Year pairs to test your memory!",
         icon: Brain,
         color: "from-purple-500 to-indigo-600",
-        emoji: "🎄",
+        emoji: "🎉",
     },
     {
         id: "catch",
@@ -28,8 +28,8 @@ const games = [
     },
     {
         id: "trivia",
-        title: "Christmas Trivia",
-        description: "Test your Christmas knowledge with fun questions!",
+        title: "New Year Trivia",
+        description: "Test your New Year knowledge with fun questions!",
         icon: HelpCircle,
         color: "from-green-500 to-emerald-600",
         emoji: "❓",
@@ -39,8 +39,8 @@ const games = [
 export default function GamesPage() {
     return (
         <PageLayout
-            title="Christmas Games 🎮"
-            subtitle="Play fun games and spread the holiday cheer!"
+            title="New Year Games 🎮"
+            subtitle="Play fun games and spread the celebration!"
         >
             {/* Games Grid */}
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
@@ -88,17 +88,17 @@ export default function GamesPage() {
                     🏆 Compete & Win!
                 </h3>
                 <p className="text-[var(--text-muted)]">
-                    Play our Christmas games and share your high scores with friends.
+                    Play our New Year games and share your high scores with friends.
                     The more you play, the more fun you spread!
                 </p>
             </div>
 
-             {/* Greetings Promo */}
-                  <section className="px-4">
-                    <div className="max-w-6xl mx-auto">
-                      <GreetingsPromo />
-                    </div>
-                  </section>
+            {/* Greetings Promo */}
+            <section className="px-4">
+                <div className="max-w-6xl mx-auto">
+                    <GreetingsPromo />
+                </div>
+            </section>
         </PageLayout>
     );
 }

@@ -98,7 +98,7 @@ export function MiniSpinner() {
                     fill="white"
                     fontSize="8"
                 >
-                    🎄
+                    🎉
                 </text>
 
                 <defs>

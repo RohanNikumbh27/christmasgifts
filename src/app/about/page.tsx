@@ -2,15 +2,15 @@ import { PageLayout } from "@/components/PageLayout";
 import { Shield, Users, Award, Heart, Target, Star } from "lucide-react";
 
 export const metadata = {
-    title: "About Us | TrustChristmas Foundation",
-    description: "Learn about TrustChristmas Foundation - our mission to spread joy and happiness through Christmas gifts.",
+    title: "About Us | TrustNewYear Foundation",
+    description: "Learn about TrustNewYear Foundation - our mission to spread joy and happiness through New Year gifts.",
 };
 
 export default function AboutPage() {
     return (
         <PageLayout
-            title="About TrustChristmas 🎄"
-            subtitle="Spreading joy and happiness through our Christmas Gift Carnival"
+            title="About TrustNewYear 🎉"
+            subtitle="Spreading joy and happiness through our New Year Gift Carnival 2026"
         >
             {/* Mission Section */}
             <div className="card mb-8 animate-fade-in">
@@ -21,9 +21,9 @@ export default function AboutPage() {
                     <h2 className="text-2xl font-bold text-[var(--foreground)]">Our Mission</h2>
                 </div>
                 <p className="text-[var(--text-muted)] leading-relaxed">
-                    At TrustChristmas Foundation, we believe that the magic of Christmas should be experienced by everyone.
+                    At TrustNewYear Foundation, we believe that the magic of New Year should be experienced by everyone.
                     Our mission is to spread joy and happiness by giving amazing gifts to people all around India during
-                    the festive season. We&apos;ve been making Christmas special since 2020, and we&apos;ve touched the lives
+                    the festive season. We&apos;ve been making New Year special since 2020, and we&apos;ve touched the lives
                     of over 10,000+ families.
                 </p>
             </div>
@@ -38,7 +38,7 @@ export default function AboutPage() {
                 </div>
                 <p className="text-[var(--text-muted)] leading-relaxed">
                     We envision a world where the spirit of giving transcends boundaries. Our goal is to become
-                    the largest Christmas gift-giving initiative in India, reaching every corner of the nation
+                    the largest New Year gift-giving initiative in India, reaching every corner of the nation
                     with smiles and joy. By 2030, we aim to gift over 1 million families.
                 </p>
             </div>
@@ -82,7 +82,7 @@ export default function AboutPage() {
                     {
                         icon: Heart,
                         title: "Genuine Care",
-                        desc: "We genuinely care about making every winner&apos;s Christmas memorable.",
+                        desc: "We genuinely care about making every winner&apos;s New Year memorable.",
                         color: "from-red-500 to-pink-600"
                     },
                 ].map((value, index) => (

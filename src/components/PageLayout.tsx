@@ -49,12 +49,12 @@ export function PageLayout({ children, title, subtitle }: PageLayoutProps) {
                                     <Gift className="w-6 h-6 text-white" />
                                 </div>
                                 <div>
-                                    <h3 className="font-bold text-white">TrustChristmas</h3>
+                                    <h3 className="font-bold text-white">TrustNewYear</h3>
                                     <p className="text-xs text-zinc-400">GlobalTrust Foundation</p>
                                 </div>
                             </div>
                             <p className="text-sm text-zinc-400">
-                                Spreading joy and happiness through our Christmas Gift Carnival. A trusted foundation bringing smiles to thousands.
+                                Spreading joy and happiness through our New Year Gift Carnival 2026. A trusted foundation bringing smiles to thousands.
                             </p>
                         </div>
 
@@ -80,8 +80,8 @@ export function PageLayout({ children, title, subtitle }: PageLayoutProps) {
                     </div>
 
                     <div className="pt-8 border-t border-zinc-800 text-center text-sm text-zinc-400">
-                        <p>© 2025 TrustChristmas Foundation. All rights reserved.</p>
-                        <p className="mt-2">Made with ❤️ for spreading Christmas joy</p>
+                        <p>© 2026 TrustNewYear Foundation. All rights reserved.</p>
+                        <p className="mt-2">Made with ❤️ for spreading New Year joy</p>
                     </div>
                 </div>
             </footer>

@@ -14,7 +14,7 @@ interface Present {
     speed: number;
 }
 
-const presentEmojis = ["🎁", "🎀", "🎄", "⭐", "🔔", "🍬"];
+const presentEmojis = ["🎁", "🎀", "🎉", "⭐", "🍾", "🎊"];
 
 export default function CatchGame() {
     const router = useRouter();
@@ -149,7 +149,7 @@ export default function CatchGame() {
                 >
                     {/* Snowflakes background decoration */}
                     <div className="absolute inset-0 opacity-20 text-4xl pointer-events-none">
-                        ❄️ ❄️ ❄️
+                        ✨ ✨ ✨
                     </div>
 
                     {/* Presents */}
@@ -195,7 +195,7 @@ export default function CatchGame() {
                 {isGameOver && (
                     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
                         <div className="card text-center max-w-sm w-full animate-scale-in">
-                            <div className="text-6xl mb-4">🎄</div>
+                            <div className="text-6xl mb-4">🎉</div>
                             <h2 className="text-2xl font-bold text-[var(--foreground)] mb-2">
                                 Game Over!
                             </h2>

@@ -124,10 +124,10 @@ export default function TriviaGame() {
                 {/* Title */}
                 <div className="text-center mb-6">
                     <h1 className="text-3xl font-bold text-[var(--foreground)] mb-2">
-                        ❓ Christmas Trivia
+                        ❓ New Year Trivia
                     </h1>
                     <p className="text-[var(--text-muted)]">
-                        Test your holiday knowledge!
+                        Test your celebration knowledge!
                     </p>
                 </div>
 
@@ -195,7 +195,7 @@ export default function TriviaGame() {
                     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
                         <div className="card text-center max-w-sm w-full animate-scale-in">
                             <div className="text-6xl mb-4">
-                                {score >= 8 ? "🏆" : score >= 5 ? "🎄" : "⭐"}
+                                {score >= 8 ? "🏆" : score >= 5 ? "🎉" : "⭐"}
                             </div>
                             <h2 className="text-2xl font-bold text-[var(--foreground)] mb-2">
                                 Quiz Complete!
@@ -205,10 +205,10 @@ export default function TriviaGame() {
                             </p>
                             <p className="text-lg font-semibold mb-4">
                                 {score >= 8
-                                    ? "🎅 You're a Christmas Expert!"
+                                    ? "🏆 You're a New Year Expert!"
                                     : score >= 5
-                                        ? "🎄 Good job, holiday fan!"
-                                        : "❄️ Keep learning about Christmas!"}
+                                        ? "🎉 Good job, celebration fan!"
+                                        : "✨ Keep learning about New Year traditions!"}
                             </p>
                             <div className="flex gap-3 justify-center">
                                 <button onClick={restartGame} className="btn-primary">

@@ -37,7 +37,7 @@ export default function ContactPage() {
                                 </div>
                                 <div className="min-w-0">
                                     <h4 className="font-semibold text-sm text-[var(--foreground)]">Email</h4>
-                                    <p className="text-sm text-[var(--text-muted)] truncate">support@trustchristmas.org</p>
+                                    <p className="text-sm text-[var(--text-muted)] truncate">support@trustnewyear.org</p>
                                 </div>
                             </div>
 
@@ -58,7 +58,7 @@ export default function ContactPage() {
                                 <div className="min-w-0">
                                     <h4 className="font-semibold text-sm text-[var(--foreground)]">Address</h4>
                                     <p className="text-sm text-[var(--text-muted)]">
-                                        123, Christmas Lane<br />
+                                        123, Celebration Lane<br />
                                         Mumbai, MH 400001
                                     </p>
                                 </div>

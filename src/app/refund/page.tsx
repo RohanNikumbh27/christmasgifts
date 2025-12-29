@@ -3,8 +3,8 @@ import { Gift, Truck, AlertCircle, HelpCircle } from "lucide-react";
 import Link from "next/link";
 
 export const metadata = {
-    title: "Refund Policy | TrustChristmas Foundation",
-    description: "Understand our gift delivery and refund policy at TrustChristmas Foundation.",
+    title: "Refund Policy | TrustNewYear Foundation",
+    description: "Understand our gift delivery and refund policy at TrustNewYear Foundation.",
 };
 
 export default function RefundPage() {
@@ -61,7 +61,7 @@ export default function RefundPage() {
             {[
                 {
                     title: "No Purchase, No Refund",
-                    content: `TrustChristmas Gift Carnival is a free giveaway program. Since participants do not pay for gifts:
+                    content: `TrustNewYear Gift Carnival is a free giveaway program. Since participants do not pay for gifts:
 
 • There are no refunds because there are no payments
 • All gifts are given as charitable donations
@@ -83,7 +83,7 @@ export default function RefundPage() {
 
 • Report the issue within 48 hours of delivery
 • Take clear photos of the damage
-• Email us at support@trustchristmas.org with your order details
+• Email us at support@trustnewyear.org with your order details
 • We will arrange a replacement at no cost
 • Original items may need to be returned for verification`
                 },
@@ -127,7 +127,7 @@ In these cases, no replacement will be provided.`
                 },
                 {
                     title: "Limitation of Liability",
-                    content: `TrustChristmas Foundation is not liable for:
+                    content: `TrustNewYear Foundation is not liable for:
 
 • Delays caused by incorrect address information
 • Customs or import issues (for international addresses if applicable)
@@ -138,12 +138,12 @@ In these cases, no replacement will be provided.`
                     title: "Dispute Resolution",
                     content: `If you have any concerns:
 
-1. First, contact us at support@trustchristmas.org
+1. First, contact us at support@trustnewyear.org
 2. Provide your order/entry details
 3. We aim to respond within 48 hours
 4. Our team will work to resolve your issue fairly
 
-For unresolved disputes, you may escalate to our grievance officer at grievance@trustchristmas.org.`
+For unresolved disputes, you may escalate to our grievance officer at grievance@trustnewyear.org.`
                 },
             ].map((section, index) => (
                 <div
