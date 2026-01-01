@@ -126,11 +126,11 @@ function GreetingContent() {
 
             {/* Floating Orbs Background */}
             <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-                <div className="float-orb absolute top-[10%] left-[10%] w-32 h-32 rounded-full bg-white/20 blur-2xl" style={{ animationDelay: '0s' }} />
-                <div className="float-orb absolute top-[60%] right-[15%] w-48 h-48 rounded-full bg-white/15 blur-3xl" style={{ animationDelay: '2s' }} />
-                <div className="float-orb absolute top-[30%] right-[5%] w-24 h-24 rounded-full bg-white/25 blur-xl" style={{ animationDelay: '4s' }} />
-                <div className="float-orb absolute bottom-[20%] left-[20%] w-40 h-40 rounded-full bg-white/10 blur-2xl" style={{ animationDelay: '1s' }} />
-                <div className="float-orb absolute top-[50%] left-[50%] w-64 h-64 rounded-full bg-white/10 blur-3xl" style={{ animationDelay: '3s' }} />
+                <div className="float-orb absolute top-[10%] left-[10%] w-32 h-32 rounded-full bg-white/20" style={{ animationDelay: '0s' }} />
+                <div className="float-orb absolute top-[60%] right-[15%] w-48 h-48 rounded-full bg-white/15" style={{ animationDelay: '2s' }} />
+                <div className="float-orb absolute top-[30%] right-[5%] w-24 h-24 rounded-full bg-white/25" style={{ animationDelay: '4s' }} />
+                <div className="float-orb absolute bottom-[20%] left-[20%] w-40 h-40 rounded-full bg-white/10" style={{ animationDelay: '1s' }} />
+                <div className="float-orb absolute top-[50%] left-[50%] w-64 h-64 rounded-full bg-white/10" style={{ animationDelay: '3s' }} />
             </div>
 
             {/* Sparkle Effects */}
@@ -217,7 +217,7 @@ function GreetingContent() {
                                 router.push('/greetings');
                             }
                         }}
-                        className="flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-white/90 backdrop-blur-md hover:bg-white transition-all shadow-lg hover:shadow-xl hover:scale-105"
+                        className="flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-white/90 hover:bg-white transition-all shadow-lg hover:shadow-xl hover:scale-105"
                     >
                         <ArrowLeft className="w-4 h-4 text-gray-700" />
                         <span className="font-semibold text-sm tracking-wide text-gray-700">Back</span>
@@ -237,11 +237,11 @@ function GreetingContent() {
                 <div className="float-gentle min-h-[65svh] flex items-center flex-col justify-center">
                     {/* Main Card Container with Glassmorphism */}
                     <div className="relative w-full max-w-xl">
-                        {/* Glow Ring Behind Card */}
-                        <div className="absolute -inset-4 rounded-[40px] bg-white/10 blur-2xl pulse-glow" />
+                        {/* Glow Ring Behind Card - lighter for performance */}
+                        <div className="absolute -inset-2 rounded-[36px] bg-white/15 opacity-60" />
 
-                        {/* Card */}
-                        <div className="relative overflow-hidden p-8 md:p-10 rounded-3xl bg-white/15 backdrop-blur-xl border-2 border-white/30 shadow-2xl border-glow">
+                        {/* Card */} {/* backdrop-blur-sm */}
+                        <div className="relative overflow-hidden p-8 md:p-10 rounded-3xl bg-white/20 border-2 border-white/40 shadow-2xl border-glow">
                             {/* Shimmer Overlay */}
                             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent" style={{ animation: 'shimmer 4s linear infinite', backgroundSize: '200% 100%' }} />
 
@@ -252,10 +252,9 @@ function GreetingContent() {
                             <div className="absolute bottom-3 right-3 text-3xl opacity-30">✧</div>
 
                             <div className="relative z-10 text-center text-white">
-                                {/* Emoji with Glow */}
+                                {/* Emoji */}
                                 <div className="relative inline-block mb-6">
-                                    <div className="absolute inset-0 text-8xl md:text-9xl blur-xl opacity-50">{card.emoji}</div>
-                                    <div className="text-8xl md:text-9xl emoji-entrance relative">{card.emoji}</div>
+                                    <div className="text-8xl md:text-9xl emoji-entrance">{card.emoji}</div>
                                 </div>
 
                                 {/* Recipient Name */}
@@ -272,9 +271,9 @@ function GreetingContent() {
                                     <div className="mt-2 mx-auto w-24 h-1 bg-gradient-to-r from-transparent via-white/60 to-transparent rounded-full" />
                                 </div>
 
-                                {/* Message Box - Enhanced */}
+                                {/* Message Box */}
                                 <div
-                                    className="text-reveal mb-6 p-6 md:p-8 rounded-2xl bg-white/20 backdrop-blur-sm border border-white/20 shadow-inner relative overflow-hidden"
+                                    className="text-reveal mb-6 p-6 md:p-8 rounded-2xl bg-white/25 border border-white/30 shadow-lg relative overflow-hidden"
                                     style={{ animationDelay: '0.5s' }}
                                 >
                                     <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/5" />
@@ -296,12 +295,11 @@ function GreetingContent() {
 
                     {/* Sender Badge - Enhanced */}
                     <div className="text-reveal mt-6" style={{ animationDelay: '0.9s' }}>
-                        <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/95 backdrop-blur-sm shadow-xl border border-white/50">
+                        <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/95 shadow-xl border border-white/50">
                             <span className="text-2xl">{card.emoji}</span>
                             <div className="flex items-center gap-2">
                                 <span className="text-sm text-gray-500">From</span>
-                                <span className="font-bold text-gray-800">{senderName || "your friend"}</span>
-                                <span className="text-lg">💌</span>
+                                <span className="font-bold text-gray-800">{senderName || "your friend"} 🌟</span>
                             </div>
                         </div>
                     </div>
