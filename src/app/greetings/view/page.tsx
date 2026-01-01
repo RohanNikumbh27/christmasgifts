@@ -60,7 +60,7 @@ function GreetingContent() {
 
     return (
         <main className={`h-dvh bg-gradient-to-br ${card.gradient} relative overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]`}>
-            {/* Confetti Animations */}
+            {/* Enhanced Animations */}
             <style jsx>{`
                 @keyframes confetti-fall {
                     0% { transform: translateY(-100vh) rotate(0deg); opacity: 0; }
@@ -68,62 +68,95 @@ function GreetingContent() {
                     100% { transform: translateY(100vh) rotate(720deg); opacity: 0.5; }
                 }
                 @keyframes confetti-left-burst {
-                    0% { 
-                        transform: translate(-10%, -10%) rotate(0deg); 
-                        opacity: 0; 
-                    }
+                    0% { transform: translate(-10%, -10%) rotate(0deg); opacity: 0; }
                     5% { opacity: 1; }
-                    100% { 
-                        transform: translate(50vw, 100vh) rotate(720deg); 
-                        opacity: 0; 
-                    }
+                    100% { transform: translate(50vw, 100vh) rotate(720deg); opacity: 0; }
                 }
                 @keyframes confetti-right-burst {
-                    0% { 
-                        transform: translate(10%, -10%) rotate(0deg); 
-                        opacity: 0; 
-                    }
+                    0% { transform: translate(10%, -10%) rotate(0deg); opacity: 0; }
                     5% { opacity: 1; }
-                    100% { 
-                        transform: translate(-50vw, 100vh) rotate(-720deg); 
-                        opacity: 0; 
-                    }
+                    100% { transform: translate(-50vw, 100vh) rotate(-720deg); opacity: 0; }
                 }
-                .confetti {
-                    position: fixed;
-                    width: 10px;
-                    height: 10px;
-                    z-index: 1;
-                    animation: confetti-fall linear infinite both;
+                @keyframes float-orb {
+                    0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.4; }
+                    25% { transform: translate(20px, -30px) scale(1.1); opacity: 0.6; }
+                    50% { transform: translate(-10px, -50px) scale(0.9); opacity: 0.5; }
+                    75% { transform: translate(-25px, -20px) scale(1.05); opacity: 0.4; }
                 }
-                .confetti-left {
-                    position: fixed;
-                    width: 10px;
-                    height: 10px;
-                    z-index: 1;
-                    left: 0;
-                    top: 0;
-                    animation: confetti-left-burst linear infinite both;
+                @keyframes pulse-glow {
+                    0%, 100% { box-shadow: 0 0 40px rgba(255,255,255,0.2), 0 0 80px rgba(255,255,255,0.1); }
+                    50% { box-shadow: 0 0 60px rgba(255,255,255,0.3), 0 0 120px rgba(255,255,255,0.2); }
                 }
-                .confetti-right {
-                    position: fixed;
-                    width: 10px;
-                    height: 10px;
-                    z-index: 1;
-                    right: 0;
-                    top: 0;
-                    animation: confetti-right-burst linear infinite both;
+                @keyframes border-glow {
+                    0%, 100% { border-color: rgba(255,255,255,0.3); }
+                    50% { border-color: rgba(255,255,255,0.6); }
                 }
+                @keyframes shimmer {
+                    0% { background-position: -200% 0; }
+                    100% { background-position: 200% 0; }
+                }
+                @keyframes sparkle {
+                    0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+                    50% { opacity: 1; transform: scale(1) rotate(180deg); }
+                }
+                @keyframes float-gentle {
+                    0%, 100% { transform: translateY(0); }
+                    50% { transform: translateY(-10px); }
+                }
+                @keyframes emoji-entrance {
+                    0% { transform: scale(0) rotate(-180deg); opacity: 0; }
+                    60% { transform: scale(1.2) rotate(10deg); }
+                    100% { transform: scale(1) rotate(0deg); opacity: 1; }
+                }
+                @keyframes text-reveal {
+                    0% { opacity: 0; transform: translateY(20px); }
+                    100% { opacity: 1; transform: translateY(0); }
+                }
+                .confetti { position: fixed; width: 10px; height: 10px; z-index: 1; animation: confetti-fall linear infinite both; }
+                .confetti-left { position: fixed; width: 10px; height: 10px; z-index: 1; left: 0; top: 0; animation: confetti-left-burst linear infinite both; }
+                .confetti-right { position: fixed; width: 10px; height: 10px; z-index: 1; right: 0; top: 0; animation: confetti-right-burst linear infinite both; }
+                .float-orb { animation: float-orb 8s ease-in-out infinite; }
+                .pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+                .border-glow { animation: border-glow 2s ease-in-out infinite; }
+                .shimmer-text { background: linear-gradient(90deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0.8) 100%); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; animation: shimmer 3s linear infinite; }
+                .float-gentle { animation: float-gentle 4s ease-in-out infinite; }
+                .emoji-entrance { animation: emoji-entrance 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards; }
+                .text-reveal { animation: text-reveal 0.6s ease-out forwards; }
             `}</style>
 
-            {/* Multiple Confetti Particles - Falling */}
+            {/* Floating Orbs Background */}
+            <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+                <div className="float-orb absolute top-[10%] left-[10%] w-32 h-32 rounded-full bg-white/20 blur-2xl" style={{ animationDelay: '0s' }} />
+                <div className="float-orb absolute top-[60%] right-[15%] w-48 h-48 rounded-full bg-white/15 blur-3xl" style={{ animationDelay: '2s' }} />
+                <div className="float-orb absolute top-[30%] right-[5%] w-24 h-24 rounded-full bg-white/25 blur-xl" style={{ animationDelay: '4s' }} />
+                <div className="float-orb absolute bottom-[20%] left-[20%] w-40 h-40 rounded-full bg-white/10 blur-2xl" style={{ animationDelay: '1s' }} />
+                <div className="float-orb absolute top-[50%] left-[50%] w-64 h-64 rounded-full bg-white/10 blur-3xl" style={{ animationDelay: '3s' }} />
+            </div>
+
+            {/* Sparkle Effects */}
+            {showConfetti && Array.from({ length: 20 }).map((_, i) => (
+                <div
+                    key={`sparkle-${i}`}
+                    className="fixed text-2xl pointer-events-none z-0"
+                    style={{
+                        left: `${Math.random() * 100}%`,
+                        top: `${Math.random() * 100}%`,
+                        animation: `sparkle ${2 + Math.random() * 2}s ease-in-out infinite`,
+                        animationDelay: `${Math.random() * 3}s`,
+                    }}
+                >
+                    ✦
+                </div>
+            ))}
+
+            {/* Confetti Particles - Falling */}
             {showConfetti && Array.from({ length: 50 }).map((_, i) => (
                 <div
                     key={i}
                     className="confetti"
                     style={{
                         left: `${Math.random() * 100}%`,
-                        backgroundColor: ['#ff6b6b', '#4ecdc4', '#ffe66d', '#ff6b9d', '#c44569', '#f8b500', '#1e90ff'][i % 7],
+                        backgroundColor: ['#fbbf24', '#f59e0b', '#ffffff', '#fcd34d', '#fde68a', '#fb923c', '#fdba74'][i % 7],
                         width: `${Math.random() * 8 + 4}px`,
                         height: `${Math.random() * 8 + 4}px`,
                         animationDuration: `${Math.random() * 3 + 3}s`,
@@ -133,57 +166,47 @@ function GreetingContent() {
                 />
             ))}
 
-            {/* Confetti Burst from Left Edge */}
-            {showConfetti && Array.from({ length: 25 }).map((_, i) => {
-                const randomTop = Math.random() * 30; // Random vertical offset 0-30%
-                const randomHorizontal = Math.random() * 40 + 30; // Random horizontal spread 30-70vw
-                return (
-                    <div
-                        key={`left-${i}`}
-                        className="confetti-left"
-                        style={{
-                            top: `${randomTop}%`,
-                            backgroundColor: ['#ff6b6b', '#4ecdc4', '#ffe66d', '#ff6b9d', '#c44569', '#f8b500', '#1e90ff'][i % 7],
-                            width: `${Math.random() * 10 + 6}px`,
-                            height: `${Math.random() * 10 + 6}px`,
-                            animationDuration: `${Math.random() * 2 + 2}s`,
-                            animationDelay: `${Math.random() * 3}s`,
-                            borderRadius: Math.random() > 0.5 ? '50%' : '0%',
-                            '--randomX': `${randomHorizontal}vw`,
-                        } as React.CSSProperties & { '--randomX': string }}
-                    />
-                );
-            })}
+            {/* Confetti Burst from Left */}
+            {showConfetti && Array.from({ length: 25 }).map((_, i) => (
+                <div
+                    key={`left-${i}`}
+                    className="confetti-left"
+                    style={{
+                        top: `${Math.random() * 30}%`,
+                        backgroundColor: ['#fbbf24', '#f59e0b', '#ffffff', '#fcd34d', '#fde68a', '#fb923c', '#fdba74'][i % 7],
+                        width: `${Math.random() * 10 + 6}px`,
+                        height: `${Math.random() * 10 + 6}px`,
+                        animationDuration: `${Math.random() * 2 + 2}s`,
+                        animationDelay: `${Math.random() * 3}s`,
+                        borderRadius: Math.random() > 0.5 ? '50%' : '0%',
+                    }}
+                />
+            ))}
 
-            {/* Confetti Burst from Right Edge */}
-            {showConfetti && Array.from({ length: 25 }).map((_, i) => {
-                const randomTop = Math.random() * 30; // Random vertical offset 0-30%
-                const randomHorizontal = Math.random() * 40 + 30; // Random horizontal spread 30-70vw
-                return (
-                    <div
-                        key={`right-${i}`}
-                        className="confetti-right"
-                        style={{
-                            top: `${randomTop}%`,
-                            backgroundColor: ['#ff6b6b', '#4ecdc4', '#ffe66d', '#ff6b9d', '#c44569', '#f8b500', '#1e90ff'][i % 7],
-                            width: `${Math.random() * 10 + 6}px`,
-                            height: `${Math.random() * 10 + 6}px`,
-                            animationDuration: `${Math.random() * 2 + 2}s`,
-                            animationDelay: `${Math.random() * 3}s`,
-                            borderRadius: Math.random() > 0.5 ? '50%' : '0%',
-                            '--randomX': `${randomHorizontal}vw`,
-                        } as React.CSSProperties & { '--randomX': string }}
-                    />
-                );
-            })}
+            {/* Confetti Burst from Right */}
+            {showConfetti && Array.from({ length: 25 }).map((_, i) => (
+                <div
+                    key={`right-${i}`}
+                    className="confetti-right"
+                    style={{
+                        top: `${Math.random() * 30}%`,
+                        backgroundColor: ['#fbbf24', '#f59e0b', '#ffffff', '#fcd34d', '#fde68a', '#fb923c', '#fdba74'][i % 7],
+                        width: `${Math.random() * 10 + 6}px`,
+                        height: `${Math.random() * 10 + 6}px`,
+                        animationDuration: `${Math.random() * 2 + 2}s`,
+                        animationDelay: `${Math.random() * 3}s`,
+                        borderRadius: Math.random() > 0.5 ? '50%' : '0%',
+                    }}
+                />
+            ))}
 
-            {/* Decorative Corner Icons */}
-            <div className="fixed top-4 left-4 text-5xl md:text-6xl z-0 animate-pulse">✨</div>
-            <div className="fixed top-4 right-4 text-5xl md:text-6xl z-0 animate-pulse" style={{ animationDelay: '0.5s' }}>⭐</div>
-            <div className="fixed bottom-4 left-4 text-5xl md:text-6xl z-0 animate-pulse" style={{ animationDelay: '1s' }}>🌟</div>
-            <div className="fixed bottom-4 right-4 text-5xl md:text-6xl z-0 animate-pulse" style={{ animationDelay: '1.5s' }}>✨</div>
+            {/* Decorative Corner Icons - Enhanced */}
+            <div className="fixed top-6 left-6 text-4xl md:text-5xl z-0 opacity-80" style={{ animation: 'sparkle 2s ease-in-out infinite' }}>✨</div>
+            <div className="fixed top-6 right-6 text-4xl md:text-5xl z-0 opacity-80" style={{ animation: 'sparkle 2s ease-in-out infinite', animationDelay: '0.5s' }}>⭐</div>
+            <div className="fixed bottom-6 left-6 text-4xl md:text-5xl z-0 opacity-80" style={{ animation: 'sparkle 2s ease-in-out infinite', animationDelay: '1s' }}>🌟</div>
+            <div className="fixed bottom-6 right-6 text-4xl md:text-5xl z-0 opacity-80" style={{ animation: 'sparkle 2s ease-in-out infinite', animationDelay: '1.5s' }}>✨</div>
 
-            {/* Navigation Buttons - Replace Navbar */}
+            {/* Navigation Buttons */}
             <div className="sticky top-4 z-40 max-w-2xl mx-auto px-4 pt-4">
                 <div className="flex items-center justify-between gap-3">
                     <button
@@ -194,71 +217,93 @@ function GreetingContent() {
                                 router.push('/greetings');
                             }
                         }}
-                        className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/90 backdrop-blur-sm hover:bg-white transition-colors shadow-lg"
+                        className="flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-white/90 backdrop-blur-md hover:bg-white transition-all shadow-lg hover:shadow-xl hover:scale-105"
                     >
                         <ArrowLeft className="w-4 h-4 text-gray-700" />
                         <span className="font-semibold text-sm tracking-wide text-gray-700">Back</span>
                     </button>
                     <Link
                         href="/greetings"
-                        className="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-zinc-950 to-black hover:from-zinc-900 hover:to-black text-amber-300 font-medium transition-colors shadow-xl"
+                        className="flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-gradient-to-r from-zinc-900 to-black hover:from-zinc-800 hover:to-zinc-900 text-amber-300 font-semibold transition-all shadow-xl hover:shadow-2xl hover:scale-105"
                     >
-                        <Plus size={20} absoluteStrokeWidth />
-                        <span>Create your greetings</span>
+                        <Plus size={18} />
+                        <span>Create yours</span>
                     </Link>
                 </div>
             </div>
 
-            <div className="max-w-2xl mx-auto px-4 pb-8 pt-10 relative z-10">
-                {/* Greeting Card */}
-                <div className="animate-scale-in h-[75svh] flex items-center flex-col justify-center">
-                    {/* Card */}
-                    <div
-                        className="relative overflow-hidden p-8  md:p-12 md:pt-4 text-white"
-                    >
-                        {/* Decorative elements */}
-                        <div className="absolute top-4 right-4 text-6xl opacity-20">✨</div>
-                        <div className="absolute bottom-4 left-4 text-6xl opacity-20">✨</div>
+            <div className="max-w-2xl mx-auto px-4 pb-8 pt-16 relative z-10">
+                {/* Greeting Card - Enhanced */}
+                <div className="float-gentle min-h-[65svh] flex items-center flex-col justify-center">
+                    {/* Main Card Container with Glassmorphism */}
+                    <div className="relative w-full max-w-xl">
+                        {/* Glow Ring Behind Card */}
+                        <div className="absolute -inset-4 rounded-[40px] bg-white/10 blur-2xl pulse-glow" />
 
-                        <div className="relative z-10 text-center">
-                            {/* Emoji */}
-                            <div className="text-7xl md:text-8xl mb-6 animate-bounce-slow">
-                                {card.emoji}
-                            </div>
+                        {/* Card */}
+                        <div className="relative overflow-hidden p-8 md:p-10 rounded-3xl bg-white/15 backdrop-blur-xl border-2 border-white/30 shadow-2xl border-glow">
+                            {/* Shimmer Overlay */}
+                            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent" style={{ animation: 'shimmer 4s linear infinite', backgroundSize: '200% 100%' }} />
 
-                            {/* Recipient */}
-                            <div className="mb-6 inline-block">
-                                <div className="rounded-2xl">
-                                    <p className="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-lg leading-tight">
-                                        {recipientName ? recipientName : "Hello Dear 🤩"}
+                            {/* Inner Decorative Corners */}
+                            <div className="absolute top-3 left-3 text-3xl opacity-30">✧</div>
+                            <div className="absolute top-3 right-3 text-3xl opacity-30">✧</div>
+                            <div className="absolute bottom-3 left-3 text-3xl opacity-30">✧</div>
+                            <div className="absolute bottom-3 right-3 text-3xl opacity-30">✧</div>
+
+                            <div className="relative z-10 text-center text-white">
+                                {/* Emoji with Glow */}
+                                <div className="relative inline-block mb-6">
+                                    <div className="absolute inset-0 text-8xl md:text-9xl blur-xl opacity-50">{card.emoji}</div>
+                                    <div className="text-8xl md:text-9xl emoji-entrance relative">{card.emoji}</div>
+                                </div>
+
+                                {/* Recipient Name */}
+                                <div className="text-reveal mb-6" style={{ animationDelay: '0.3s' }}>
+                                    <p className="text-4xl md:text-5xl font-black tracking-tight drop-shadow-2xl leading-tight">
+                                        {recipientName ? (
+                                            <span className="bg-gradient-to-r from-white via-white to-white/80 bg-clip-text">
+                                                {recipientName}
+                                            </span>
+                                        ) : (
+                                            <span>Hello Dear 🤩</span>
+                                        )}
+                                    </p>
+                                    <div className="mt-2 mx-auto w-24 h-1 bg-gradient-to-r from-transparent via-white/60 to-transparent rounded-full" />
+                                </div>
+
+                                {/* Message Box - Enhanced */}
+                                <div
+                                    className="text-reveal mb-6 p-6 md:p-8 rounded-2xl bg-white/20 backdrop-blur-sm border border-white/20 shadow-inner relative overflow-hidden"
+                                    style={{ animationDelay: '0.5s' }}
+                                >
+                                    <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/5" />
+                                    <p className="text-lg md:text-xl font-medium leading-relaxed tracking-wide relative z-10">
+                                        &ldquo;{message}&rdquo;
+                                    </p>
+                                </div>
+
+                                {/* Sender Info */}
+                                <div className="text-reveal" style={{ animationDelay: '0.7s' }}>
+                                    <p className="text-sm md:text-base flex items-center justify-center gap-2 opacity-90">
+                                        <Heart className="w-4 h-4 fill-current" />
+                                        <span className="font-medium">{card.title} card</span>
                                     </p>
                                 </div>
                             </div>
-
-                            {/* Message */}
-                            <div className="mb-8 p-8 md:p-10 rounded-3xl bg-white/20 backdrop-blur-sm text-center border border-white/10 shadow-xl">
-                                <p className="text-lg md:text-xl font-medium leading-relaxed tracking-wide opacity-95">
-                                    {message}
-                                </p>
-                            </div>
-
-                            {/* Sender */}
-                            {senderName && (
-                                <p className="text-sm md:text-base flex items-center justify-center gap-2 opacity-80 tracking-wide">
-                                    <Heart className="w-4 h-4" />
-                                    <span className="font-medium">{card.title} card</span>
-                                </p>
-                            )}
                         </div>
                     </div>
 
-                    {/* Card Type Badge */}
-                    <div className="flex justify-center mt-2 relative z-10 items-center">
-                        <div className="px-5 py-2.5 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] shadow-xl flex items-center gap-3">
-                            <span className="text-xl">{card.emoji}</span>
-                            <span className="font-semibold text-base tracking-wide text-[var(--foreground)]"><span className="font-medium opacity-60">Sender:</span>  {senderName || "your friend"} 🌟</span>
+                    {/* Sender Badge - Enhanced */}
+                    <div className="text-reveal mt-6" style={{ animationDelay: '0.9s' }}>
+                        <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/95 backdrop-blur-sm shadow-xl border border-white/50">
+                            <span className="text-2xl">{card.emoji}</span>
+                            <div className="flex items-center gap-2">
+                                <span className="text-sm text-gray-500">From</span>
+                                <span className="font-bold text-gray-800">{senderName || "your friend"}</span>
+                                <span className="text-lg">💌</span>
+                            </div>
                         </div>
-                        {/* <span className="text-6xl ml-2">😉</span> */}
                     </div>
                 </div>
 
