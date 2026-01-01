@@ -12,7 +12,7 @@ const lexend = Lexend({
 });
 
 export const metadata: Metadata = {
-  title: "TrustNewYear Gift Carnival 2026 | Win Amazing New Year Gifts!",
+  title: "TrustNewYear",
   description: "Spin the wheel and win exciting gifts from TrustNewYear Foundation. Join thousands of winners this New Year 2026!",
   keywords: "New Year gifts, 2026, lottery, wheel spin, TrustNewYear, free gifts, new year giveaway",
   openGraph: {

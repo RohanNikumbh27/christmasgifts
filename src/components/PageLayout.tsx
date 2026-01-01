@@ -13,7 +13,27 @@ interface PageLayoutProps {
 
 export function PageLayout({ children, title, subtitle }: PageLayoutProps) {
     return (
-        <main className="min-h-screen bg-[var(--background)]">
+        <main className="min-h-screen bg-[var(--background)] relative overflow-x-hidden">
+            {/* Ambient Glare Effects */}
+            <div className="pointer-events-none absolute inset-0 overflow-hidden">
+                {/* Top-left amber glow */}
+                <div className="absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-amber-400/30 to-orange-500/15 blur-3xl" />
+                {/* Top-right orange glow */}
+                <div className="absolute -top-20 -right-32 w-[400px] h-[400px] rounded-full bg-gradient-to-bl from-orange-400/25 to-amber-500/15 blur-3xl" />
+                {/* Top-center subtle flare */}
+                <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-gradient-to-b from-amber-300/20 to-transparent blur-3xl" />
+                {/* Center-right subtle flare */}
+                <div className="absolute top-1/4 -right-20 w-[350px] h-[350px] rounded-full bg-gradient-to-l from-orange-500/20 to-amber-400/10 blur-3xl" />
+                {/* Center-left warm accent */}
+                <div className="absolute top-1/3 -left-20 w-[300px] h-[300px] rounded-full bg-gradient-to-r from-amber-500/15 to-orange-400/10 blur-2xl" />
+                {/* Mid-right accent */}
+                <div className="absolute top-1/2 -right-40 w-[400px] h-[400px] rounded-full bg-gradient-to-l from-amber-400/20 to-orange-500/10 blur-3xl" />
+                {/* Mid-left accent */}
+                <div className="absolute top-[55%] -left-32 w-[350px] h-[350px] rounded-full bg-gradient-to-r from-orange-400/15 to-amber-500/10 blur-3xl" />
+                {/* Bottom-left warm glow */}
+                <div className="absolute top-2/3 -left-32 w-[400px] h-[400px] rounded-full bg-gradient-to-tr from-orange-500/15 to-amber-400/10 blur-3xl" />
+            </div>
+
             <Navbar />
 
             {/* Page Header - only show if title exists */}

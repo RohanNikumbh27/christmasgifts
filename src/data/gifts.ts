@@ -470,13 +470,13 @@ export const allGifts: Gift[] = [
 ];
 
 // Gifts displayed on the wheel (8 segments for visual purposes)
-// These use the ORIGINAL colors from the wheel design - all red/pink shades
+// Bright amber-orange palette - lighter shades for vibrant look
 export const gifts: Gift[] = [
     {
         id: 101,
         name: "iPhone 15 Pro",
-        color: "#f59e0b",
-        textColor: "#ffffff",
+        color: "#fbbf24", // amber-400
+        textColor: "#78350f",
         icon: "📱",
         image: "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium?wid=400&hei=400&fmt=jpeg&qlt=95&.v=1692845702708",
         value: "₹1,34,900",
@@ -486,7 +486,7 @@ export const gifts: Gift[] = [
     {
         id: 102,
         name: "AirPods Pro 2",
-        color: "#ea580c",
+        color: "#f97316", // orange-500
         textColor: "#ffffff",
         icon: "🎧",
         image: "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MQD83?wid=400&hei=400&fmt=jpeg&qlt=95&.v=1660803972361",
@@ -497,8 +497,8 @@ export const gifts: Gift[] = [
     {
         id: 103,
         name: "Apple Watch S9",
-        color: "#d97706",
-        textColor: "#ffffff",
+        color: "#fcd34d", // amber-300
+        textColor: "#78350f",
         icon: "⌚",
         image: "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MRXK3ref_VW_34FR+watch-case-45-aluminum-midnight-nc-s9_VW_34FR+watch-face-45-aluminum-midnight-s9_VW_34FR?wid=400&hei=400&fmt=jpeg&qlt=95&.v=1694507911484",
         value: "₹44,900",
@@ -508,8 +508,8 @@ export const gifts: Gift[] = [
     {
         id: 104,
         name: "Gold Necklace",
-        color: "#fb923c",
-        textColor: "#ffffff",
+        color: "#fb923c", // orange-400
+        textColor: "#7c2d12",
         icon: "✨",
         image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400&h=400&fit=crop",
         value: "₹35,000",
@@ -519,7 +519,7 @@ export const gifts: Gift[] = [
     {
         id: 105,
         name: "Amazon Gift Card",
-        color: "#c2410c",
+        color: "#f59e0b", // amber-500
         textColor: "#ffffff",
         icon: "🎁",
         image: "https://m.media-amazon.com/images/G/31/gc/designs/livepreview/amzn_wedding_background_all_Background._SX300_QL85_.jpg",
@@ -530,8 +530,8 @@ export const gifts: Gift[] = [
     {
         id: 106,
         name: "PlayStation 5",
-        color: "#f97316",
-        textColor: "#ffffff",
+        color: "#fdba74", // orange-300
+        textColor: "#7c2d12",
         icon: "🎮",
         image: "https://gmedia.playstation.com/is/image/SIEPDC/ps5-product-thumbnail-01-en-14sep21?$facebook$",
         value: "₹49,990",
@@ -541,7 +541,7 @@ export const gifts: Gift[] = [
     {
         id: 107,
         name: "Diamond Earrings",
-        color: "#b45309",
+        color: "#ea580c", // orange-600
         textColor: "#ffffff",
         icon: "💎",
         image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=400&h=400&fit=crop",
@@ -552,8 +552,8 @@ export const gifts: Gift[] = [
     {
         id: 108,
         name: "MacBook Air M3",
-        color: "#fdba74",
-        textColor: "#ffffff",
+        color: "#fde68a", // amber-200
+        textColor: "#78350f",
         icon: "💻",
         image: "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mba13-midnight-select-202402?wid=400&hei=400&fmt=jpeg&qlt=95&.v=1708367688034",
         value: "₹1,14,900",

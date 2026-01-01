@@ -107,7 +107,7 @@ export default function GreetingsPage() {
             {/* Step 1: Choose Card */}
             {step === 1 && (
                 <div className="animate-fade-in">
-                    <h3 className="text-xl text-[var(--foreground)]/40 text-center mb-2">
+                    <h3 className="text-xl text-[var(--foreground)]/40 text-center mb-10">
                         Choose Your Card Style
                     </h3>
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">

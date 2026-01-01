@@ -209,7 +209,18 @@ export default function SpinPage() {
     };
 
     return (
-        <main className="bg-[var(--background)] overflow-x-hidden">
+        <main className="bg-[var(--background)] overflow-x-hidden relative">
+            {/* Ambient Glare Effects */}
+            <div className="pointer-events-none absolute inset-0 overflow-hidden">
+                <div className="absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-amber-400/30 to-orange-500/15 blur-3xl" />
+                <div className="absolute -top-20 -right-32 w-[400px] h-[400px] rounded-full bg-gradient-to-bl from-orange-400/25 to-amber-500/15 blur-3xl" />
+                <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-gradient-to-b from-amber-300/20 to-transparent blur-3xl" />
+                <div className="absolute top-1/4 -right-20 w-[350px] h-[350px] rounded-full bg-gradient-to-l from-orange-500/20 to-amber-400/10 blur-3xl" />
+                <div className="absolute top-1/3 -left-20 w-[300px] h-[300px] rounded-full bg-gradient-to-r from-amber-500/15 to-orange-400/10 blur-2xl" />
+                <div className="absolute top-1/2 -right-40 w-[400px] h-[400px] rounded-full bg-gradient-to-l from-amber-400/20 to-orange-500/10 blur-3xl" />
+                <div className="absolute top-[55%] -left-32 w-[350px] h-[350px] rounded-full bg-gradient-to-r from-orange-400/15 to-amber-500/10 blur-3xl" />
+                <div className="absolute top-2/3 -left-32 w-[400px] h-[400px] rounded-full bg-gradient-to-tr from-orange-500/15 to-amber-400/10 blur-3xl" />
+            </div>
             {/* Back Button Header */}
             <header className="sticky top-0 z-50 glass border-b border-[var(--card-border)]">
                 <div className="max-w-6xl mx-auto px-4 py-4">

@@ -17,11 +17,33 @@ export default function Home() {
   const displayedWinners = showAllTestimonials ? winners : winners.slice(0, 3);
 
   return (
-    <main className="min-h-screen bg-[var(--background)] overflow-x-hidden">
+    <main className="min-h-screen bg-[var(--background)] overflow-x-hidden relative">
+      {/* Ambient Glare Effects */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        {/* Top-left amber glow */}
+        <div className="absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-amber-400/30 to-orange-500/15 blur-3xl" />
+        {/* Top-right orange glow */}
+        <div className="absolute -top-20 -right-32 w-[400px] h-[400px] rounded-full bg-gradient-to-bl from-orange-400/25 to-amber-500/15 blur-3xl" />
+        {/* Top-center subtle flare */}
+        <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-gradient-to-b from-amber-300/20 to-transparent blur-3xl" />
+        {/* Center-right subtle flare */}
+        <div className="absolute top-1/4 -right-20 w-[350px] h-[350px] rounded-full bg-gradient-to-l from-orange-500/20 to-amber-400/10 blur-3xl" />
+        {/* Center-left warm accent */}
+        <div className="absolute top-1/3 -left-20 w-[300px] h-[300px] rounded-full bg-gradient-to-r from-amber-500/15 to-orange-400/10 blur-2xl" />
+        {/* Mid-page center glow (behind wheel) */}
+        <div className="absolute top-[40%] left-1/2 -translate-x-1/2 w-[700px] h-[500px] rounded-full bg-gradient-to-b from-orange-400/15 via-amber-400/10 to-transparent blur-3xl" />
+        {/* Mid-right accent */}
+        <div className="absolute top-1/2 -right-40 w-[400px] h-[400px] rounded-full bg-gradient-to-l from-amber-400/20 to-orange-500/10 blur-3xl" />
+        {/* Mid-left accent */}
+        <div className="absolute top-[55%] -left-32 w-[350px] h-[350px] rounded-full bg-gradient-to-r from-orange-400/15 to-amber-500/10 blur-3xl" />
+        {/* Bottom-left warm glow */}
+        <div className="absolute top-2/3 -left-32 w-[400px] h-[400px] rounded-full bg-gradient-to-tr from-orange-500/15 to-amber-400/10 blur-3xl" />
+      </div>
+
       <Navbar />
 
       {/* Hero Section */}
-      <section className="py-8 md:pb-12 md:pt-5 px-4">
+      <section className="py-8 md:pb-12 md:pt-5 px-4 relative z-10">
         <div className="max-w-6xl mx-auto text-center">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-br from-amber-500 to-orange-600 border border-amber-500/30 mb-6 animate-fade-in">
