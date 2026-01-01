@@ -253,12 +253,12 @@ function GreetingContent() {
                     </div>
 
                     {/* Card Type Badge */}
-                    <div className="flex justify-center mt-2 relative z-10">
-                        <div className="px-5 py-2.5 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] shadow-lg flex items-center gap-3">
+                    <div className="flex justify-center mt-2 relative z-10 items-center">
+                        <div className="px-5 py-2.5 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] shadow-xl flex items-center gap-3">
                             <span className="text-xl">{card.emoji}</span>
-                            <span className="font-semibold text-base tracking-wide text-[var(--foreground)]">by {senderName || "your friend"}</span>
+                            <span className="font-semibold text-base tracking-wide text-[var(--foreground)]"><span className="font-medium opacity-60">Sender:</span>  {senderName || "your friend"} 🌟</span>
                         </div>
-                        <span className="text-4xl md:text-5xl ml-2">😉</span>
+                        {/* <span className="text-6xl ml-2">😉</span> */}
                     </div>
                 </div>
 
@@ -271,7 +271,6 @@ function GreetingContent() {
                                 className="flex items-center justify-center gap-2 px-2 md:px-4 py-3 rounded-xl bg-white dark:bg-zinc-800 text-gray-800 dark:text-white font-medium hover:bg-neutral-700 dark:hover:bg-neutral-700 transition-colors shadow-md"
                             >
                                 <ArrowLeft className="w-5 h-5" />
-                                <span className="hidden md:block">Back</span>
                             </button>
                             <Link
                                 href="/"
