@@ -24,14 +24,14 @@ export default function Home() {
       <section className="py-8 md:pb-12 md:pt-5 px-4">
         <div className="max-w-6xl mx-auto text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-br from-pink-600 to-rose-600 border border-pink-500/30 mb-6 animate-fade-in">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-br from-amber-500 to-orange-600 border border-amber-500/30 mb-6 animate-fade-in">
             <WandSparkles className="w-4 h-4 text-yellow-400" />
-            <span className="text-base font-medium text-zinc-100">New Year Special 2026</span>
+            <span className="text-base font-medium text-amber-800">New Year Special 2026</span>
           </div>
 
           {/* Title */}
           <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4 animate-slide-up">
-            <span className="bg-gradient-to-br from-pink-600 to-rose-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-br from-amber-500 to-orange-600 bg-clip-text text-transparent">
               Win Amazing
             </span>
             <br />
@@ -158,7 +158,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-gradient-to-br from-pink-500 to-rose-600 rounded-2xl">
+                <div className="p-2 bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl">
                   <Gift className="w-6 h-6 text-white" />
                 </div>
                 <div>

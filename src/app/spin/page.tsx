@@ -247,9 +247,9 @@ export default function SpinPage() {
                 <div className="max-w-6xl mx-auto">
                     {/* Header */}
                     <div className="text-center mb-8">
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-br from-pink-600 to-rose-600 border border-pink-500/30 mb-4 animate-fade-in">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-br from-amber-500 to-orange-600 border border-amber-500/30 mb-4 animate-fade-in">
                             <Sparkles className="w-4 h-4 text-yellow-400" />
-                            <span className="text-base font-medium text-zinc-100">Spin #{spinCount}</span>
+                            <span className="text-base font-medium text-amber-200">Spin #{spinCount}</span>
                         </div>
                         <h1 className="text-4xl md:text-4xl font-bold text-[var(--foreground)] mb-2">
                             {isSpinning ? "Spinning..." : hasSpun ? "🎉 You Won!" : "Ready to Spin!"}
@@ -270,11 +270,11 @@ export default function SpinPage() {
                                 <div className="relative">
                                     {/* Pointer */}
                                     <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-2 z-10">
-                                        <div className="w-0 h-0 border-l-[18px] border-l-transparent border-r-[18px] border-r-transparent border-t-[35px] border-t-rose-600 drop-shadow-2xl" />
+                                        <div className="w-0 h-0 border-l-[18px] border-l-transparent border-r-[18px] border-r-transparent border-t-[35px] border-t-orange-600 drop-shadow-2xl" />
                                     </div>
 
                                     {/* Outer glow ring */}
-                                    <div className={`absolute inset-0 rounded-full bg-gradient-to-br from-pink-600 to-rose-600 opacity-50 blur-xl ${isSpinning ? 'animate-pulse' : ''}`}
+                                    <div className={`absolute inset-0 rounded-full bg-gradient-to-br from-amber-500 to-orange-600 opacity-50 blur-xl ${isSpinning ? 'animate-pulse' : ''}`}
                                         style={{ margin: '-20px' }} />
 
                                     {/* Wheel */}
@@ -316,13 +316,13 @@ export default function SpinPage() {
                                         </text>
                                         <defs>
                                             <linearGradient id="pinkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                                <stop offset="0%" stopColor="#ef4444" />
-                                                <stop offset="50%" stopColor="#ec4899" />
-                                                <stop offset="100%" stopColor="#db2777" />
+                                                <stop offset="0%" stopColor="#f59e0b" />
+                                                <stop offset="50%" stopColor="#f97316" />
+                                                <stop offset="100%" stopColor="#ea580c" />
                                             </linearGradient>
                                             <radialGradient id="centerGradient" cx="50%" cy="50%" r="50%">
-                                                <stop offset="0%" stopColor="#ef4444" />
-                                                <stop offset="100%" stopColor="#db2777" />
+                                                <stop offset="0%" stopColor="#f59e0b" />
+                                                <stop offset="100%" stopColor="#ea580c" />
                                             </radialGradient>
                                         </defs>
                                     </svg>
@@ -356,7 +356,7 @@ export default function SpinPage() {
                                     {/* CTA Buttons */}
                                     <button
                                         onClick={handleClaimGift}
-                                        className="btn-primary group w-full py-4 px-6 rounded-2xl shadow-lg shadow-pink-500/25 hover:shadow-pink-500/40 hover:scale-[1.02] active:scale-[0.98] mb-3"
+                                        className="btn-primary group w-full py-4 px-6 rounded-2xl shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40 hover:scale-[1.02] active:scale-[0.98] mb-3"
                                     >
                                         <Gift className="w-5 h-5" />
                                         <span>Claim Your Gift</span>

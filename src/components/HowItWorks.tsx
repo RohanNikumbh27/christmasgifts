@@ -42,7 +42,7 @@ export function HowItWorks() {
                                 className="card text-center relative animate-slide-up"
                                 style={{ animationDelay: `${index * 150}ms` }}
                             >
-                                <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center text-white font-bold text-sm">
+                                <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-amber-200 font-bold text-sm">
                                     {item.step}
                                 </div>
                                 <div className="text-5xl mb-4 mt-4">{item.icon}</div>

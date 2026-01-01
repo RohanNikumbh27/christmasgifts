@@ -111,7 +111,7 @@ Phone: +91 9876 543 210`
                     </div>
                 ))}
 
-                <div className="card text-center bg-gradient-to-br from-red-500/10 to-pink-500/10 border-red-500/20 animate-fade-in mt-8">
+                <div className="card text-center bg-gradient-to-br from-amber-500/10 to-orange-500/10 border-amber-500/20 animate-fade-in mt-8">
                     <p className="text-[var(--foreground)]">
                         By participating in the TrustNewYear Gift Carnival, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions.
                     </p>

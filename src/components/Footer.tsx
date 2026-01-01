@@ -10,7 +10,7 @@ export function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
                     <div>
                         <div className="flex items-center gap-3 mb-4">
-                            <div className="p-2 bg-gradient-to-br from-pink-500 to-rose-600 rounded-2xl">
+                            <div className="p-2 bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl">
                                 <Gift className="w-6 h-6 text-white" />
                             </div>
                             <div>

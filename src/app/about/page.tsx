@@ -15,7 +15,7 @@ export default function AboutPage() {
             {/* Mission Section */}
             <div className="card mb-8 animate-fade-in">
                 <div className="flex items-center gap-3 mb-4">
-                    <div className="p-3 bg-gradient-to-br from-red-500 to-pink-600 rounded-xl">
+                    <div className="p-3 bg-gradient-to-br from-amber-500 to-orange-600 rounded-xl">
                         <Target className="w-6 h-6 text-white" />
                     </div>
                     <h2 className="text-2xl font-bold text-[var(--foreground)]">Our Mission</h2>
@@ -83,7 +83,7 @@ export default function AboutPage() {
                         icon: Heart,
                         title: "Genuine Care",
                         desc: "We genuinely care about making every winner&apos;s New Year memorable.",
-                        color: "from-red-500 to-pink-600"
+                        color: "from-amber-500 to-orange-600"
                     },
                 ].map((value, index) => (
                     <div

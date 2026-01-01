@@ -54,7 +54,7 @@ export default function HowItWorksPage() {
                         className="card relative animate-slide-up"
                         style={{ animationDelay: `${index * 150}ms` }}
                     >
-                        <div className="absolute -top-4 left-6 w-10 h-10 rounded-full bg-gradient-to-br from-red-500 to-pink-600 flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                        <div className="absolute -top-4 left-6 w-10 h-10 rounded-full bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-amber-200 font-bold text-lg shadow-lg">
                             {item.step}
                         </div>
                         <div className="flex flex-col md:flex-row gap-6 pt-4">

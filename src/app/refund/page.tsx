@@ -20,7 +20,7 @@ export default function RefundPage() {
                         icon: Gift,
                         title: "Free Gifts",
                         desc: "All gifts are given completely free of charge. There are no hidden costs or fees.",
-                        color: "from-red-500 to-pink-600"
+                        color: "from-amber-500 to-orange-600"
                     },
                     {
                         icon: Truck,

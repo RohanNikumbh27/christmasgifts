@@ -101,11 +101,11 @@ export function LotteryWheel() {
             <div className="relative cursor-pointer" onClick={handleSpinClick}>
                 {/* Pointer */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-2 z-10">
-                    <div className="w-0 h-0 border-l-[18px] border-l-transparent border-r-[18px] border-r-transparent border-t-[35px] border-t-rose-600 drop-shadow-2xl" />
+                    <div className="w-0 h-0 border-l-[18px] border-l-transparent border-r-[18px] border-r-transparent border-t-[35px] border-t-orange-600 drop-shadow-2xl" />
                 </div>
 
                 {/* Outer glow ring */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-pink-600 to-rose-600 opacity-50 blur-xl animate-pulse"
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-amber-500 to-orange-600 opacity-50 blur-xl animate-pulse"
                     style={{ margin: '-20px' }} />
 
                 {/* Wheel */}
@@ -153,13 +153,13 @@ export function LotteryWheel() {
                     {/* Gradients */}
                     <defs>
                         <linearGradient id="pinkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stopColor="#ef4444" />
-                            <stop offset="50%" stopColor="#ec4899" />
-                            <stop offset="100%" stopColor="#db2777" />
+                            <stop offset="0%" stopColor="#f59e0b" />
+                            <stop offset="50%" stopColor="#f97316" />
+                            <stop offset="100%" stopColor="#ea580c" />
                         </linearGradient>
                         <radialGradient id="centerGradient" cx="50%" cy="50%" r="50%">
-                            <stop offset="0%" stopColor="#ef4444" />
-                            <stop offset="100%" stopColor="#db2777" />
+                            <stop offset="0%" stopColor="#f59e0b" />
+                            <stop offset="100%" stopColor="#ea580c" />
                         </radialGradient>
                     </defs>
                 </svg>
@@ -167,7 +167,7 @@ export function LotteryWheel() {
 
             <button
                 onClick={handleSpinClick}
-                className="btn-primary group w-full py-4 px-6 rounded-2xl shadow-lg shadow-pink-500/25 hover:shadow-pink-500/40 hover:scale-[1.02] active:scale-[0.98]"
+                className="btn-primary group w-full py-4 px-6 rounded-2xl shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40 hover:scale-[1.02] active:scale-[0.98]"
             >
                 <GiftIcon className="w-5 h-5" />
                 <span>SPIN TO WIN!</span>

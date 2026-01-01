@@ -60,7 +60,7 @@ export function WinnerPopup({ gift, onClose }: WinnerPopupProps) {
             {/* Modal */}
             <div className="relative w-full max-w-sm animate-bounce-in">
                 {/* Glow effect behind modal */}
-                <div className="absolute inset-0 bg-gradient-to-br from-pink-600/30 to-rose-600/30 blur-3xl rounded-full scale-150" />
+                <div className="absolute inset-0 bg-gradient-to-br from-amber-500/30 to-orange-600/30 blur-3xl rounded-full scale-150" />
 
                 {/* Modal content */}
                 <div className="relative bg-[var(--card-bg)] border border-[var(--card-border)] rounded-3xl p-6 shadow-2xl">
@@ -75,10 +75,10 @@ export function WinnerPopup({ gift, onClose }: WinnerPopupProps) {
                     {/* Content */}
                     <div className="text-center">
                         {/* Celebration badge */}
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-pink-600 to-rose-600 mb-4">
-                            <Sparkles className="w-4 h-4 text-white" />
-                            <span className="text-sm font-semibold text-white">You&apos;re a Winner!</span>
-                            <Sparkles className="w-4 h-4 text-white" />
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-amber-500 to-orange-600 mb-4">
+                            <Sparkles className="w-4 h-4 text-yellow-300" />
+                            <span className="text-sm font-semibold text-amber-200">You&apos;re a Winner!</span>
+                            <Sparkles className="w-4 h-4 text-yellow-300" />
                         </div>
 
                         {/* Title */}
@@ -117,7 +117,7 @@ export function WinnerPopup({ gift, onClose }: WinnerPopupProps) {
                         {/* CTA Button */}
                         <button
                             onClick={handleGetGift}
-                            className="btn-primary group w-full py-4 px-6 rounded-2xl shadow-lg shadow-pink-500/25 hover:shadow-pink-500/40 hover:scale-[1.02] active:scale-[0.98]"
+                            className="btn-primary group w-full py-4 px-6 rounded-2xl shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40 hover:scale-[1.02] active:scale-[0.98]"
                         >
                             <Gift className="w-5 h-5" />
                             <span>Claim Your Gift</span>

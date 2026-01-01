@@ -281,7 +281,7 @@ export default function SharePage() {
 
                 {/* Claim Gift Section (when unlocked) */}
                 {isUnlocked && (
-                    <div className="card text-center mb-8 bg-gradient-to-br from-red-500/10 to-pink-600/10 border-pink-500/30">
+                    <div className="card text-center mb-8 bg-gradient-to-br from-amber-500/10 to-orange-600/10 border-amber-500/30">
                         <div className="text-6xl mb-4">🎊</div>
                         <h3 className="text-3xl font-bold text-[var(--foreground)] mb-2">
                             Your Gift is Ready!
@@ -290,7 +290,7 @@ export default function SharePage() {
                         {isSubmitting ? (
                             <div className="py-8">
                                 <div className="flex justify-center mb-4">
-                                    <div className="w-16 h-16 border-4 border-pink-200 border-t-pink-600 rounded-full animate-spin"></div>
+                                    <div className="w-16 h-16 border-4 border-amber-200 border-t-amber-600 rounded-full animate-spin"></div>
                                 </div>
                                 <p className="text-lg text-[var(--text-muted)]">
                                     Processing your claim...
@@ -309,7 +309,7 @@ export default function SharePage() {
                                             onChange={(e) => setName(e.target.value)}
                                             placeholder="Enter your full name"
                                             required
-                                            className="w-full px-4 py-4 rounded-xl bg-[var(--background)] border border-[var(--card-border)] text-[var(--foreground)] placeholder:text-[var(--text-muted)] focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent text-lg"
+                                            className="w-full px-4 py-4 rounded-xl bg-[var(--background)] border border-[var(--card-border)] text-[var(--foreground)] placeholder:text-[var(--text-muted)] focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent text-lg"
                                         />
                                         <input
                                             type="email"
@@ -317,7 +317,7 @@ export default function SharePage() {
                                             onChange={(e) => setEmail(e.target.value)}
                                             placeholder="Enter your email address"
                                             required
-                                            className="w-full px-4 py-4 rounded-xl bg-[var(--background)] border border-[var(--card-border)] text-[var(--foreground)] placeholder:text-[var(--text-muted)] focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent text-lg"
+                                            className="w-full px-4 py-4 rounded-xl bg-[var(--background)] border border-[var(--card-border)] text-[var(--foreground)] placeholder:text-[var(--text-muted)] focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent text-lg"
                                         />
                                         <button type="submit" className="btn-primary text-lg px-8 py-4">
                                             Claim Your Gift Now

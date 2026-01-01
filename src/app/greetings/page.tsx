@@ -87,7 +87,7 @@ export default function GreetingsPage() {
                         <div key={s} className="flex items-center">
                             <div
                                 className={`w-10 h-10 rounded-full flex items-center justify-center font-bold transition-all ${step >= s
-                                    ? "bg-gradient-to-r from-red-500 to-pink-600 text-white"
+                                    ? "bg-gradient-to-r from-amber-500 to-orange-600 text-amber-200"
                                     : "bg-[var(--card-bg)] border border-[var(--card-border)] text-[var(--text-muted)]"
                                     }`}
                             >
@@ -95,7 +95,7 @@ export default function GreetingsPage() {
                             </div>
                             {s < 3 && (
                                 <div
-                                    className={`w-8 h-1 mx-1 rounded ${step > s ? "bg-gradient-to-r from-red-500 to-pink-600" : "bg-[var(--card-border)]"
+                                    className={`w-8 h-1 mx-1 rounded ${step > s ? "bg-gradient-to-r from-amber-500 to-orange-600" : "bg-[var(--card-border)]"
                                         }`}
                                 />
                             )}

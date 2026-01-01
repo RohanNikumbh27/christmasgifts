@@ -61,7 +61,7 @@ export function MiniSpinner() {
             title="Click to spin!"
         >
             {/* Glow effect */}
-            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-pink-600 to-rose-600 opacity-40 blur-lg group-hover:opacity-60 transition-opacity"
+            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-amber-500 to-orange-600 opacity-40 blur-lg group-hover:opacity-60 transition-opacity"
                 style={{ margin: '-8px' }} />
 
             {/* Mini Wheel */}
@@ -103,20 +103,20 @@ export function MiniSpinner() {
 
                 <defs>
                     <linearGradient id="miniPinkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#ef4444" />
-                        <stop offset="50%" stopColor="#ec4899" />
-                        <stop offset="100%" stopColor="#db2777" />
+                        <stop offset="0%" stopColor="#f59e0b" />
+                        <stop offset="50%" stopColor="#f97316" />
+                        <stop offset="100%" stopColor="#ea580c" />
                     </linearGradient>
                     <radialGradient id="miniCenterGradient" cx="50%" cy="50%" r="50%">
-                        <stop offset="0%" stopColor="#ef4444" />
-                        <stop offset="100%" stopColor="#db2777" />
+                        <stop offset="0%" stopColor="#f59e0b" />
+                        <stop offset="100%" stopColor="#ea580c" />
                     </radialGradient>
                 </defs>
             </svg>
 
             {/* Pointer */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1">
-                <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[10px] border-t-rose-600" />
+                <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[10px] border-t-orange-600" />
             </div>
         </div>
     );

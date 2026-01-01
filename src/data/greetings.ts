@@ -9,6 +9,19 @@ export interface GreetingCard {
 
 export const greetingCards: GreetingCard[] = [
     {
+        id: "classic",
+        emoji: "🥂",
+        title: "Classic Celebration",
+        gradient: "from-amber-500 to-orange-600",
+        messages: [
+            { id: 1, message: "🥂✨ Happy New Year 2026! May this year bring you endless opportunities, cherished moments, and dreams fulfilled. Cheers! 🎉🌟" },
+            { id: 2, message: "🌟🥂 As we toast to 2026, may your days be bright, your heart be light, and your future be extraordinary! ✨🎊" },
+            { id: 3, message: "🎁✨ Wishing you a spectacular 2026! May every moment sparkle with joy and every day bring new reasons to smile! 🥂🌟" },
+            { id: 4, message: "🌟🥂 Cheers to new beginnings! May 2026 be filled with success, happiness, and unforgettable memories! ✨🎁" },
+            { id: 5, message: "🥂🎁 Here's to an amazing 2026! May all your resolutions come true and your journey be extraordinary! ✨🌟" },
+        ],
+    },
+    {
         id: "celebration",
         emoji: "🎉",
         title: "New Year Wishes",
@@ -45,19 +58,6 @@ export const greetingCards: GreetingCard[] = [
             { id: 3, message: "❤️🎁 No gift compares to the joy you bring! May 2026 bless you with everything your heart desires! 💕✨" },
             { id: 4, message: "🎁💕 My New Year wish is for your happiness! May 2026 bring you closer to your dreams. I love you! ❤️🎉" },
             { id: 5, message: "💕❤️ You are loved beyond measure! This New Year 2026, I'm grateful for YOU - the most precious gift of all! 🎁✨" },
-        ],
-    },
-    {
-        id: "classic",
-        emoji: "🥂",
-        title: "Classic Celebration",
-        gradient: "from-amber-500 to-orange-600",
-        messages: [
-            { id: 1, message: "🥂✨ Happy New Year 2026! May this year bring you endless opportunities, cherished moments, and dreams fulfilled. Cheers! 🎉🌟" },
-            { id: 2, message: "🌟🥂 As we toast to 2026, may your days be bright, your heart be light, and your future be extraordinary! ✨🎊" },
-            { id: 3, message: "🎁✨ Wishing you a spectacular 2026! May every moment sparkle with joy and every day bring new reasons to smile! 🥂🌟" },
-            { id: 4, message: "🌟🥂 Cheers to new beginnings! May 2026 be filled with success, happiness, and unforgettable memories! ✨🎁" },
-            { id: 5, message: "🥂🎁 Here's to an amazing 2026! May all your resolutions come true and your journey be extraordinary! ✨🌟" },
         ],
     },
 

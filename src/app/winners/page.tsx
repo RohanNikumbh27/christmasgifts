@@ -10,7 +10,7 @@ import { GreetingsPromo } from "@/components/GreetingsPromo";
 import { Sparkles, Trophy, Gift, Star, TrendingUp, ChevronDown } from "lucide-react";
 
 const stats = [
-    { icon: Gift, value: "12,500+", label: "Gifts Given", gradient: "from-red-500 to-pink-600" },
+    { icon: Gift, value: "12,500+", label: "Gifts Given", gradient: "from-amber-500 to-orange-600" },
     { icon: Trophy, value: "10,250+", label: "Happy Winners", gradient: "from-amber-500 to-orange-600" },
     { icon: TrendingUp, value: "150+", label: "Cities", gradient: "from-emerald-500 to-teal-600" },
     { icon: Star, value: "4.9/5", label: "Rating", gradient: "from-violet-500 to-purple-600" },
@@ -19,7 +19,7 @@ const stats = [
 const giftCategories = [
     { emoji: "📱", name: "iPhones", gradient: "from-slate-600 to-slate-800" },
     { emoji: "💻", name: "Laptops", gradient: "from-blue-500 to-cyan-600" },
-    { emoji: "⌚", name: "Smartwatches", gradient: "from-rose-500 to-pink-600" },
+    { emoji: "⌚", name: "Smartwatches", gradient: "from-amber-500 to-orange-600" },
     { emoji: "🎧", name: "Headphones", gradient: "from-purple-500 to-indigo-600" },
     { emoji: "🎮", name: "Gaming", gradient: "from-green-500 to-emerald-600" },
     { emoji: "💎", name: "Jewelry", gradient: "from-amber-400 to-yellow-500" },
@@ -48,7 +48,7 @@ export default function WinnersPage() {
             {/* Enhanced Stats Section */}
             <div className="relative mb-16">
                 {/* Background glow */}
-                <div className="absolute inset-0 bg-gradient-to-r from-pink-500/10 via-purple-500/10 to-cyan-500/10 rounded-3xl blur-3xl -z-10" />
+                <div className="absolute inset-0 bg-gradient-to-r from-amber-500/10 via-orange-500/10 to-yellow-500/10 rounded-3xl blur-3xl -z-10" />
 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     {stats.map((stat, index) => {
@@ -76,7 +76,7 @@ export default function WinnersPage() {
             </div>
 
             {/* Enhanced CTA */}
-            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-red-500 via-pink-500 to-rose-600 p-8 md:p-12 text-center shadow-2xl animate-fade-in">
+            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-amber-500 via-orange-500 to-orange-600 p-8 md:p-12 text-center shadow-2xl animate-fade-in">
                 {/* Decorative elements */}
                 <div className="absolute top-0 left-0 w-32 h-32 bg-white/10 rounded-full blur-2xl" />
                 <div className="absolute bottom-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-2xl" />
@@ -97,7 +97,7 @@ export default function WinnersPage() {
                     </p>
                     <Link
                         href="/"
-                        className="inline-flex items-center gap-2 bg-white text-pink-600 font-bold text-lg px-8 py-4 rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
+                        className="inline-flex items-center gap-2 bg-white text-orange-600 font-bold text-lg px-8 py-4 rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
                     >
                         <span>🎡</span>
                         <span>Spin & Win Now!</span>
@@ -136,7 +136,7 @@ export default function WinnersPage() {
 
                 {/* Subtle background pattern */}
                 <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-pink-500/5 to-transparent rounded-3xl -z-10" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-amber-500/5 to-transparent rounded-3xl -z-10" />
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
                         {displayedWinners.map((winner, index) => (
                             <TestimonialCard key={winner.id} winner={winner} index={index} />
@@ -149,7 +149,7 @@ export default function WinnersPage() {
                     <div className="mt-10 flex flex-col items-center">
                         <button
                             onClick={handleLoadMore}
-                            className="group inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-gradient-to-r from-pink-500 to-rose-600 text-white font-semibold text-lg shadow-lg shadow-pink-500/25 hover:shadow-pink-500/40 hover:scale-105 active:scale-95 transition-all duration-300"
+                            className="group inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-gradient-to-r from-amber-500 to-orange-600 text-amber-200 font-semibold text-lg shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40 hover:scale-105 active:scale-95 transition-all duration-300"
                         >
                             <span>View More Winners</span>
                             <ChevronDown className="w-5 h-5 group-hover:translate-y-0.5 transition-transform" />

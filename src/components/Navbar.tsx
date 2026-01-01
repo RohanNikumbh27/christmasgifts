@@ -39,8 +39,8 @@ export function Navbar() {
                     <div className="flex items-center justify-between">
                         {/* Logo */}
                         <Link href="/" className="flex items-center gap-3">
-                            <div className="p-2 bg-gradient-to-br from-pink-600 to-rose-600 rounded-2xl">
-                                <Gift className="w-6 h-6 text-white" />
+                            <div className="p-2 bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl">
+                                <Gift className="w-6 h-6 text-amber-200" />
                             </div>
                             <div>
                                 <h1 className="font-bold text-[var(--foreground)]">TrustNewYear</h1>
@@ -55,7 +55,7 @@ export function Navbar() {
                                     key={item.href}
                                     href={item.href}
                                     className={`flex items-center gap-2 px-4 py-2 rounded-xl transition-all ${isActive(item.href)
-                                        ? 'bg-gradient-to-r from-pink-600 to-rose-600 text-white shadow-lg shadow-pink-600/20'
+                                        ? 'bg-gradient-to-r from-amber-500 to-orange-600 text-amber-200 shadow-lg shadow-amber-500/20'
                                         : 'text-[var(--text-muted)] hover:text-[var(--foreground)] hover:bg-[var(--card-bg)]'
                                         }`}
                                 >
@@ -101,8 +101,8 @@ export function Navbar() {
                         {/* Festive Background Decorations (Dark Mode Only) */}
                         {theme === 'dark' && (
                             <>
-                                <div className="absolute top-0 right-0 -mt-20 -mr-20 w-64 h-64 bg-red-500/10 rounded-full blur-3xl pointer-events-none" />
-                                <div className="absolute bottom-0 left-0 -mb-20 -ml-20 w-64 h-64 bg-pink-500/10 rounded-full blur-3xl pointer-events-none" />
+                                <div className="absolute top-0 right-0 -mt-20 -mr-20 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
+                                <div className="absolute bottom-0 left-0 -mb-20 -ml-20 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl pointer-events-none" />
                             </>
                         )}
 
@@ -110,10 +110,10 @@ export function Navbar() {
                             {/* Header */}
                             <div className={`flex items-center justify-between p-6 border-b ${theme === 'dark' ? 'border-[var(--card-border)]/50' : 'border-neutral-200'}`}>
                                 <div className="flex items-center gap-3">
-                                    <div className="p-2 bg-gradient-to-br from-pink-600 to-rose-600 rounded-xl shadow-lg shadow-pink-600/20">
+                                    <div className="p-2 bg-gradient-to-br from-amber-500 to-orange-600 rounded-xl shadow-lg shadow-amber-500/20">
                                         <Gift className="w-5 h-5 text-white" />
                                     </div>
-                                    <span className={`text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r ${theme === 'dark' ? 'from-pink-400 to-rose-400' : 'from-pink-600 to-rose-600'}`}>
+                                    <span className={`text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r ${theme === 'dark' ? 'from-amber-400 to-orange-400' : 'from-amber-500 to-orange-600'}`}>
                                         Menu
                                     </span>
                                 </div>
@@ -133,13 +133,13 @@ export function Navbar() {
                                         href={item.href}
                                         onClick={() => setIsOpen(false)}
                                         className={`group flex items-center gap-4 px-3 py-3 rounded-2xl transition-all duration-300 border ${isActive(item.href)
-                                            ? (theme === 'dark' ? 'bg-gradient-to-r from-red-950 to-pink-950 border-red-900' : 'bg-gradient-to-r from-red-500/50 to-pink-500/50 border-red-200')
+                                            ? (theme === 'dark' ? 'bg-gradient-to-r from-amber-950 to-orange-950 border-amber-900' : 'bg-gradient-to-r from-amber-500/50 to-orange-500/50 border-amber-200')
                                             : (theme === 'dark' ? 'border-transparent hover:bg-white/5' : 'border-transparent hover:bg-neutral-100')
                                             }`}
                                         style={{ transitionDelay: `${idx * 50}ms` }}
                                     >
                                         <div className={`p-2.5 rounded-xl transition-all duration-300 ${isActive(item.href)
-                                            ? 'bg-gradient-to-br from-red-500 to-pink-600 text-white shadow-md shadow-red-500/25'
+                                            ? 'bg-gradient-to-br from-amber-500 to-orange-600 text-amber-200 shadow-md shadow-amber-500/25'
                                             : (theme === 'dark' ? 'bg-white/10 border-transparent text-[var(--text-muted)] group-hover:text-[var(--foreground)]' : 'bg-white border-neutral-200 text-neutral-500 group-hover:text-neutral-900 group-hover:border-neutral-300') + ' border group-hover:scale-110'
                                             }`}>
                                             <item.icon className="w-5 h-5" />
@@ -153,7 +153,7 @@ export function Navbar() {
                                             </span>
                                         </div>
                                         <div className={`opacity-0 -translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0`}>
-                                            <div className="w-1.5 h-1.5 rounded-full bg-red-500" />
+                                            <div className="w-1.5 h-1.5 rounded-full bg-amber-500" />
                                         </div>
                                     </Link>
                                 ))}
@@ -161,7 +161,7 @@ export function Navbar() {
 
                             {/* Footer in menu */}
                             <div className="p-6 mt-auto">
-                                <div className="relative overflow-hidden p-5 rounded-3xl bg-gradient-to-br from-pink-600 to-rose-600 text-white shadow-xl shadow-pink-900/20">
+                                <div className="relative overflow-hidden p-5 rounded-3xl bg-gradient-to-br from-amber-500 to-orange-600 text-white shadow-xl shadow-amber-900/20">
                                     <div className="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-white/10 rounded-full blur-2xl" />
                                     <div className="absolute bottom-0 left-0 -mb-4 -ml-4 w-24 h-24 bg-black/10 rounded-full blur-2xl" />
 

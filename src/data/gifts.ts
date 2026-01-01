@@ -475,7 +475,7 @@ export const gifts: Gift[] = [
     {
         id: 101,
         name: "iPhone 15 Pro",
-        color: "#ef4444",
+        color: "#f59e0b",
         textColor: "#ffffff",
         icon: "📱",
         image: "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium?wid=400&hei=400&fmt=jpeg&qlt=95&.v=1692845702708",
@@ -486,7 +486,7 @@ export const gifts: Gift[] = [
     {
         id: 102,
         name: "AirPods Pro 2",
-        color: "#ec4899",
+        color: "#ea580c",
         textColor: "#ffffff",
         icon: "🎧",
         image: "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MQD83?wid=400&hei=400&fmt=jpeg&qlt=95&.v=1660803972361",
@@ -497,7 +497,7 @@ export const gifts: Gift[] = [
     {
         id: 103,
         name: "Apple Watch S9",
-        color: "#db2777",
+        color: "#d97706",
         textColor: "#ffffff",
         icon: "⌚",
         image: "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MRXK3ref_VW_34FR+watch-case-45-aluminum-midnight-nc-s9_VW_34FR+watch-face-45-aluminum-midnight-s9_VW_34FR?wid=400&hei=400&fmt=jpeg&qlt=95&.v=1694507911484",
@@ -508,7 +508,7 @@ export const gifts: Gift[] = [
     {
         id: 104,
         name: "Gold Necklace",
-        color: "#f43f5e",
+        color: "#fb923c",
         textColor: "#ffffff",
         icon: "✨",
         image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400&h=400&fit=crop",
@@ -519,7 +519,7 @@ export const gifts: Gift[] = [
     {
         id: 105,
         name: "Amazon Gift Card",
-        color: "#be185d",
+        color: "#c2410c",
         textColor: "#ffffff",
         icon: "🎁",
         image: "https://m.media-amazon.com/images/G/31/gc/designs/livepreview/amzn_wedding_background_all_Background._SX300_QL85_.jpg",
@@ -530,7 +530,7 @@ export const gifts: Gift[] = [
     {
         id: 106,
         name: "PlayStation 5",
-        color: "#dc2626",
+        color: "#f97316",
         textColor: "#ffffff",
         icon: "🎮",
         image: "https://gmedia.playstation.com/is/image/SIEPDC/ps5-product-thumbnail-01-en-14sep21?$facebook$",
@@ -541,7 +541,7 @@ export const gifts: Gift[] = [
     {
         id: 107,
         name: "Diamond Earrings",
-        color: "#e11d48",
+        color: "#b45309",
         textColor: "#ffffff",
         icon: "💎",
         image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=400&h=400&fit=crop",
@@ -552,7 +552,7 @@ export const gifts: Gift[] = [
     {
         id: 108,
         name: "MacBook Air M3",
-        color: "#fb7185",
+        color: "#fdba74",
         textColor: "#ffffff",
         icon: "💻",
         image: "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mba13-midnight-select-202402?wid=400&hei=400&fmt=jpeg&qlt=95&.v=1708367688034",

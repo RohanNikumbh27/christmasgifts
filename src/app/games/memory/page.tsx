@@ -137,7 +137,7 @@ export default function MemoryGame() {
                             key={card.id}
                             onClick={() => handleCardClick(card.id)}
                             className={`aspect-square rounded-xl text-4xl flex items-center justify-center transition-all duration-300 transform ${card.isFlipped || card.isMatched
-                                ? "bg-gradient-to-br from-red-500 to-pink-600 rotate-0 scale-100"
+                                ? "bg-gradient-to-br from-amber-500 to-orange-600 rotate-0 scale-100"
                                 : "bg-[var(--card-bg)] border border-[var(--card-border)] hover:scale-105"
                                 } ${card.isMatched ? "opacity-50" : ""}`}
                             disabled={card.isMatched}

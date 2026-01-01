@@ -23,7 +23,7 @@ const games = [
         title: "Catch the Presents",
         description: "Catch falling gifts before they hit the ground!",
         icon: Gift,
-        color: "from-red-500 to-pink-600",
+        color: "from-amber-500 to-orange-600",
         emoji: "🎁",
     },
     {
@@ -70,7 +70,7 @@ export default function GamesPage() {
                             </p>
 
                             {/* Play Button */}
-                            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-red-500 to-pink-600 text-white font-medium text-sm group-hover:shadow-lg transition-shadow">
+                            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-amber-500 to-orange-600 text-amber-200 font-medium text-sm group-hover:shadow-lg transition-shadow">
                                 <Gamepad2 className="w-4 h-4" />
                                 <span>Play Now</span>
                             </div>

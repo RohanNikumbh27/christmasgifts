@@ -125,7 +125,7 @@ export default function FAQPage() {
                         key={category}
                         onClick={() => setActiveCategory(category)}
                         className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${activeCategory === category
-                            ? "bg-gradient-to-br from-red-500 to-pink-600 text-white"
+                            ? "bg-gradient-to-br from-amber-500 to-orange-600 text-amber-200"
                             : "bg-[var(--card-bg)] text-[var(--foreground)] border border-[var(--card-border)] hover:border-[var(--foreground)]"
                             }`}
                     >
