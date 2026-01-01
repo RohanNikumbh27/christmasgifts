@@ -204,7 +204,7 @@ function GreetingContent() {
                         className="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-zinc-950 to-black hover:from-zinc-900 hover:to-black text-amber-300 font-medium transition-colors shadow-xl"
                     >
                         <Plus size={20} absoluteStrokeWidth />
-                        <span>New</span>
+                        <span>Create your greetings</span>
                     </Link>
                 </div>
             </div>
