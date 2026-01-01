@@ -344,7 +344,7 @@ function GreetingContent() {
 
 
                 {/* Footer Message */}
-                <div className="mt-30 p-8 md:p-10 rounded-3xl bg-white/20 backdrop-blur-sm text-center border border-white/10">
+                <div className="mt-30 p-8 md:p-10 rounded-3xl bg-white/50 text-center border border-white/10">
                     <div className="mb-3">
                         <p className="text-base tracking-wide text-black/80">
                             🎉 Spread the New Year joy with TrustNewYear 🎁
