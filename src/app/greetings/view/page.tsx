@@ -217,14 +217,14 @@ function GreetingContent() {
                                 router.push('/greetings');
                             }
                         }}
-                        className="flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-white/90 hover:bg-white transition-all shadow-lg hover:shadow-xl hover:scale-105"
+                        className="flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-white/90 hover:bg-white transition-all hover:scale-105"
                     >
                         <ArrowLeft className="w-4 h-4 text-gray-700" />
                         <span className="font-semibold text-sm tracking-wide text-gray-700">Back</span>
                     </button>
                     <Link
                         href="/greetings"
-                        className="flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-gradient-to-r from-zinc-900 to-black hover:from-zinc-800 hover:to-zinc-900 text-amber-300 font-semibold transition-all shadow-xl hover:shadow-2xl hover:scale-105"
+                        className="flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-gradient-to-r from-zinc-900 to-black hover:from-zinc-800 hover:to-zinc-900 text-amber-300 font-semibold transition-all hover:scale-105"
                     >
                         <Plus size={18} />
                         <span>Create yours</span>
@@ -241,7 +241,7 @@ function GreetingContent() {
                         <div className="absolute -inset-2 rounded-[36px] bg-white/15 opacity-60" />
 
                         {/* Card */} {/* backdrop-blur-sm */}
-                        <div className="relative overflow-hidden p-8 md:p-10 rounded-3xl bg-white/20 border-2 border-white/40 shadow-2xl border-glow">
+                        <div className="relative overflow-hidden p-8 md:p-10 rounded-3xl bg-white/20 border-2 border-white/40 border-glow">
                             {/* Shimmer Overlay */}
                             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent" style={{ animation: 'shimmer 4s linear infinite', backgroundSize: '200% 100%' }} />
 
@@ -259,7 +259,7 @@ function GreetingContent() {
 
                                 {/* Recipient Name */}
                                 <div className="text-reveal mb-6" style={{ animationDelay: '0.3s' }}>
-                                    <p className="text-4xl md:text-5xl font-black tracking-tight drop-shadow-2xl leading-tight">
+                                    <p className="text-4xl md:text-5xl font-black tracking-tight leading-tight">
                                         {recipientName ? (
                                             <span className="bg-gradient-to-r from-white via-white to-white/80 bg-clip-text">
                                                 {recipientName}
@@ -273,7 +273,7 @@ function GreetingContent() {
 
                                 {/* Message Box */}
                                 <div
-                                    className="text-reveal mb-6 p-6 md:p-8 rounded-2xl bg-white/25 border border-white/30 shadow-lg relative overflow-hidden"
+                                    className="text-reveal mb-6 p-6 md:p-8 rounded-2xl bg-white/25 border border-white/30 relative overflow-hidden"
                                     style={{ animationDelay: '0.5s' }}
                                 >
                                     <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/5" />
@@ -295,7 +295,7 @@ function GreetingContent() {
 
                     {/* Sender Badge - Enhanced */}
                     <div className="text-reveal mt-6" style={{ animationDelay: '0.9s' }}>
-                        <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/95 shadow-xl border border-white/50">
+                        <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/95 border border-white/50">
                             <span className="text-2xl">{card.emoji}</span>
                             <div className="flex items-center gap-2">
                                 <span className="text-sm text-gray-500">From</span>
@@ -307,24 +307,24 @@ function GreetingContent() {
 
                 {/* Preview Mode Buttons - Bottom Dock */}
                 {isPreview && (
-                    <div className="fixed bottom-0 left-0 right-0 z-50 bg-zinc-950 dark:bg-zinc-950 rounded-t-3xl px-4 py-4 shadow-2xl max-w-2xl mx-auto">
+                    <div className="fixed bottom-0 left-0 right-0 z-50 bg-zinc-950 dark:bg-zinc-950 rounded-t-3xl px-4 py-4 max-w-2xl mx-auto">
                         <div className="max-w-4xl mx-auto grid grid-cols-4 gap-3">
                             <button
                                 onClick={() => router.back()}
-                                className="flex items-center justify-center gap-2 px-2 md:px-4 py-3 rounded-xl bg-white dark:bg-zinc-800 text-gray-800 dark:text-white font-medium hover:bg-neutral-700 dark:hover:bg-neutral-700 transition-colors shadow-md"
+                                className="flex items-center justify-center gap-2 px-2 md:px-4 py-3 rounded-xl bg-white dark:bg-zinc-800 text-gray-800 dark:text-white font-medium hover:bg-neutral-700 dark:hover:bg-neutral-700 transition-colors"
                             >
                                 <ArrowLeft className="w-5 h-5" />
                             </button>
                             <Link
                                 href="/"
-                                className="flex items-center justify-center gap-2 px-2 md:px-4 py-3 rounded-xl bg-white dark:bg-zinc-800 text-gray-800 dark:text-white font-medium hover:bg-neutral-700 dark:hover:bg-neutral-700 transition-colors shadow-md"
+                                className="flex items-center justify-center gap-2 px-2 md:px-4 py-3 rounded-xl bg-white dark:bg-zinc-800 text-gray-800 dark:text-white font-medium hover:bg-neutral-700 dark:hover:bg-neutral-700 transition-colors"
                             >
                                 <Home className="w-5 h-5" />
                                 <span className="hidden md:block">Home</span>
                             </Link>
                             <button
                                 onClick={handleWhatsApp}
-                                className="flex items-center justify-center gap-2 px-2 md:px-4 py-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-medium transition-colors shadow-md"
+                                className="flex items-center justify-center gap-2 px-2 md:px-4 py-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-medium transition-colors"
                             >
                                 <Share2 className="w-5 h-5" />
                                 <span className="hidden md:block">Share</span>
@@ -357,7 +357,7 @@ function GreetingContent() {
                         </p>
                         <Link
                             href="/greetings"
-                            className="bg-amber-400 text-black hover:bg-zinc-900 hover:text-white inline-flex px-8 py-4 rounded-full mx-auto mt-4 items-center gap-3 font-bold text-base tracking-wide transition-all shadow-lg hover:shadow-xl hover:scale-105"
+                            className="bg-amber-400 text-black hover:bg-zinc-900 hover:text-white inline-flex px-8 py-4 rounded-full mx-auto mt-4 items-center gap-3 font-bold text-base tracking-wide transition-all hover:scale-105"
                         >
                             <Sparkles className="w-5 h-5" />
                             <span>Create Your Greeting</span>
@@ -382,7 +382,7 @@ function GreetingContent() {
                         {/* Greetings - 2nd */}
                         <Link
                             href="/greetings"
-                            className="group relative overflow-hidden rounded-3xl bg-zinc-900 p-8 shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all border border-zinc-800"
+                            className="group relative overflow-hidden rounded-3xl bg-zinc-900 p-8 hover:scale-[1.02] transition-all border border-zinc-800"
                         >
                             <div className="absolute top-4 right-4 text-8xl text-zinc-700 opacity-40 group-hover:opacity-60 transition-opacity">💌</div>
                             <div className="relative z-10">
@@ -404,7 +404,7 @@ function GreetingContent() {
                         {/* Spin & Win */}
                         <Link
                             href="/spin"
-                            className="group relative overflow-hidden rounded-3xl bg-zinc-900 p-8 shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all border border-zinc-800"
+                            className="group relative overflow-hidden rounded-3xl bg-zinc-900 p-8 hover:scale-[1.02] transition-all border border-zinc-800"
                         >
                             <div className="absolute top-4 right-4 text-8xl text-zinc-700 opacity-40 group-hover:opacity-60 transition-opacity">🎡</div>
                             <div className="relative z-10">
@@ -426,7 +426,7 @@ function GreetingContent() {
                         {/* Games with Thumbnails - Last */}
                         <Link
                             href="/games"
-                            className="group relative overflow-hidden rounded-3xl bg-zinc-900 p-8 shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all border border-zinc-800"
+                            className="group relative overflow-hidden rounded-3xl bg-zinc-900 p-8 hover:scale-[1.02] transition-all border border-zinc-800"
                         >
                             <div className="absolute top-4 right-4 text-8xl text-zinc-700 opacity-40 group-hover:opacity-60 transition-opacity">🎮</div>
                             <div className="relative z-10">
