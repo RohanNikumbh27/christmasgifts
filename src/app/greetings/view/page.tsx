@@ -209,7 +209,7 @@ function GreetingContent() {
                 </div>
             </div>
 
-            <div className="max-w-2xl mx-auto px-4 pb-8 pt-4 relative z-10">
+            <div className="max-w-2xl mx-auto px-4 pb-8 pt-10 relative z-10">
                 {/* Greeting Card */}
                 <div className="animate-scale-in h-[75svh] flex items-center flex-col justify-center">
                     {/* Card */}
